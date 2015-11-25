@@ -128,3 +128,27 @@
 		height:20px;
 	}
 }
+.powered-by-text{
+	font-style: italic;
+}
+
+.footer {
+  /*position: absolute;*/
+  /*bottom: 0;*/
+  width: 100%;
+  padding:15px;
+  margin-bottom: -20px;
+  /* Set the fixed height of the footer here */
+  height: 90px;
+  color: #fff;
+  background-color: #717071;
+
+  img{
+  	height: 23.5px;
+  }
+
+}
+
+.footer-white-links a{
+	color:#fff;
+}
