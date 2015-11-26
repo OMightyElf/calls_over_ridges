@@ -264,3 +264,9 @@ zh-TW:
       long: ! '%Y年%b%d日 %H:%M'
       short: ! '%b%d日 %H:%M'
     pm: 下午
+  enum:
+    post:
+      status:
+        draft: "草稿"
+        permit: "已審核"
+        publish: "已發布"
