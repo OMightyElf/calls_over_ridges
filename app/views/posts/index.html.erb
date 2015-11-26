@@ -1,11 +1,22 @@
 
-<%= render partial: "posts/index_slider",locals: {perpage: 4} %>
 
-<%= render partial: "posts/main_issue",locals: {perpage: 4} %>
+
+<div class="row">
+	<div class="col-lg-12">
+		<%= render partial: "posts/index_slider",locals: {perpage: 4} %>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-12">
+		<%= render partial: "posts/main_issue" %>
+	</div>
+</div>
+
+
 
 <%= render partial: "posts/hot_posts",locals: {perpage: 4} %>
 
 <%= render partial: "posts/about_us",locals: {perpage: 4} %>
 
 <%= render partial: "posts/latest_posts",locals: {perpage: 4} %>
-

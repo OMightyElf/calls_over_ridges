@@ -5,10 +5,8 @@
 
 $(document).ready ->
   $("#covers-bxslider").bxSlider({
-    pager: false
-    auto: true
+    pagerCustom: '#index-slider-pager'
+    auto: false
     controls: false
-    autoStart: true
-    pause: 2000
     infiniteLoop: true
     })

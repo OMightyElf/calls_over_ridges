@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
-    @covers = Post.all
+    @covers = @posts.first(4)
   end
 
   def show
