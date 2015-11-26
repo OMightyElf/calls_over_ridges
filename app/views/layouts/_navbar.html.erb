@@ -2,7 +2,7 @@
 <div class="navbar-fill azure-bg"></div>
   <div class="container">
 	<div class="navbar-header">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="<%= root_path %>">
         <img alt="夢想實驗室" src=" <%= asset_path('lab_logo.png') %> ">
       </a>
       
@@ -12,7 +12,7 @@
     <div class="navbar-slogan azure-text">激發做夢與實踐的DNA</div>
     <!-- TODO 把li.a改成tag.find(?).title之類的 -->
       <ul class="nav navbar-nav custom-nav white-text">
-        <li class="active"><a href="#">首頁 <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="<%= root_path %>">首頁 <span class="sr-only">(current)</span></a></li>
         <li><a href="#">背包客x志工故事</a></li>
         <li><a href="#">創業x實習趨勢</a></li>
         <li><a href="#">青年發聲</a></li>

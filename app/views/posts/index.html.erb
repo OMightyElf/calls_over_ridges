@@ -1,7 +1,11 @@
 
-<% @posts.each do |p| %>
+<%= render partial: "posts/index_slider",locals: {perpage: 4} %>
 
-<h2> <%= p.title %> </h2>
-<p> <%= p.content %> </p>
+<%= render partial: "posts/main_issue",locals: {perpage: 4} %>
 
-<% end %>
+<%= render partial: "posts/hot_posts",locals: {perpage: 4} %>
+
+<%= render partial: "posts/about_us",locals: {perpage: 4} %>
+
+<%= render partial: "posts/latest_posts",locals: {perpage: 4} %>
+

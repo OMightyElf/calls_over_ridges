@@ -12,4 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bxslider
+//= require posts
 //= require bootstrap-sprockets
