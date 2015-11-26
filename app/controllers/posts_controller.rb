@@ -3,6 +3,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @latest_posts = Post.all.order(created_at: :desc)
     @covers = @posts.first(4)
   end
 
