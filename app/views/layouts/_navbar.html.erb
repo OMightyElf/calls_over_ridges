@@ -10,12 +10,11 @@
 
     <div class="collapse navbar-collapse navbar-link-padding" id="bs-example-navbar-collapse-1">
     <div class="navbar-slogan azure-text">激發做夢與實踐的DNA</div>
-    <!-- TODO 把li.a改成tag.find(?).title之類的 -->
       <ul class="nav navbar-nav custom-nav white-text">
         <li class="active"><a href="<%= root_path %>">首頁 <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">背包客x志工故事</a></li>
-        <li><a href="#">創業x實習趨勢</a></li>
-        <li><a href="#">青年發聲</a></li>
+        <% Tag.all.each do |t| %>
+          <li><a href="/tags/<%= t.id %>"><%= t.name_zh %></a></li>        
+        <% end %>
         <li><a href="#">關於我們</a></li>        
       </ul>
       <div class="navbar-logo azure-text powered-by">

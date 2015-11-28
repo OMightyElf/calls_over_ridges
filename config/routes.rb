@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # root 'welcome#index'
 
   root 'posts#index'
-
+  get 'tags/:id', to: 'tags#show_posts'
   # get 'posts/:id', to: 'posts#show'
   # get 'posts/new', to: 'posts#new'
   # post 'posts', to: 'posts#create'
