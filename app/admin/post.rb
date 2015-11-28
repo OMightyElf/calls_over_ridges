@@ -1,5 +1,5 @@
 ActiveAdmin.register Post do
-	permit_params :title, :content, :summary, :cover, tag_ids: []
+	permit_params :title, :content, :summary, :cover, post_tags_attributes: [:id, :post_id, :tag_id]
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -39,7 +39,7 @@ ActiveAdmin.register Post do
 					row :tag do |project|
 						table_for project.tags do
 							column do |tag|
-								link_to tag.name_zh, [:admin, tag] if tag?
+								link_to tag.name_zh
 							end
 						end
 					end
@@ -56,7 +56,10 @@ ActiveAdmin.register Post do
 			f.input :summary
 			f.input :content
 			f.input :status, as: :select, collection: Post.status_attributes_for_select, include_blank: false
-			f.input :post_tags, label: "文章類別", as: :check_boxes, collection: Tag.all, member_label: Proc.new { |a| "#{a.name_zh}" }
+			f.has_many :post_tags, header: "文章類別" do |tif|
+			  tif.input :tag, as: :select, collection: Tag.all, member_label: Proc.new { |t| "#{t.name_zh}" }, include_blank: false
+			end
+			# f.input :post_tags, label: "文章類別", as: :check_boxes, collection: Tag.all, member_label: Proc.new { |a| "#{a.name_zh}" }
 			f.input :publish_date, as: :date_picker
 			f.input :cover
 		end
