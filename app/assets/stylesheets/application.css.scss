@@ -14,9 +14,20 @@
  *
  *= require_self
  *= require page_layout
- *= require bxslider
+ *= require components
+  *= require bxslider
  *= require posts
+
+
  */
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.margin-top5 { margin-top:5px; }
+.margin-top7 { margin-top:7px; }
+.margin-top10 { margin-top:10px; }
+.margin-top15 { margin-top:15px; }
+.margin-top17 { margin-top:17px; }
+.margin-top30 { margin-top:30px; }
+

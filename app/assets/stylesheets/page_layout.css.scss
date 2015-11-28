@@ -161,12 +161,15 @@
 	margin: 30px;
 }
 
-.panel-header{
+.side-panel-header{
 	border-bottom: 1px solid #0077fb;
 	padding: 0 15px;
+	h4{
+		font-size:22px;
+	}
 }
 
-.panel-body{
+.side-panel-body{
 	img{
 		width: 113px;
 		height: auto;
