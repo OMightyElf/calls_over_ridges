@@ -5,7 +5,7 @@ class PagesController < ApplicationController
 	  @covers = @posts.first(4)
 	end
 
-	def show_posts
+	def show_posts_with_tag
 		@posts = Post.where(id: PostTag.where(tag_id: params[:id]).pluck(:post_id))
 	end
 end
