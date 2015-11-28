@@ -1,5 +1,5 @@
 ActiveAdmin.register Post do
-	permit_params :title, :content, :summary, :cover, :tag_ids
+	permit_params :title, :content, :summary, :cover, tag_ids: []
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -13,6 +13,14 @@ ActiveAdmin.register Post do
 #   permitted << :other if resource.something?
 #   permitted
 # end
+
+  controller do
+    def scoped_collection
+      Post.all.includes(:tags)
+    end
+  end
+
+
 	show do
 		columns do
 			column span: 4 do
@@ -31,7 +39,7 @@ ActiveAdmin.register Post do
 					row :tag do |project|
 						table_for project.tags do
 							column do |tag|
-								link_to tag.name_zh, [:admin, tag] if tag.tag?
+								link_to tag.name_zh, [:admin, tag] if tag?
 							end
 						end
 					end

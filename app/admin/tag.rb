@@ -1,11 +1,11 @@
 ActiveAdmin.register Tag do
   permit_params :name_zh, :name_en
 
-  controller do
-    def scoped_collection
-      Tag.includes(:posts)
-    end
-  end
+  # controller do
+  #   def scoped_collection
+  #     Tag.includes(:posts)
+  #   end
+  # end
 
   index do
     column :id
