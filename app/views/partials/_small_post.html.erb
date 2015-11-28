@@ -7,6 +7,6 @@
 		<span><%= small_post.title || '夢想實驗室建構中' %></span>
 	</div>
 	<div class="col-md-7">
-		<span><%= small_post.tags.first || '背包客志工' %> | <%= small_post.publish_date.try(:to_date) || Date.today %></span>
+		<span><%= small_post.tags.first.name_zh || '背包客志工' %> | <%= small_post.publish_date.try(:to_date) || Date.today %></span>
 	</div>
 </div>

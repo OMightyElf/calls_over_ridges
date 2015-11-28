@@ -15,7 +15,7 @@
       <% Tag.all.each do |t| %>
       <li class="<%= setactive('show_posts', t.id) %>"><a href="/tags/<%= t.id %>"><%= t.name_zh %></a></li>        
       <% end %>
-      <li class="<%= setactive('about', "") %>"><a href="#">關於我們</a></li>        
+      <li class="<%= setactive('about', "") %>"><a href="<%= aboutus_path %>">關於我們</a></li>        
     </ul>
     <div class="navbar-logo azure-text powered-by">
      <h6><small>Powered by</small></h6>

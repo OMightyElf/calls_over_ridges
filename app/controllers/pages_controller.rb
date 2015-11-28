@@ -8,4 +8,7 @@ class PagesController < ApplicationController
 	def show_posts_with_tag
 		@posts = Post.where(id: PostTag.where(tag_id: params[:id]).pluck(:post_id))
 	end
+
+	def aboutus
+	end
 end
