@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
-  root 'posts#index'
-  get 'tags/:id', to: 'tags#show_posts'
+  root 'pages#index'
+  get 'tags/:id', to: 'pages#show_posts'
   # get 'posts/:id', to: 'posts#show'
   # get 'posts/new', to: 'posts#new'
   # post 'posts', to: 'posts#create'

@@ -1,35 +1,44 @@
 <nav class="navbar navbar-default navbar-fixed-top custom-navbar">
-<div class="navbar-fill azure-bg"></div>
+  <div class="navbar-fill azure-bg"></div>
   <div class="container">
-	<div class="navbar-header">
-      <a class="navbar-brand" href="<%= root_path %>">
-        <img alt="夢想實驗室" src=" <%= asset_path('lab_logo.png') %> ">
-      </a>
-      
-    </div>
-
-    <div class="collapse navbar-collapse navbar-link-padding" id="bs-example-navbar-collapse-1">
-    <div class="navbar-slogan azure-text">激發做夢與實踐的DNA</div>
-      <ul class="nav navbar-nav custom-nav white-text">
-        <li class="active"><a href="<%= root_path %>">首頁 <span class="sr-only">(current)</span></a></li>
-        <% Tag.all.each do |t| %>
-          <li><a href="/tags/<%= t.id %>"><%= t.name_zh %></a></li>        
-        <% end %>
-        <li><a href="#">關於我們</a></li>        
-      </ul>
-      <div class="navbar-logo azure-text powered-by">
-      	<h6><small>Powered by</small></h6>
-      	<img src="<%= asset_path('aiesec_blue_logo') %>" alt="AIESEC">
-      </div>
-		<form class="navbar-form navbar-left custom-navbar-form" role="search">
-        <div class="form-group search-bar-form-group">
-          <input type="text" class="form-control custom-search-box" placeholder="搜尋">
-        </div>
-        <!-- <button type="submit" class="btn btn-default">Submit</button> -->
-      </form>
-
-
-    </div><!-- /.navbar-collapse -->
+   <div class="navbar-header">
+    <a class="navbar-brand" href="<%= root_path %>">
+      <img alt="夢想實驗室" src=" <%= asset_path('lab_logo.png') %> ">
+    </a>
 
   </div>
+
+  <div class="collapse navbar-collapse navbar-link-padding" id="bs-example-navbar-collapse-1">
+    <div class="navbar-slogan azure-text">激發做夢與實踐的DNA</div>
+    <ul class="nav navbar-nav custom-nav white-text">
+      <li class="<%= setactive('index', "") %>"><a href="<%= root_path %>">首頁 <span class="sr-only">(current)</span></a></li>
+      <% Tag.all.each do |t| %>
+      <li class="<%= setactive('show_posts', t.id) %>"><a href="/tags/<%= t.id %>"><%= t.name_zh %></a></li>        
+      <% end %>
+      <li class="<%= setactive('about', "") %>"><a href="#">關於我們</a></li>        
+    </ul>
+    <div class="navbar-logo azure-text powered-by">
+     <h6><small>Powered by</small></h6>
+     <img src="<%= asset_path('aiesec_blue_logo') %>" alt="AIESEC">
+   </div>
+   <form class="navbar-form navbar-left custom-navbar-form" role="search">
+    <div class="form-group search-bar-form-group">
+      <input type="text" class="form-control custom-search-box" placeholder="搜尋">
+    </div>
+    <!-- <button type="submit" class="btn btn-default">Submit</button> -->
+  </form>
+
+
+</div><!-- /.navbar-collapse -->
+
+</div>
 </nav>
+
+<script>
+  $(".nav a").on("click", function(){
+   $(".nav").find(".active").removeClass("active");
+   $(this).parent().addClass("active");
+ });
+
+  console.log("<%= setactive('show_posts', 1) %>");
+</script>
