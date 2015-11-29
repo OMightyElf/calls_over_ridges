@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
-    @hot_posts = Post.all.order(view_count: :desc)
+    # @hot_posts = Post.all.order(view_count: :desc)
   end
 
   def new
