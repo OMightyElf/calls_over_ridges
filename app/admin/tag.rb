@@ -1,5 +1,5 @@
 ActiveAdmin.register Tag do
-  permit_params :name_zh, :name_en
+  permit_params :name_zh, :name_en, :tag_type, :status
 
   # controller do
   #   def scoped_collection
@@ -25,6 +25,7 @@ ActiveAdmin.register Tag do
     f.inputs do
       f.input :name_zh
       f.input :name_en
+      f.input :tag_type, as: :select, collection: Tag.tag_type_attributes_for_select, include_blank: false
     end
     f.actions
   end

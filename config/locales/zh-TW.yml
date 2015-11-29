@@ -270,3 +270,8 @@ zh-TW:
         draft: "草稿"
         permit: "已審核"
         publish: "已發布"
+    tag:
+      tag_type:
+        main_tag: "首頁標籤"
+        issue: "議題"
+        other_tag: "其他標籤"
