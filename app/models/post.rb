@@ -1,4 +1,6 @@
 class Post < ActiveRecord::Base
+
+
   belongs_to :user
   has_many :post_tags, dependent: :destroy
   has_many :tags, through: :post_tags
@@ -13,5 +15,10 @@ class Post < ActiveRecord::Base
     statuses.map do |status, _|
       [I18n.t("enum.post.status.#{status}"), status]
     end
+  end
+
+  def self.search(query)
+    # where(:title, query) -> This would return an exact match of the query
+    where("title like ?", "%#{query}%") 
   end
 end
