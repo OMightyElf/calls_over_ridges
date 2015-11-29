@@ -3,8 +3,13 @@
 	background: #F7F7F7;
 }
 
+.content-container{
+	margin-top:20px;
+	min-height:80vh;
+}
+
 .custom-navbar{
-	min-height: 76px;
+  min-height: 76px;
 	/*padding-top:10px;*/
   background: #fff;
   border: none;
@@ -267,4 +272,13 @@
 	top: 120px;
     left: 0;
     width: 100%;
+}
+
+.col-post-grid{
+	h4{
+		font-size:14px;
+	}
+	span{
+		font-size:10px;
+	}
 }
