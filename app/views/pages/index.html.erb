@@ -15,13 +15,15 @@
 		<%= render partial: "posts/main_issue" %>
 	</div>
 </div>
+<div class="row">
+	<div class="col-md-8 margin-top30">
+		<%= render partial: "posts/hot_posts",locals: {perpage: 4} %>
+	</div>
 
-<%= render partial: "posts/hot_posts",locals: {perpage: 4} %>
+	<div class="col-md-4 post-panel margin-top30">
+		<%= render partial: "posts/aboutus" %>
+	</div>
 
-<div class="col-md-4 col-md-offset-8 post-panel margin-top30">
-	<%= render partial: "posts/aboutus" %>
-</div>
-
-<div class="col-md-4 col-md-offset-8 post-panel">
+<div class="col-md-4 post-panel">
 	<%= render partial: "posts/latest_posts",locals: {perpage: 4} %>
 </div>

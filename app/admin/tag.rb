@@ -26,6 +26,7 @@ ActiveAdmin.register Tag do
       f.input :name_zh
       f.input :name_en
       f.input :tag_type, as: :select, collection: Tag.tag_type_attributes_for_select, include_blank: false
+      f.input :status, as: :select, collection: Tag.status_attributes_for_select, include_blank: false
     end
     f.actions
   end

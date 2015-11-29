@@ -1,4 +1,4 @@
 <div class="panel-header padding-top20">
 		<h4>主打議題<span class="azure-text">（主打議題）</span></h4>
 	</div>
-<%= render partial: "partials/issue_cover_layout", locals:{ cover: @main_issue_posts[0..2] } %>
+<%= render partial: "partials/issue_cover_layout", locals:{ cover: @main_issue_posts.take(3) } %>

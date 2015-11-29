@@ -15,5 +15,11 @@ class Tag < ActiveRecord::Base
       [I18n.t("enum.tag.tag_type.#{tag_type}"), tag_type]
     end
   end
+  def self.status_attributes_for_select
+    statuses.map do |status, _|
+      [I18n.t("enum.tag.status.#{status}"), status]
+    end
+  end
+
 
 end

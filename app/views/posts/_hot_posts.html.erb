@@ -1,6 +1,27 @@
 <div class="panel-header">
 	<h4>熱門</h4>
+	  <!-- Nav tabs -->
+	<ul class="nav nav-tabs custom-panel-nav" role="tablist" id="hot-post-nav">
+	<% Tag.main_tag.first(3).each do |t| %>	
+		<li role="presentation"><a href="#<%= t.name_en %>" aria-controls="<%= t.name_en %>" role="tab" data-toggle="tab"><%= t.name_zh %></a>
+		</li>
+	<% end %>
+
+  </ul>
 </div>
 <div class="panel-body">
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane" id="profile">xxx</div>
+    <div role="tabpanel" class="tab-pane" id="messages">yyy</div>
+    <div role="tabpanel" class="tab-pane" id="settings">...</div>
+  </div>
+
+
 	<%= render partial: 'partials/small_post', collection: @hot_posts.first(perpage) %>
 </div>
+
+<script type="text/javascript">
+	$('#hot-post-nav > li:first-child').addClass( "active" );
+</script>
