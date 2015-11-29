@@ -18,6 +18,8 @@ gem 'activeadmin', '~> 1.0.0.pre2'
 gem 'active_skin'
 gem 'bxslider-rails'
 gem 'bootstrap-sass', '~> 3.3.5'
+gem "font-awesome-rails"
+
 
 group :production do
   gem "rails_12factor"
