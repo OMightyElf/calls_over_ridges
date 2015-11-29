@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   root 'pages#index'
   get 'tags/:name_en', to: 'pages#show_posts_with_tag'
   get 'aboutus', to: 'pages#aboutus'
+  post 'attachment/upload' => 'attachments#upload'
+
   # get 'posts/:id', to: 'posts#show'
   # get 'posts/new', to: 'posts#new'
   # post 'posts', to: 'posts#create'
