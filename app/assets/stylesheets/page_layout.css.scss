@@ -178,7 +178,7 @@
 
 .panel-body{
 	img{
-		width: 113px;
+		width: 100%;
 		height: auto;
 	}
 }
@@ -217,15 +217,18 @@
 	width: 100%;
 	height: 55px;
 	padding: 0 10px;
-	.red-text{
-		color: #F77F7F;
-	}
-	.gray-text{
-		color: #B9B9B9;
-	}
-	.white-text{
-		color: white
-	}
+}
+.red-text{
+	color: #F77F7F;
+}
+.gray-text{
+	color: #B9B9B9;
+}
+.dark-gray-text{
+	color: #717079;
+}
+.white-text{
+	color: white
 }
 .issue-cover-title-left{
 	height: 110px;
@@ -244,4 +247,24 @@
 }
 .section-wrapper{
 	margin-top: 80px;
+}
+.content-cover{
+	position: relative;
+	img{
+	width: 100%;
+	height: auto;
+	}
+}
+
+.fr-view{
+	img{
+		max-width: 100%;
+	}
+}
+
+.panel-stick-right{
+	position: fixed;
+	top: 120px;
+    left: 0;
+    width: 100%;
 }

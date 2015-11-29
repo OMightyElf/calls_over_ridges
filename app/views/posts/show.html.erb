@@ -1,6 +1,25 @@
-<div class="fr-view">
-<h1><%= @post.id %></h1>
-<h2> <%= @post.title %> </h2>
-<p> <%= @post.content.html_safe %> </p>
-<%= image_tag @post.cover.url %>
+<div class="row">
+<div class="col-sm-12 col-md-8">
+<% @post.tags.each do |t| %>
+	<span class="font-size20 dark-gray-text"><%= t.name_zh %></span>
+<% end.join("｜") %>
+	<br>
+	<div class="content-cover">
+	<!-- TODO把所有的 .cover 換成 .cover.url 才會對～ -->
+		<%= image_tag @post.cover %>
+		<div class="issue-cover-title issue-cover-title-left black-bg-with-opacity">
+			<h2 class="white-text"><%= @post.title %></h2>
+		</div>
+	</div>
+	<span><%= @post.publish_date.try(:to_date) || Date.today.to_date %></span><span class="margin-left20 weight900">文｜<%= @post.try(:user).try(:author_name) || "Adele Yu" %></span>
+	<div class="fr-view">
+		<p> <%= @post.content.html_safe %> </p>
+	</div>
+</div>
+</div>
+
+<div class="row panel-stick-right">
+<div class="col-sm-12 col-md-4 col-md-offset-8">
+<%= render partial: "posts/hot_posts", locals: { perpage: 4 } %>
+</div>
 </div>
