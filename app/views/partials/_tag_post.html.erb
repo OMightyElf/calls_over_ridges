@@ -1,4 +1,6 @@
-<h1><%= tag_post.id %></h1>
-<h2> <%= tag_post.title %> </h2>
-<p> <%= tag_post.content %> </p>
-<%= image_tag tag_post.cover.url %>
+<div class="col-sm-12 col-md-2">
+
+	<%= image_tag tag_post.cover.url, class: 'tag-post-pic' %>
+	<h4> <%= tag_post.title %> </h4>
+	<span><%= tag_post.tags.first.try(:name_zh) || '背包客志工' %> | <%= tag_post.publish_date.try(:to_date) || Date.today %></span>
+</div>

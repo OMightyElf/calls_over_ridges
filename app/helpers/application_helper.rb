@@ -1,5 +1,5 @@
 module ApplicationHelper
-	def setactive(page, id)
-		(params[:action] == page && params[:id].to_s == id.to_s) ? "active" : nil
+	def setactive(page, name_en)
+		(params[:action] == page && params[:name_en].to_s == name_en.to_s) ? "active" : nil
 	end
 end

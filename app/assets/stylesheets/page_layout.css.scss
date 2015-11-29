@@ -83,11 +83,12 @@
 	color: white;
 }
 
-
-
+.container-margin-top-nav{
+	margin-top: 76px;
+}
 
 .page-wrapper{
-	margin-top: 76px;
+	margin-top: 20px;
 }
 
 .navbar-form.custom-navbar-form{
@@ -167,15 +168,15 @@
 	margin: 30px;
 }
 
-.side-panel-header{
+.panel-header{
 	border-bottom: 1px solid #0077fb;
-	padding: 0 15px;
+	padding-left: 15px;
 	h4{
 		font-size:22px;
 	}
 }
 
-.side-panel-body{
+.panel-body{
 	img{
 		width: 113px;
 		height: auto;
@@ -184,4 +185,63 @@
 
 .small-post-height{
 	min-height: 60px;
+}
+
+.col-issue-cover{
+	margin-top: 20px;
+	.issue-cover-bg-img{
+		height:400px;
+		position: relative;
+		img{
+			width:100%;
+		}
+	}
+	.issue-cover-small-bg-img{
+		height:190px;
+		position: relative;
+		img{
+			width:100%;
+		}
+	}
+	&.col-issue-cover-left{
+		height:400px;
+
+	}
+	&.col-issue-cover-right{
+		height:200px;
+	}
+}
+.issue-cover-title{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 55px;
+	padding: 0 10px;
+	.red-text{
+		color: #F77F7F;
+	}
+	.gray-text{
+		color: #B9B9B9;
+	}
+	.white-text{
+		color: white
+	}
+}
+.issue-cover-title-left{
+	height: 110px;
+}
+.black-bg-with-opacity{
+	background: rgba(0,0,0,0.6);
+}
+.issue-post-title{
+	&.issue-post-title-left{
+		height:50px;
+	}
+}
+.tag-post-pic{
+	width: 100%;
+	height: auto;
+}
+.section-wrapper{
+	margin-top: 80px;
 }

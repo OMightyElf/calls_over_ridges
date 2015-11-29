@@ -11,15 +11,17 @@
 
 <%= render partial: "layouts/navbar" %>
 <!-- TODO: navbar -->
-<div class="container-fluid container-gray-section">
-	<%= yield :cover %>
+<div class="container-fluid container-gray-section container-margin-top-nav">
+	<div class="container">
+		<%= yield :cover %>
+	</div>
 </div>
 
-<div class="container page-wrapper">
+<div class="container margin-top15">
 	<%= yield %>
 </div>
 
-<%= render partial: "layouts/footer" %>.
+<%= render partial: "layouts/footer" %>
 <!-- TODO: footer -->
 
 </body>

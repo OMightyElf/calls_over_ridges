@@ -13,7 +13,7 @@
     <ul class="nav navbar-nav custom-nav white-text">
       <li class="<%= setactive('index', "") %>"><a href="<%= root_path %>">首頁 <span class="sr-only">(current)</span></a></li>
       <% Tag.all.each do |t| %>
-      <li class="<%= setactive('show_posts_with_tag', t.id) %>"><a href="/tags/<%= t.id %>"><%= t.name_zh %></a></li>        
+      <li class="<%= setactive('show_posts_with_tag', t.name_en) %>"><a href="/tags/<%= t.name_en %>"><%= t.name_zh %></a></li>        
       <% end %>
       <li class="<%= setactive('about', "") %>"><a href="<%= aboutus_path %>">關於我們</a></li>        
     </ul>
