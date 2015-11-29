@@ -11,6 +11,10 @@
 
 <%= render partial: "layouts/navbar" %>
 <!-- TODO: navbar -->
+<div class="container-fluid container-gray-section">
+	<%= yield :cover %>
+</div>
+
 <div class="container page-wrapper">
 	<%= yield %>
 </div>

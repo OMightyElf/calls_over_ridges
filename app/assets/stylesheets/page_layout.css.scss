@@ -1,5 +1,10 @@
+.container-gray-section{
+	padding:0px;
+	background: #F7F7F7;
+}
+
 .custom-navbar{
-	min-height: 100px;
+	min-height: 76px;
 	/*padding-top:10px;*/
   background: #fff;
   border: none;
@@ -32,7 +37,7 @@
 .nav.custom-nav li.active a{
 	color:white;
 	background: none;
-	border-bottom: 10px solid white;
+	border-bottom: 4px solid white;
 	&:hover{
 		background:none;
 		color:#fff;
@@ -82,11 +87,12 @@
 
 
 .page-wrapper{
-	margin-top: 80px;
+	margin-top: 76px;
 }
 
 .navbar-form.custom-navbar-form{
 	margin-top: 3px;
+	margin-bottom:0px;
 }
 
 .search-bar-form-group{
