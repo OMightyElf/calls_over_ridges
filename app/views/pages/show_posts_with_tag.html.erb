@@ -1,12 +1,14 @@
 <% content_for :cover do %>
-	<div class="panel-header padding-top20">
-			<h4><%= @tag.name_zh %></h4>
-		</div>
-	<%= render partial: "partials/issue_cover_layout", locals:{ cover: @posts[0..2] } %>
+<div class="panel-header padding-top20">
+	<h4><%= @tag.name_zh %></h4>
+</div>
+<%= render partial: "partials/issue_cover_layout", locals:{ cover: @posts[0..2] } %>
 <% end %>
 
 <div class="row margin-top15">
-	<!-- <div class="section-wrapper"> -->
-		<%= render partial: "partials/post_grid", collection: @posts %>
-	<!-- </div> -->
+	<div class="col-sm-12 col-md-8">
+		<div class="row">
+			<%= render partial: "partials/post_grid", collection: @posts %>
+		</div>
+	</div>
 </div>

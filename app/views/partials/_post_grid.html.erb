@@ -1,5 +1,8 @@
-<div class="col-sm-12 col-md-2 col-post-grid">
-	<%= image_tag post_grid.cover.url, class: 'tag-post-pic' %>
+<div class="col-sm-12 col-md-4 col-post-grid">
+	<div class="img-wrapper">
+		<!-- TODO 把預設都拿掉 -->
+		<%= image_tag (post_grid.cover.url || 'https://i.ytimg.com/vi/V46K7apDziA/maxresdefault.jpg' ), class: 'tag-post-pic' %>
+	</div>
 	<h4> <%= post_grid.title %> </h4>
 	<span class="red-text"><%= post_grid.tags.first.try(:name_zh) || '背包客志工' %></span><span class="gray-text"> | <%= post_grid.publish_date.try(:to_date) || Date.today %></span>
 </div>
