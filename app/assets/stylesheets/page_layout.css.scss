@@ -233,18 +233,21 @@
 }
 .content-cover, .tag-content-cover{
 	position: relative;
+	overflow: hidden;
 	img{
 	width: 100%;
 	height: auto;
 	}
 }
 
+.content-cover{
+	height: 400px;
+}
 
 .col-issue-cover{
 	margin-top: 20px;
 	.tag-content-cover{
 		height:400px;
-		overflow: hidden;
 		position: relative;
 		img{
 			width:100%;
