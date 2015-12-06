@@ -1,10 +1,16 @@
 <div class="row">
 	
 	<div class="col-sm-12 col-md-5">
+		<%= link_to(post[0]) do %>
 		<%= image_tag ( post[0].cover.url || 'https://i.ytimg.com/vi/V46K7apDziA/maxresdefault.jpg' ), class: 'tag-post-pic' %>
+		<% end %>
 	</div>
 	<div class="col-sm-12 col-md-7">
+
+	<%= link_to(post[0]) do %>
 	<h4> <%= post[0].title %> </h4>
+	<% end %>
+
 	<span class="red-text"><%= post[0].tags.first.try(:name_zh) || '背包客志工' %></span><span class="gray-text"> | <%= post[0].publish_date.try(:to_date) || Date.today %></span><br>
 	<p class="margin-top10"><%= post[0].summary %></p>
 	</div>

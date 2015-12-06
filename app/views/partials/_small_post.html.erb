@@ -1,13 +1,20 @@
 <!-- TODO 把預設都拿掉 -->
 <div class="row margins small-post-height">
 	<div class="col-md-5">
+		<%= link_to(small_post) do %>
 		<%= image_tag ( small_post.cover.url || 'https://i.ytimg.com/vi/V46K7apDziA/maxresdefault.jpg' ) %>
+		<% end %>
 	</div>
 	<!-- <div class="col-md-7"> -->
+		<%= link_to(small_post) do %>
 		<span><%= small_post.title || '夢想實驗室建構中' %></span>
+		<% end %>
+
 		<br>
 	<!-- </div> -->
 	<!-- <div class="col-md-7"> -->
+		<%= link_to(small_post.tags.first) do %>
 		<span class="red-text"><%= small_post.tags.first.try(:name_zh) || '背包客志工' %></span><span class="gray-text"> | <%= small_post.publish_date.try(:to_date) || Date.today %></span>
+		<% end %>
 	<!-- </div> -->
 </div>

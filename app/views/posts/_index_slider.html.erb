@@ -3,10 +3,14 @@
 <ul class="bxslider" id="covers-bxslider">
 	<% @covers.each do |p| %>
 	<li>
-	<div class="covers-element">
-		<img class="img-responsive img-cover" src="<%= p.cover %>">
-		<h3><%= p.title %></h3>
-	</div>
+
+	<%= link_to(p) do %>
+		<div class="covers-element">
+			<img class="img-responsive img-cover" src="<%= p.cover %>">
+			<h3><%= p.title %></h3>
+		</div>
+	<% end %>
+
 	</li>
 	<% end %>
 </ul>
