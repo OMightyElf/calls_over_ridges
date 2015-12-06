@@ -17,7 +17,16 @@
 		</div>
 	</div>
 	<div class="col-sm-12 col-md-8">
-		<%= render partial: "posts/related_posts", locals: { perpage: 4 } %>
+		<div class="row">
+			<%= render partial: "posts/related_posts", locals: { perpage: 6 } %>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 col-md-12">
+				<p class="padding-right15 text-right">
+					<button type="button" class="btn btn-azure text-right">看更多</button>
+				</p>
+			</div>
+		</div>
 	</div>
 </div>
 
