@@ -16,6 +16,9 @@
 			<p> <%= @post.content.html_safe %> </p>
 		</div>
 	</div>
+	<div class="col-sm-12 col-md-8">
+		<%= render partial: "posts/related_posts", locals: { perpage: 4 } %>
+	</div>
 </div>
 
 <div class="row panel-stick-right">
