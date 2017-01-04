@@ -1,27 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>DreamLabBlog</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>資助平台- 遠山呼喚</title>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="400" />
+  <!--<meta name="format-detection" content="telephone=no" />-->
+  <meta http-equiv="cleartype" content="on" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui" />
+  <meta name="author" content="Aplus Digital Consulting Co., Ltd." />
+  <link rel="apple-touch-icon" href="../Content/images/touch/apple-touch-icon.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../Content/images/touch/apple-touch-icon-144x144-precomposed.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../Content/images/touch/apple-touch-icon-114x114-precomposed.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../Content/images/touch/apple-touch-icon-72x72-precomposed.png" />
+  <link rel="apple-touch-icon-precomposed" href="../Content/images/touch/apple-touch-icon-57x57-precomposed.png" />
+  <link rel="shortcut icon" sizes="196x196" href="../Content/images/touch/touch-icon-196x196.png" />
+  <link rel="shortcut icon" href="../Content/images/touch/apple-touch-icon.png" />
+  <link rel="shortcut icon" href="../favicon.ico" />
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag :modernizr %>
   <%= csrf_meta_tags %>
   <!-- TODO: Meta Tags -->
 </head>
 <body>
 
-<%= render partial: "layouts/navbar" %>
-<!-- TODO: navbar -->
-<div class="container-fluid container-gray-section container-margin-top-nav">
-	<div class="container">
-		<%= yield :cover %>
-	</div>
-</div>
-
-<div class="container content-container">
+<div class="container">
+	<%= render partial: "layouts/navbar" %>
 	<%= yield %>
+	<%= render partial: "layouts/footer" %>
 </div>
 
-<%= render partial: "layouts/footer" %>
 <!-- TODO: footer -->
 
 </body>

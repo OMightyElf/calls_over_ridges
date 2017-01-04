@@ -1,0 +1,35 @@
+@media screen and (max-width: 1000px) {
+  .login {
+    min-height: 500px;
+  }
+
+  .title:before, .title:after {
+    width: 30px;
+  }
+  .modal .title {
+    text-align: left;
+    border-left: 3px solid #990033;
+    padding-left: 10px;
+  }
+  .modal .title:before, .modal .title:after {
+    content: none;
+  }
+
+  .recordPopup {
+    padding: 25px;
+  }
+  .recordPopup__left {
+    float: left;
+    width: 100%;
+    padding: 10px;
+  }
+  .recordPopup__right {
+    float: left;
+    width: 100%;
+  }
+
+  .response > li {
+    width: 100%;
+    margin: 20px 0;
+  }
+}

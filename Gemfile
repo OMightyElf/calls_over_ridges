@@ -19,7 +19,11 @@ gem 'active_skin'
 gem 'bxslider-rails'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem "font-awesome-rails"
-
+gem 'modernizr-rails'
+gem 'fancybox-rails'
+gem 'materialize-sass'
+gem 'chartjs-ror'
+gem 'dotenv-rails', :groups => [:development, :test]
 
 group :production do
   gem "rails_12factor"
@@ -30,6 +34,6 @@ group :development do
   gem 'spring'
   gem 'byebug'
   gem 'pry-rails'
-
+  gem 'better_errors'
 end
 

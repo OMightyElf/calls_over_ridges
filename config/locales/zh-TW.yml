@@ -1,9 +1,6 @@
 zh-TW:
   activerecord:
     models:
-      admin_user:
-        one: "管理員"
-        other: "管理員"
       ad:
         one: "廣告"
         other: "廣告"
@@ -17,19 +14,6 @@ zh-TW:
         one: "類別"
         other: "類別"
     attributes:
-      admin_user: 
-        email: "email"
-        encrypted_password: "encrypted_password"
-        reset_password_token: "reset_password_token"
-        reset_password_sent_at: "reset_password_sent_at"
-        remember_created_at: "remember_created_at"
-        sign_in_count: "登入次數"
-        current_sign_in_at: "目前登入時間"
-        last_sign_in_at: "最後登入時間"
-        current_sign_in_ip: "目前登入 IP"
-        last_sign_in_ip: "最後登入 IP"
-        created_at: "建立日期"
-        updated_at: "更新日期"
       ad:
         cover: "封面"
         title: "標題"

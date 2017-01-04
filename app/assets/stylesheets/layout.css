@@ -1,0 +1,308 @@
+.wrap {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body.menu--on {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+.header {
+  background-color: #fff;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+.header__logo {
+  width: 200px;
+  height: 75px;
+  display: block;
+  float: left;
+  padding: 8px 20px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.header__logo img {
+  width: 160px;
+}
+.header__toggle {
+  width: 75px;
+  height: 75px;
+  background: #003471;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-bottom-right-radius: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+  -moz-transition: .3s ease;
+  -o-transition: .3s ease;
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+  z-index: 1;
+  display: none;
+}
+.header__toggle .burger {
+  width: 30px;
+  height: 3px;
+  background: #ffffff;
+  position: absolute;
+  left: 15px;
+  top: 30px;
+  -moz-transition: .2s ease;
+  -o-transition: .2s ease;
+  -webkit-transition: .2s ease;
+  transition: .2s ease;
+}
+.header__toggle .burger:before {
+  content: '';
+  display: block;
+  position: absolute;
+  background: #ffffff;
+  width: 30px;
+  height: 3px;
+  top: -10px;
+  -moz-transition: .2s ease;
+  -o-transition: .2s ease;
+  -webkit-transition: .2s ease;
+  transition: .2s ease;
+}
+.header__toggle .burger:after {
+  content: '';
+  display: block;
+  position: absolute;
+  background: #ffffff;
+  width: 30px;
+  height: 3px;
+  top: 10px;
+  -moz-transition: .2s ease;
+  -o-transition: .2s ease;
+  -webkit-transition: .2s ease;
+  transition: .2s ease;
+}
+.menu--on .header__toggle {
+  width: 3000px;
+  height: 3000px;
+  -moz-transition: .3s ease;
+  -o-transition: .3s ease;
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+}
+.menu--on .header__toggle .burger {
+  transform: rotate(135deg);
+}
+.menu--on .header__toggle .burger:before {
+  transform: rotate(90deg) translate(10px, 0px);
+}
+.menu--on .header__toggle .burger:after {
+  transform: rotate(180deg) translate(0px, 10px);
+}
+.header__menu {
+  display: block;
+}
+.header .menu__nav {
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+.header .menu__nav li {
+  float: left;
+  list-style: none;
+  padding: 25px 15px;
+}
+.header .menu__nav li a {
+  padding: 20px 0;
+  color: #333;
+  font-weight: bold;
+  border-top: 4px solid #fff;
+  border-bottom: 4px solid #fff;
+  -moz-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  box-sizing: border-box;
+}
+.header .menu__nav li a:hover {
+  border-top: 2px solid #003471;
+  border-bottom: 2px solid #003471;
+  padding: 8px 0;
+}
+.header .menu__member {
+  float: right;
+  margin: 0;
+  padding: 0;
+}
+.header .menu__member li {
+  float: left;
+  list-style: none;
+}
+.header .menu__member li a {
+  margin: 19px 10px;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.footer {
+  border-top: 5px solid #003471;
+  text-align: center;
+  background: #333;
+  padding-bottom: 30px;
+  padding-top: 45px;
+  font-size: 14px;
+}
+.footer .wrap {
+  display: table;
+  width: 100%;
+}
+.footer__logo {
+  width: 25%;
+  display: table-cell;
+}
+.footer__logo img {
+  height: 65px;
+  opacity: 0.3;
+  -moz-transition: all .5s;
+  -o-transition: all .5s;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+.footer__logo img:hover {
+  opacity: 1;
+}
+.footer__copyright {
+  display: table-cell;
+  width: 50%;
+  vertical-align: middle;
+}
+.footer__copyright > div {
+  font-size: 14px;
+  margin-top: 5px;
+  color: #aaaaaa;
+}
+.footer__copyright > div:first-of-type {
+  margin-top: 0;
+}
+.footer__socialLink {
+  width: 25%;
+  vertical-align: middle;
+  display: table-cell;
+}
+.footer__socialLink a {
+  margin: 0 5px;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+@media screen and (max-width: 1000px) {
+  .wrap {
+    width: 100%;
+  }
+
+  /* ==========================================================================
+     Header
+     ========================================================================== */
+  .header {
+    position: relative;
+  }
+  .header__menu {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    height: 100%;
+    margin: 0;
+    z-index: 999;
+    display: none;
+  }
+  .menu--on .header__menu {
+    display: block;
+  }
+  .header__menu .menu__nav {
+    float: none;
+  }
+  .header__menu .menu__nav > li {
+    width: 100%;
+    text-align: center;
+  }
+  .header__menu .menu__nav > li a {
+    color: #fff;
+    border: none;
+    font-size: 18px;
+  }
+  .header__menu .menu__nav > li a:hover {
+    border: none;
+  }
+  .header__menu .menu__member {
+    float: none;
+  }
+  .header__menu .menu__member > li {
+    width: 100%;
+    text-align: center;
+  }
+  .header__menu .menu__member > li a {
+    color: #fff;
+    border: 1px solid #fff;
+    font-size: 18px;
+  }
+  .header__logo {
+    float: none;
+    width: 100%;
+    text-align: center;
+  }
+  .header__toggle {
+    display: block;
+  }
+
+  /* ==========================================================================
+     Footer
+     ========================================================================== */
+  .footer {
+    padding-top: 20px;
+  }
+  .footer__logo {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+  .footer__copyright {
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+  .footer__socialLink {
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  /* ==========================================================================
+     Menu
+     ========================================================================== */
+  /* ==========================================================================
+     Hide items
+     ========================================================================== */
+}
+@media print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
+  /* ==========================================================================
+     Header
+     ========================================================================== */
+  /* ==========================================================================
+     Footer
+     ========================================================================== */
+  /* ==========================================================================
+     Menu
+     ========================================================================== */
+}

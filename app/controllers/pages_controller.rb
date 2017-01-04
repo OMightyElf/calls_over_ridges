@@ -3,7 +3,6 @@ class PagesController < ApplicationController
 	  @posts = Post.all
 	  @latest_posts = Post.all.order(created_at: :desc)
 	  @covers = @posts.first(4)
-	  @main_issue_posts = Tag.issue_tag.online_tag.last.try(:posts)
 	end
 
 	def show_posts_with_tag

@@ -14,16 +14,16 @@
  *
  *= require_self
  *= require font-awesome
- *= require page_layout
- *= require components
+ *= require layout
+ *= require main
+ *= require mobile
  *= require bxslider
- *= require posts
-
-
+ *= require fancybox
  */
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "materialize";
 
 .margin-top5 { margin-top:5px; }
 .margin-top7 { margin-top:7px; }
