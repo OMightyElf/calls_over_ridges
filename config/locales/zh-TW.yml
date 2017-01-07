@@ -13,6 +13,12 @@ zh-TW:
       tag:
         one: "類別"
         other: "類別"
+      child:
+        one: "孩童"
+        other: "孩童"
+      user:
+        one: "資助者"
+        other: "資助者"
     attributes:
       ad:
         cover: "封面"
@@ -45,6 +51,8 @@ zh-TW:
         name_en: "英文名稱"
         created_at: "建立時間"
         updated_at: "更新時間"
+      child:
+
   date:
     abbr_day_names:
     - 日

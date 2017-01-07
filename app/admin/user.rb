@@ -15,6 +15,8 @@ ActiveAdmin.register User do
 #   permitted
 # end
 
+	filter :gender, as: :select, collection: User.genders
+
   controller do
     def scoped_collection
       User.all.includes(:children)

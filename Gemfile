@@ -13,6 +13,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem "figaro"
 gem "fog"
+gem "activeadmin-select2", github: 'mfairburn/activeadmin-select2'
 gem "carrierwave"
 gem 'activeadmin', '~> 1.0.0.pre2'
 gem 'active_skin'
