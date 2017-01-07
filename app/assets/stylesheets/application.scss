@@ -1,5 +1,3 @@
-
-
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -14,16 +12,13 @@
  *
  *= require_self
  *= require font-awesome
+ *= require materialize
  *= require layout
  *= require main
  *= require mobile
  *= require bxslider
  *= require fancybox
  */
-
-@import "bootstrap-sprockets";
-@import "bootstrap";
-@import "materialize";
 
 .margin-top5 { margin-top:5px; }
 .margin-top7 { margin-top:7px; }
