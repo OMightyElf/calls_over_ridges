@@ -13,10 +13,13 @@
         <li><a href="#">極光計畫</a></li>
         <li><a href="#">BLOG</a></li>
       </ul>
-      <ul class="menu__member">
-        <li><a href="../sponse/login.html" class="btn btn--rev">資助人登入</a></li>
-        <li><a href="../sponse/createAccount.html" class="btn btn--rev">成為資助人</a></li>
-      </ul>
+      <% if !user_signed_in? %>
+        <ul class="menu__member">
+          <li><%= link_to '資助人登入', new_user_session_path, class: 'btn btn--rev' %></li>
+          <li><%= link_to '成為資助人', new_registration_path(@user), style: " text-decoration: none;", id: "signup", class: 'btn btn--rev' %></li>
+        </ul>
+      <% end %>
+
     </div>
   </div>
 </header>
