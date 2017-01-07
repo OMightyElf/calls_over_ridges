@@ -14,6 +14,7 @@ gem 'devise'
 gem "figaro"
 gem "fog"
 gem "activeadmin-select2", github: 'mfairburn/activeadmin-select2'
+gem "select2-rails"
 gem "carrierwave"
 gem 'activeadmin', '~> 1.0.0.pre2'
 gem 'active_skin'

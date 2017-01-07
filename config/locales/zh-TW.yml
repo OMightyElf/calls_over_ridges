@@ -270,3 +270,7 @@ zh-TW:
       status:
         draft: "草稿"
         publish: "已發佈"  
+    user:
+      role:
+        supporter: "資助者"
+        admin: "管理者"

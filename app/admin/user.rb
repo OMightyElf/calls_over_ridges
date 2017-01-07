@@ -1,5 +1,6 @@
 ActiveAdmin.register User do
-	permit_params :email, :role, :phone_number, :address, :receipt_url, :support_batch, :support_year, :paid_at, :current_receipt_state
+	permit_params :name, :email, :password, :password_confirmation, :role, :phone_number, :address, :receipt_url, :support_batch, :support_year, :paid_at, :current_receipt_state,
+								:child_ids, children_attributes: [:id, :supporter_id]
 
 
 # See permitted parameters documentation:
@@ -27,6 +28,7 @@ ActiveAdmin.register User do
 			column span: 4 do
 				h1 "資助者檢視"
 				attributes_table  do
+					row :name
 					row :email
 					row :role
 					row :phone_number
@@ -49,6 +51,7 @@ ActiveAdmin.register User do
 	end
 
 	index do
+		column :name
 		column :email
 		column :role
 		column :phone_number
@@ -64,8 +67,11 @@ ActiveAdmin.register User do
 
 	form do |f|
 		f.inputs do
+			f.semantic_errors *f.object.errors.keys
+			f.input :name
+			f.hidden_field :password, value: f.object.password || Devise.friendly_token.first(8)
 			f.input :email
-			f.input :role
+			f.input :role, as: :select, collection: User.role_attributes_for_select, include_blank: false
 			f.input :phone_number
 			f.input :address
 			f.input :receipt_url
@@ -73,9 +79,6 @@ ActiveAdmin.register User do
 			f.input :support_year
 			f.input :paid_at, as: :date_picker
 			f.input :current_receipt_state
-			# f.has_many :children, header: "資助小孩" do |ch|
-			#   ch.input :child, as: :select, collection: Child.all, member_label: Proc.new { |t| "#{t.name}" }, include_blank: false
-			# end
 		end
 		f.actions
 	end

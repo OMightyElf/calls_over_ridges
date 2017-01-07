@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170107060155) do
+ActiveRecord::Schema.define(version: 20170107065820) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20170107060155) do
     t.string   "serial_number"
     t.integer  "gender"
     t.datetime "birthday"
-    t.string   "school"
+    t.integer  "school"
     t.integer  "school_year"
     t.datetime "supported_at"
     t.datetime "support_until"
@@ -125,7 +125,8 @@ ActiveRecord::Schema.define(version: 20170107060155) do
     t.string   "phone_number"
     t.string   "address"
     t.string   "receipt_url"
-    t.datetime "support_date"
+    t.integer  "support_batch"
+    t.integer  "support_year"
     t.datetime "paid_at"
     t.integer  "current_receipt_state"
     t.string   "name"
