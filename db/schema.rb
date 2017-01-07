@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161231072602) do
+ActiveRecord::Schema.define(version: 20170107060155) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,13 +54,14 @@ ActiveRecord::Schema.define(version: 20161231072602) do
     t.string   "serial_number"
     t.integer  "gender"
     t.datetime "birthday"
-    t.integer  "school"
+    t.string   "school"
     t.integer  "school_year"
     t.datetime "supported_at"
     t.datetime "support_until"
     t.integer  "supporter_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.text     "description"
   end
 
   create_table "post_tags", force: :cascade do |t|
@@ -117,14 +118,10 @@ ActiveRecord::Schema.define(version: 20161231072602) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.text     "summary"
-    t.string   "author_name"
-    t.integer  "role"
     t.string   "phone_number"
     t.string   "address"
     t.string   "receipt_url"
-    t.integer  "support_batch"
-    t.integer  "support_year"
+    t.datetime "support_date"
     t.datetime "paid_at"
     t.integer  "current_receipt_state"
   end
