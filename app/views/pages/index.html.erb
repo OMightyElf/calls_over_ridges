@@ -5,25 +5,20 @@
 <% content_for :cover do %>
 	<div class="row">
 		<div class="col-md-12">
-			<%= render partial: "posts/index_slider",locals: {perpage: 4} %>
 		</div>
 	</div>
 <% end %>
 
 <div class="row">
 	<div class="col-md-12">
-		<%= render partial: "posts/main_issue" %>
 	</div>
 </div>
 <div class="row">
 	<div class="col-md-8 margin-top30">
-		<%= render partial: "posts/hot_posts",locals: {perpage: 4} %>
 	</div>
 
 	<div class="col-md-4 post-panel margin-top30">
-		<%= render partial: "posts/aboutus" %>
 	</div>
 
 <div class="col-md-4 post-panel">
-	<%= render partial: "posts/latest_posts",locals: {perpage: 4} %>
 </div>

@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
     if !user_signed_in?
       redirect_to new_user_session_path, error: "請先登入"
       # raise_404("User Not Signed In in authenticate_admin!")
-    elsif current_user.try(:member?)
+    elsif !current_user.try(:admin?)
       redirect_to root_path, error: "權限不足無法進入"
     end
   end

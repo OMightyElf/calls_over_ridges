@@ -23,7 +23,7 @@ ActiveAdmin.register Child do
 	show do
 		columns do
 			column span: 4 do
-				h1 "使用者檢視"
+				h1 "孩童檢視"
 				attributes_table  do
 					row :name
 					row :serial_number
@@ -57,7 +57,6 @@ ActiveAdmin.register Child do
 		column :supporter_id
 		actions defaults: true
 	end
-
 
 	form do |f|
 		f.inputs do

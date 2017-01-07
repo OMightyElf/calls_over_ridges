@@ -15,8 +15,6 @@ ActiveAdmin.register User do
 #   permitted
 # end
 
-	filter :gender, as: :select, collection: User.genders
-
   controller do
     def scoped_collection
       User.all.includes(:children)
@@ -27,7 +25,7 @@ ActiveAdmin.register User do
 	show do
 		columns do
 			column span: 4 do
-				h1 "使用者檢視"
+				h1 "資助者檢視"
 				attributes_table  do
 					row :email
 					row :role
@@ -41,7 +39,7 @@ ActiveAdmin.register User do
 					row :children do |user|
 						table_for user.children do
 							column do |child|
-								link_to child, child
+								link_to child.name, admin_child_path(child)
 							end
 						end
 					end

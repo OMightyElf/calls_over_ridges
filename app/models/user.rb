@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   enum current_receipt_state: [:no_receipt_needed, :fundation_checking, :sent]
   enum gender: [:other, :male, :female]
+  enum role: [:supporter, :admin]
   has_many :children, foreign_key: :supporter_id
 
   def first_child
