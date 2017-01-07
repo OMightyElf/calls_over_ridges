@@ -36,7 +36,7 @@
 						<li>性別： <%= @child.gender %></li>
 						<li>年紀： <%= ((Time.now - @child.birthday) / 1.year).round %> 歲</li>
 						<li>就讀小學： <%= @child.school %></li>
-						<li>就讀年級： 小學 3 年級</li>
+						<li>就讀年級： <%= @child.school_year %> 年級</li>
 					</ul>
 					<div class="kidData__info">
 						<%= @child.description %>
