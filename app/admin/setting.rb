@@ -14,11 +14,11 @@ ActiveAdmin.register Setting do
 
 	controller do
 		def scoped_collection
-			Setting.get_all
+			Setting.all
 		end
 	end
 
-	filter :gender, as: :select, collection: Child.genders
+	filter :var
 
 	show do
 		columns do
@@ -35,6 +35,7 @@ ActiveAdmin.register Setting do
 	index do
 		column :var
 		column :value
+		actions defaults: true
 	end
 
 	form do |f|
