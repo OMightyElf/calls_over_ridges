@@ -60,6 +60,7 @@ ActiveAdmin.register Child do
 
 	form do |f|
 		f.inputs do
+			f.semantic_errors *f.object.errors.keys
 			f.input :name
 			f.input :serial_number
 			f.input :gender, as: :select, collection: Child.genders.keys
@@ -69,6 +70,18 @@ ActiveAdmin.register Child do
 			f.input :supported_at, as: :date_picker
 			f.input :support_until, as: :date_picker
 			f.input :user, as: :select2, collection: User.all, member_label: Proc.new { |u| u.name }
+		end
+
+		f.has_many :updates, header: "月更新資料" do |update|
+			update.input :month
+			update.input :year
+			update.input :attendence_rate
+			update.input :reading_report_amount
+			update.input :grade
+			update.input :family_income
+			update.input :weight
+			update.input :height
+			update.input :reading_time
 		end
 		f.actions
 	end
