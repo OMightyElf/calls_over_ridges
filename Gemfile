@@ -25,6 +25,7 @@ gem 'modernizr-rails'
 gem 'fancybox-rails'
 gem 'materialize-sass'
 gem 'chartjs-ror'
+gem 'rails-settings-cached'
 gem 'dotenv-rails', :groups => [:development, :test]
 
 group :production do
@@ -36,6 +37,7 @@ group :development do
   gem 'spring'
   gem 'byebug'
   gem 'pry-rails'
+  gem 'pry-remote'
   gem 'better_errors'
 end
 

@@ -4,9 +4,6 @@ class CreateChildren < ActiveRecord::Migration
     	t.string     :name
     	t.string     :serial_number
     	t.integer    :gender
-    	t.datetime   :birthday
-    	t.string     :school
-    	t.integer    :school_year
     	t.datetime   :supported_at
     	t.datetime   :support_until
     	t.integer    :supporter_id
