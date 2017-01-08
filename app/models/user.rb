@@ -6,9 +6,10 @@ class User < ActiveRecord::Base
 
   validates :name, presence: true
 
-  enum current_receipt_state: [:no_receipt_needed, :fundation_checking, :sent]
+  enum receipt_state: [:fundation_checking, :sent]
   enum gender: [:other, :male, :female]
   enum role: [:supporter, :admin]
+  enum current_state: [:havent_paid, :payment_needs_confirmation, :confirmed_payment, :associated_with_children, :payment_over_due]
 
   has_many :children, foreign_key: :supporter_id
   accepts_nested_attributes_for :children
