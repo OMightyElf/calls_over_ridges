@@ -62,7 +62,7 @@ ActiveAdmin.register Post do
 			f.inputs "文章圖片", multipart: true do
 			  f.input :cover, as: :file, hint: f.object.cover.present? \
 			    ? image_tag(f.object.cover.url(:thumb))
-			    : f.template.content_tag(:span, "no cover page yet")
+			    : content_tag(:span, "no cover page yet")
 			  f.input :cover_cache, as: :hidden
 			end
 			f.input :user_id, as: :select, collection: User.all, member_label: Proc.new { |x| "#{x.name}(#{x.email})" }, include_blank: false
