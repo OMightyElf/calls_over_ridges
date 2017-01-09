@@ -30,11 +30,6 @@ zh-TW:
         start_time: "開始時間"
         end_time: "結束時間"
         status: "狀態"
-      post_tag:
-        post_id: "post_id"
-        tag_id: "tag_id"
-        created_at: "建立時間"
-        updated_at: "結束時間"
       post:
         user_id: "使用者id"
         title: "標題"
@@ -44,11 +39,6 @@ zh-TW:
         publish_date: "發布時間"
         cover: "封面"
         view_count: "觀看次數"
-        created_at: "建立時間"
-        updated_at: "更新時間"
-      tag:
-        name_zh: "中文名稱"
-        name_en: "英文名稱"
         created_at: "建立時間"
         updated_at: "更新時間"
       child:
@@ -260,8 +250,7 @@ zh-TW:
     post:
       status:
         draft: "草稿"
-        permit: "已審核"
-        publish: "已發佈"
+        publish: "發佈"
     tag:
       tag_type:
         main_tag: "首頁標籤"

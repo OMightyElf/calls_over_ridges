@@ -15,9 +15,10 @@ gem "figaro"
 gem "fog"
 gem "activeadmin-select2", github: 'mfairburn/activeadmin-select2'
 gem "select2-rails"
-gem "carrierwave"
+gem "carrierwave", github: "carrierwaveuploader/carrierwave"
 gem 'activeadmin', '~> 1.0.0.pre2'
 gem 'active_skin'
+gem "mini_magick"
 gem 'bxslider-rails'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem "font-awesome-rails"
@@ -26,6 +27,7 @@ gem 'fancybox-rails'
 gem 'materialize-sass'
 gem 'chartjs-ror'
 gem 'rails-settings-cached'
+gem 'enumerize'
 gem 'dotenv-rails', :groups => [:development, :test]
 
 group :production do

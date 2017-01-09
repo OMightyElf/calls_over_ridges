@@ -53,9 +53,6 @@ ActiveRecord::Schema.define(version: 20170108150100) do
     t.string   "name"
     t.string   "serial_number"
     t.integer  "gender"
-    t.datetime "birthday"
-    t.integer  "school"
-    t.integer  "school_year"
     t.datetime "supported_at"
     t.datetime "support_until"
     t.integer  "supporter_id"
@@ -64,24 +61,20 @@ ActiveRecord::Schema.define(version: 20170108150100) do
     t.text     "description"
   end
 
-  create_table "post_tags", force: :cascade do |t|
-    t.integer  "post_id"
-    t.integer  "tag_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "posts", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "title"
-    t.string   "summary"
+    t.string   "subtitle"
     t.text     "content"
-    t.integer  "status"
+    t.integer  "status",       default: 0
     t.datetime "publish_date"
     t.string   "cover"
-    t.integer  "view_count"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string   "video"
+    t.string   "author"
+    t.integer  "view_count",   default: 0
+    t.string   "category"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "settings", force: :cascade do |t|
@@ -95,25 +88,21 @@ ActiveRecord::Schema.define(version: 20170108150100) do
 
   add_index "settings", ["thing_type", "thing_id", "var"], name: "index_settings_on_thing_type_and_thing_id_and_var", unique: true, using: :btree
 
-  create_table "tags", force: :cascade do |t|
-    t.string   "name_zh"
-    t.string   "name_en"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "updates", force: :cascade do |t|
-    t.integer  "month"
-    t.integer  "year"
+    t.datetime "update_time"
     t.float    "attendence_rate"
     t.integer  "reading_report_amount"
     t.integer  "grade"
     t.integer  "family_income"
     t.float    "weight"
     t.float    "height"
-    t.float    "reading_time"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.float    "study_hours"
+    t.text     "comment"
+    t.string   "support_proof"
+    t.string   "photo",                 default: [],              array: true
+    t.string   "video"
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.integer  "child_id"
   end
 
@@ -130,16 +119,17 @@ ActiveRecord::Schema.define(version: 20170108150100) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.text     "summary"
-    t.string   "author_name"
-    t.integer  "role",                   default: 0
     t.string   "phone_number"
     t.string   "address"
+    t.string   "zipcode"
     t.string   "receipt_url"
-    t.integer  "support_batch"
-    t.integer  "support_year"
+    t.datetime "support_date"
+    t.boolean  "need_receipt"
     t.datetime "paid_at"
-    t.integer  "current_receipt_state"
+    t.string   "receipt_state"
+    t.string   "current_state"
+    t.integer  "money"
+    t.integer  "role",                   default: 0
     t.string   "name"
   end
 

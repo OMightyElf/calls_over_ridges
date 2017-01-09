@@ -7,8 +7,9 @@ class AddColumnsToUsers < ActiveRecord::Migration
   	add_column :users, :support_date, :datetime
   	add_column :users, :need_receipt, :boolean
   	add_column :users, :paid_at, :datetime
-  	add_column :users, :receipt_state, :integer
-  	add_column :users, :current_state, :integer
+  	add_column :users, :receipt_state, :string
+  	add_column :users, :current_state, :string
   	add_column :users, :money, :integer
+    add_column :users, :role, :integer
   end
 end

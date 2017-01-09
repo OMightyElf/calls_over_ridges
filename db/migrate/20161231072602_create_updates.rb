@@ -11,7 +11,7 @@ class CreateUpdates < ActiveRecord::Migration
       t.float    :study_hours
       t.text     :comment
       t.string   :support_proof
-      t.array    :photo, default: []
+      t.string    :photo, array: true, default: []
       t.string   :video
 
       t.timestamps null: false

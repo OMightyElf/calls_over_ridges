@@ -1,5 +1,5 @@
 ActiveAdmin.register Post do
-	permit_params :title, :content, :summary, :cover, post_tags_attributes: [:id, :post_id, :tag_id]
+	permit_params :user_id, :title, :subtitle, :author, :content, :status, :category, :publish_date, :cover
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -16,8 +16,17 @@ ActiveAdmin.register Post do
 
   controller do
     def scoped_collection
-      Post.all.includes(:tags)
+      Post.all
     end
+  end
+
+  index as: :grid do |post|
+  	link_to admin_post_path(post), class: 'post-grid' do
+  		content_tag :div do
+		  	image_tag(post.cover.url(:thumb)) +
+		  	content_tag(:h5, post.title)
+		  end
+	  end
   end
 
 
@@ -29,19 +38,16 @@ ActiveAdmin.register Post do
 					row :id
 					row :user_id
 					row :title
-					row :summary
-					row :cover do |project|
-						image_tag project.cover.url
+					row :subtitle
+					row :author
+					row :status
+					row :category
+					row :publish_date
+					row :cover do |post|
+						image_tag post.cover.url
 					end
-					row :content do |project|
-						raw(project.content)
-					end
-					row :tag do |project|
-						table_for project.tags do
-							column do |tag|
-								link_to tag.name_zh
-							end
-						end
+					row :content do |post|
+						raw(post.content)
 					end
 				end
 			end
@@ -51,17 +57,22 @@ ActiveAdmin.register Post do
 
 	form do |f|
 		f.inputs do
-			f.input :user_id, as: :select, collection: User.all, member_label: Proc.new { |x| "#{x.author_name}(#{x.email})" }, include_blank: false
+			# t.string   :cover
+			# t.string   :video
+			f.inputs "文章圖片", multipart: true do
+			  f.input :cover, as: :file, hint: f.object.cover.present? \
+			    ? image_tag(f.object.cover.url(:thumb))
+			    : f.template.content_tag(:span, "no cover page yet")
+			  f.input :cover_cache, as: :hidden
+			end
+			f.input :user_id, as: :select, collection: User.all, member_label: Proc.new { |x| "#{x.name}(#{x.email})" }, include_blank: false
 			f.input :title
-			f.input :summary
+			f.input :subtitle
+			f.input :author
 			f.input :content
 			f.input :status, as: :select, collection: Post.status_attributes_for_select, include_blank: false
-			f.has_many :post_tags, header: "文章類別" do |tif|
-			  tif.input :tag, as: :select, collection: Tag.all, member_label: Proc.new { |t| "#{t.name_zh}" }, include_blank: false
-			end
-			# f.input :post_tags, label: "文章類別", as: :check_boxes, collection: Tag.all, member_label: Proc.new { |a| "#{a.name_zh}" }
+			f.input :category, as: :select, collection: Post.category.options, include_blank: false
 			f.input :publish_date, as: :date_picker
-			f.input :cover
 		end
 		f.actions
 	end

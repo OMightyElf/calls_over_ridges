@@ -1,4 +1,13 @@
 GIT
+  remote: git://github.com/carrierwaveuploader/carrierwave.git
+  revision: 9ef68325dd5ea465b4d340af9a9def10934cd677
+  specs:
+    carrierwave (1.0.0)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
+      mime-types (>= 1.16)
+
+GIT
   remote: git://github.com/mfairburn/activeadmin-select2.git
   revision: f35b0367cca61266737c94ca9a94cd142c95b763
   specs:
@@ -82,11 +91,6 @@ GEM
     builder (3.2.2)
     bxslider-rails (4.2.5.1)
     byebug (8.2.0)
-    carrierwave (0.10.0)
-      activemodel (>= 3.2.0)
-      activesupport (>= 3.2.0)
-      json (>= 1.7)
-      mime-types (>= 1.16)
     chartjs-ror (3.0.2)
       rails (>= 3.1)
     coderay (1.1.0)
@@ -109,6 +113,8 @@ GEM
     dotenv-rails (2.1.1)
       dotenv (= 2.1.1)
       railties (>= 4.0, < 5.1)
+    enumerize (1.1.1)
+      activesupport (>= 3.2)
     erubis (2.7.0)
     excon (0.45.4)
     execjs (2.6.0)
@@ -264,6 +270,7 @@ GEM
       sass (~> 3.3)
     method_source (0.8.2)
     mime-types (2.99)
+    mini_magick (4.5.1)
     mini_portile (0.6.2)
     minitest (5.8.3)
     modernizr-rails (2.7.1)
@@ -377,11 +384,12 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3.5)
   bxslider-rails
   byebug
-  carrierwave
+  carrierwave!
   chartjs-ror
   coffee-rails (~> 4.1.0)
   devise
   dotenv-rails
+  enumerize
   fancybox-rails
   figaro
   fog
@@ -389,6 +397,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   materialize-sass
+  mini_magick
   modernizr-rails
   pg
   pry-rails

@@ -1,15 +1,11 @@
 class Post < ActiveRecord::Base
-
+  extend Enumerize
 
   belongs_to :user
-  has_many :post_tags, dependent: :destroy
-  has_many :tags, through: :post_tags
-  accepts_nested_attributes_for :post_tags, allow_destroy: true
 
-
-  enum status: [:draft, :permit, :publish]
+  enum status: [:draft, :publish]
+  enumerize :category, in: [:haha, :hehe]
   mount_uploader :cover, CoverUploader
-
 
   def self.status_attributes_for_select
     statuses.map do |status, _|

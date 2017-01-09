@@ -26,6 +26,10 @@ Rails.application.routes.draw do
     # Directs /admin/products/* to Admin::ProductsController
     # (app/controllers/admin/products_controller.rb)
   end
+
+  scope :blog do
+    resources :posts, only: [:show]
+  end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

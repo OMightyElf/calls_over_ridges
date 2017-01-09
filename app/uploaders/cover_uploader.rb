@@ -4,7 +4,7 @@ class CoverUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
-  # include CarrierWave::MiniMagick
+  include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
   # storage :file
@@ -16,6 +16,22 @@ class CoverUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
+  version :large do
+    process resize_to_fill: [1200, 600]
+  end
+
+  version :big, from_version: :large do
+    process resize_to_fill: [800, 400]
+  end
+
+  version :small, from_version: :big do
+    process resize_to_fill: [400, 200]
+  end
+
+  version :thumb, from_version: :small do
+    process resize_to_fill: [200, 100]
+  end
+
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
   #   # For Rails 3.1+ asset pipeline compatibility:
@@ -23,6 +39,18 @@ class CoverUploader < CarrierWave::Uploader::Base
   #
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   # end
+
+  def extension_white_list
+    %w(jpg jpeg gif png)
+  end
+
+  def move_to_cache
+    true
+  end
+
+  def move_to_store
+    true
+  end
 
   # Process files as they are uploaded:
   # process :scale => [200, 300]
