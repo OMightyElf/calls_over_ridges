@@ -6,6 +6,7 @@
 
 # Ignore bundler config.
 /.bundle
+.DS_Store
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
@@ -15,6 +16,9 @@
 /log/*
 !/log/.keep
 /tmp
+/public/system
+/public/assets
+/public/uploads
 
 # Ignore application configuration
 /config/application.yml
