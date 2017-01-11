@@ -1,0 +1,16 @@
+<%= link_to post_path(post), class: "blogCard blogCard--#{type}" do %>
+	<div class="blogCard__photo">
+		<%= image_tag post.cover.url('large') %>
+	</div>
+	<div class="blogCard__content clearfix">
+		<div class="blogCard__left">
+			<div class="blogCard__main"><%= post.title %></div>
+			<div class="blogCard__sub"><%= post.subtitle %></div>
+		</div>
+		<div class="blogCard__right">
+			<div class="blogCard__cat"><%= post.category %></div>
+			<div class="blogCard__author"><%= post.author %></div>
+			<div class="blogCard__date"><%= post.decorate.publish_date %></div>
+		</div>
+	</div>
+<% end %>

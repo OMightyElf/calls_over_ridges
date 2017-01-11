@@ -4,7 +4,7 @@ class Post < ActiveRecord::Base
   belongs_to :user
 
   enum status: [:draft, :publish]
-  enumerize :category, in: [:haha, :hehe]
+  enumerize :category, in: [:news, :special_column, :viewpoint, :behind_the_scenes, :media], scope: true
   mount_uploader :cover, CoverUploader
 
   def self.status_attributes_for_select

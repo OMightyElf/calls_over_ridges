@@ -28,6 +28,7 @@ gem 'materialize-sass'
 gem 'chartjs-ror'
 gem 'rails-settings-cached'
 gem 'enumerize'
+gem 'draper'
 gem 'dotenv-rails', :groups => [:development, :test]
 
 group :production do

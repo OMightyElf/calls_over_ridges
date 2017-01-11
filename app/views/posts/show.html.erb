@@ -1,37 +1,44 @@
-<div class="row">
-	<div class="col-sm-12 col-md-8">
-		<% @post.tags.each do |t| %>
-		<span class="font-size20 dark-gray-text"><%= t.name_zh %></span>
-		<% end.join("｜") %>
-		<br>
-		<div class="content-cover">
-			<!-- TODO把所有的 .cover 換成 .cover.url 才會對～ -->
-			<%= image_tag @post.cover %>
-			<div class="issue-cover-title issue-cover-title-left black-bg-with-opacity">
-				<h2 class="white-text"><%= @post.title %></h2>
-			</div>
-		</div>
-		<span><%= @post.publish_date.try(:to_date) || Date.today.to_date %></span><span class="margin-left20 weight900">文｜<%= @post.try(:user).try(:author_name) || "Adele Yu" %></span>
-		<div class="fr-view">
-			<p> <%= @post.content.html_safe %> </p>
+<section class="main">
+	<div class="articleBanner" style="<%= inline_background_image(@post.cover.url('large')) %>">
+		<div class="articleBanner__title">
+			<div class="articleBanner__main"><%= @post.title %></div>
+			<div class="articleBanner__sub"><%= @post.subtitle %></div>
 		</div>
 	</div>
-	<div class="col-sm-12 col-md-8">
-		<div class="row">
-			<%= render partial: "posts/related_posts", locals: { perpage: 6 } %>
-		</div>
-		<div class="row">
-			<div class="col-sm-12 col-md-12">
-				<p class="padding-right15 text-right">
-					<button type="button" class="btn btn-azure text-right">看更多</button>
-				</p>
+	<section class="section article">
+		<div class="wrap">
+			<div class="articleInfo clearfix">
+				<div class="articleInfo__left">
+					<p><%= "文字：#{@post.author}" %></p>
+					<p>攝影：Nelson</p>
+				</div>
+				<div class="articleInfo__right">
+					<p><%= @post.category %></p>
+					<p><%= @post.decorate.publish_date %></p>
+				</div>
 			</div>
+			<article>
+				<%= raw @post %>
+			</article>
 		</div>
-	</div>
-</div>
+	</section>
+	<section class="section">
+		<ul class="recommend clearfix">
+			<%= render partial: 'posts/partials/footer_post', collection: @latest_posts %>
+		</ul>
+	</section>
 
-<div class="row panel-stick-right">
-	<div class="hidden-xs hidden-sm col-md-4 col-md-offset-8">
-		<%= render partial: "partials/hot_post_sidebar", locals: { perpage: 1 } %>
-	</div>
-</div>
+</section>
+
+<% content_for :javascript do %>
+<script>
+	$(function () {
+		var resize = function () {
+			$(window).resize(function () {
+				$('.articleBanner').height($(window).height() - $('.header').outerHeight());
+			}).trigger('resize');
+		}
+		resize();
+	});
+</script>
+<% end %>

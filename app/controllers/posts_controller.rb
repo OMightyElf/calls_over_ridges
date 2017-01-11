@@ -1,7 +1,13 @@
 class PostsController < ApplicationController
+  def index
+    @posts = Post.all.order(publish_date: :desc)
+    @pinned_post_with_img = Post.first
+    @pinned_post_with_video = Post.first
+  end
+
   def show
     @post = Post.find(params[:id])
-    @related_posts = @post.tags.first.posts.order(view_count: :desc)
+    @latest_posts = Post.all.order(publish_date: :desc).limit(3)
   end
 
   def new

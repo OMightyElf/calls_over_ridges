@@ -1,0 +1,10 @@
+<li>
+	<figure>
+		<%= image_tag footer_post.cover.url('small') %>
+		<figcaption>
+			<div class="mainTitle"><%= footer_post.title %></div>
+			<span class="subTitle"><%= footer_post.subtitle %></span>
+			<%= link_to '閱讀全文', post_path(footer_post) %>
+		</figcaption>
+	</figure>
+</li>

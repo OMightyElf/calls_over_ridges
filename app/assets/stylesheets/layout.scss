@@ -6,6 +6,14 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+.wrap--s {
+  max-width: 800px;
+  margin: auto;
+}
+
+.main {
+  position: relative;
+}
 
 body.menu--on {
   width: 100%;
@@ -37,60 +45,49 @@ body.menu--on {
 .header__toggle {
   width: 75px;
   height: 75px;
-  background: #003471;
   position: absolute;
   left: 0;
   top: 0;
-  border-bottom-right-radius: 100%;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
   -moz-transition: .3s ease;
   -o-transition: .3s ease;
   -webkit-transition: .3s ease;
   transition: .3s ease;
-  z-index: 1;
+  z-index: 99;
   display: none;
 }
 .header__toggle .burger {
   width: 30px;
   height: 3px;
-  background: #ffffff;
+  background: #333;
   position: absolute;
-  left: 15px;
-  top: 30px;
-  -moz-transition: .2s ease;
-  -o-transition: .2s ease;
-  -webkit-transition: .2s ease;
-  transition: .2s ease;
+  left: 20px;
+  top: 35px;
+  -moz-transition: .3s ease;
+  -o-transition: .3s ease;
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
 }
 .header__toggle .burger:before {
   content: '';
   display: block;
   position: absolute;
-  background: #ffffff;
+  background: #333;
   width: 30px;
   height: 3px;
   top: -10px;
-  -moz-transition: .2s ease;
-  -o-transition: .2s ease;
-  -webkit-transition: .2s ease;
-  transition: .2s ease;
+  -moz-transition: .3s ease;
+  -o-transition: .3s ease;
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
 }
 .header__toggle .burger:after {
   content: '';
   display: block;
   position: absolute;
-  background: #ffffff;
+  background: #333;
   width: 30px;
   height: 3px;
   top: 10px;
-  -moz-transition: .2s ease;
-  -o-transition: .2s ease;
-  -webkit-transition: .2s ease;
-  transition: .2s ease;
-}
-.menu--on .header__toggle {
-  width: 3000px;
-  height: 3000px;
   -moz-transition: .3s ease;
   -o-transition: .3s ease;
   -webkit-transition: .3s ease;
@@ -107,6 +104,16 @@ body.menu--on {
 }
 .header__menu {
   display: block;
+}
+.logIn .header__menu {
+  float: left;
+}
+.header__member {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0;
+  margin: 0;
 }
 .header .menu__nav {
   float: left;
@@ -140,12 +147,28 @@ body.menu--on {
   margin: 0;
   padding: 0;
 }
+.logIn .header .menu__member {
+  display: none;
+}
 .header .menu__member li {
   float: left;
   list-style: none;
 }
-.header .menu__member li a {
+.header .menu__member li a.btn {
   margin: 19px 10px;
+}
+.header i,
+.header [class^="mdi-"], .header [class*="mdi-"],
+.header i.material-icons {
+  display: block;
+  font-size: 24px;
+}
+.header .dropdown-button {
+  font-size: 1rem;
+  color: #000;
+  display: block;
+  padding: 27px 40px;
+  cursor: pointer;
 }
 
 /* ==========================================================================
@@ -216,17 +239,22 @@ body.menu--on {
   .header {
     position: relative;
   }
+  .header .wrap {
+    text-align: center;
+  }
   .header__menu {
     position: fixed;
-    width: 100%;
-    left: 0;
+    width: 80%;
+    left: -100%;
     height: 100%;
     margin: 0;
     z-index: 999;
-    display: none;
+    background: #003471;
+    transition: .3s ease;
   }
   .menu--on .header__menu {
-    display: block;
+    left: 0;
+    transition: .3s ease;
   }
   .header__menu .menu__nav {
     float: none;
@@ -257,11 +285,16 @@ body.menu--on {
   }
   .header__logo {
     float: none;
-    width: 100%;
-    text-align: center;
+    display: inline-block;
   }
   .header__toggle {
     display: block;
+  }
+  .header .dropdown-button {
+    padding: 27px 20px;
+  }
+  .header .dropdown-button i.right {
+    margin-left: 5px;
   }
 
   /* ==========================================================================

@@ -17,19 +17,15 @@ class CoverUploader < CarrierWave::Uploader::Base
   end
 
   version :large do
-    process resize_to_fill: [1200, 600]
-  end
-
-  version :big, from_version: :large do
-    process resize_to_fill: [800, 400]
+    process resize_to_fill: [2000, 1500]
   end
 
   version :small, from_version: :big do
-    process resize_to_fill: [400, 200]
+    process resize_to_fill: [1000, 750]
   end
 
   version :thumb, from_version: :small do
-    process resize_to_fill: [200, 100]
+    process resize_to_fill: [500, 375]
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:

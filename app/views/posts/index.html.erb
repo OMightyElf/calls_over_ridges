@@ -1,0 +1,80 @@
+<section class="main">
+	<div class="blogBanner">
+		<div class="wrap">
+			<div class="blogBanner__title">遠山部落格</div>
+			<ul class="clearfix">
+				<li>
+					<%= render partial: 'posts/partials/post', locals: { post: @pinned_post_with_img, type: 'bookmark' } %>
+				</li>
+				<li>
+					<%= render partial: 'posts/partials/post', locals: { post: @pinned_post_with_video, type: 'video' } %>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<section class="section blogTab">
+		<div class="wrap">
+			<ul class="tabs tabs-fixed-width">
+				<li class="tab col s3"><a class="active" href="#newest_posts">最新文章</a></li>
+				<li class="tab col s3"><a href="#news">活動消息</a></li>
+				<li class="tab col s3"><a href="#special_column">主題專欄</a></li>
+				<li class="tab col s3"><a href="#viewpoint">遠山觀點</a></li>
+				<li class="tab col s3"><a href="#behind_the_scenes">團隊幕後</a></li>
+				<li class="tab col s3"><a href="#media">影音媒體</a></li>
+			</ul>
+			<div id="newest_posts" class="col s12 section">
+				<div class="row">
+					<% @posts.each do |post| %>
+						<div class="col s12 m4">
+							<%= render partial: 'posts/partials/post', locals: { post: post, type: 's' } %>
+						</div>
+					<% end %>
+				</div>
+			</div>
+			<div id="news" class="col s12 section">
+				<div class="row">
+					<% @posts.with_category(:news).each do |post| %>
+						<div class="col s12 m4">
+							<%= render partial: 'posts/partials/post', locals: { post: post, type: 's' } %>
+						</div>
+					<% end %>
+				</div>
+			</div>
+			<div id="special_column" class="col s12 section">
+				<div class="row">
+					<% @posts.with_category(:special_column).each do |post| %>
+						<div class="col s12 m4">
+							<%= render partial: 'posts/partials/post', locals: { post: post, type: 's' } %>
+						</div>
+					<% end %>
+				</div>
+			</div>
+			<div id="viewpoint" class="col s12 section">
+				<div class="row">
+					<% @posts.with_category(:viewpoint).each do |post| %>
+						<div class="col s12 m4">
+							<%= render partial: 'posts/partials/post', locals: { post: post, type: 's' } %>
+						</div>
+					<% end %>
+				</div>
+			</div>
+			<div id="behind_the_scenes" class="col s12 section">
+				<div class="row">
+					<% @posts.with_category(:behind_the_scenes).each do |post| %>
+						<div class="col s12 m4">
+							<%= render partial: 'posts/partials/post', locals: { post: post, type: 's' } %>
+						</div>
+					<% end %>
+				</div>
+			</div>
+			<div id="media" class="col s12 section">
+				<div class="row">
+					<% @posts.with_category(:media).each do |post| %>
+						<div class="col s12 m4">
+							<%= render partial: 'posts/partials/post', locals: { post: post, type: 's' } %>
+						</div>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</section>

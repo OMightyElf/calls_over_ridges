@@ -1,4 +1,4 @@
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 770px) {
   .login {
     min-height: 500px;
   }
@@ -31,5 +31,65 @@
   .response > li {
     width: 100%;
     margin: 20px 0;
+  }
+
+  .banner__title {
+    font-size: 24px;
+  }
+
+  .sponseIdeal__left {
+    width: 100%;
+    height: 200px !important;
+  }
+  .sponseIdeal__mid {
+    width: 100%;
+  }
+  .sponseIdeal__right {
+    width: 100%;
+    height: 200px !important;
+  }
+
+  .sponseOrigin {
+    margin-bottom: 0;
+  }
+  .sponseOrigin__title {
+    width: 100%;
+    padding: 30px 20px 50px 20px;
+    font-size: 20px;
+  }
+  .sponseOrigin__title:after {
+    transform: rotate(-10deg) skewX(80deg);
+  }
+  .sponseOrigin__article {
+    top: 0;
+    padding: 0 20px;
+    width: 100%;
+  }
+  .sponseOrigin__photo {
+    top: 0;
+    width: 100%;
+    left: 0;
+  }
+
+  .blogBanner {
+    padding: 20px 0;
+  }
+  .blogBanner ul > li {
+    width: 100%;
+  }
+  .blogBanner ul > li:first-of-type {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+}
+@media screen and (max-width: 650px) {
+  .processLine > li .breakLine {
+    display: inline;
+  }
+  .processLine > li:before {
+    top: 65px;
+  }
+  .processLine > li:after {
+    top: 60px;
   }
 }
