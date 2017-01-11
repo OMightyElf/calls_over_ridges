@@ -14,14 +14,28 @@
 	</div>
 	<section class="section blogTab">
 		<div class="wrap">
+			<!-- pc版的選擇器 start-->
 			<ul class="tabs tabs-fixed-width">
-				<li class="tab col s3"><a class="active" href="#newest_posts">最新文章</a></li>
-				<li class="tab col s3"><a href="#news">活動消息</a></li>
+				<li class="tab col s3"><a href="#newest_posts">最新文章</a></li>
+				<li class="tab col s3"><a class="active" href="#news">活動消息</a></li>
 				<li class="tab col s3"><a href="#special_column">主題專欄</a></li>
 				<li class="tab col s3"><a href="#viewpoint">遠山觀點</a></li>
 				<li class="tab col s3"><a href="#behind_the_scenes">團隊幕後</a></li>
 				<li class="tab col s3"><a href="#media">影音媒體</a></li>
 			</ul>
+			<!-- pc版的選擇器 end-->
+			<!-- mobile版的選擇器 start-->
+			<div class="blogTab__mobile">
+				<select id="mobileSelect">
+					<option selected value="#newest_posts">最新文章</option>
+					<option value="#news">活動消息</option>
+					<option value="#special_column">主題專欄</option>
+					<option value="#viewpoint">遠山觀點</option>
+					<option value="#behind_the_scenes">團隊幕後</option>
+					<option value="#media">影音媒體</option>
+				</select>
+			</div>
+			<!-- mobile版的選擇器 end-->
 			<div id="newest_posts" class="col s12 section">
 				<div class="row">
 					<% @posts.each do |post| %>
