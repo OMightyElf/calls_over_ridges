@@ -20,13 +20,19 @@ ActiveAdmin.register Post do
     end
   end
 
-  index as: :grid do |post|
-  	link_to admin_post_path(post), class: 'post-grid' do
-  		content_tag :div do
-		  	image_tag(post.cover.url(:thumb)) +
-		  	content_tag(:h5, post.title)
-		  end
-	  end
+  index do |post|
+  	column :cover do |post|
+  	  image_tag post.cover.url("thumb")
+  	end
+  	column :id
+  	column :user_id
+  	column :title
+  	column :subtitle
+  	column :author
+  	column :status
+  	column :category
+  	column :publish_date
+  	actions default: true
   end
 
 
@@ -44,7 +50,7 @@ ActiveAdmin.register Post do
 					row :category
 					row :publish_date
 					row :cover do |post|
-						image_tag post.cover.url
+						image_tag post.cover.url('small')
 					end
 					row :content do |post|
 						raw(post.content)
