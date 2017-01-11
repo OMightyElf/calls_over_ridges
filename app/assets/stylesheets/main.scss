@@ -177,7 +177,7 @@ a {
   -o-transition: all .5s;
   -webkit-transition: all .5s;
   transition: all .5s;
-  background-image: url("../images/iSocial.png");
+  background-image: asset_path('iSocial.png');
   background-size: 35px 70px;
 }
 
