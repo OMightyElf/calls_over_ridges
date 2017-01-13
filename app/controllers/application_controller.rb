@@ -10,7 +10,11 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    root_path
+    if resource.supporter?
+      session["user_return_to"] = resource.children.blank? ? user_path(id: resource.id) : children_path(resource.children.first)
+    else
+      session["user_return_to"] = admin_root_path
+    end
   end
 
   def set_hot_and_latest

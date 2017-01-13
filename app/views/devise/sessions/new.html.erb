@@ -1,29 +1,29 @@
-<div class="row large-margins">
-  <div class="col-lg-4 col-lg-offset-4">
-    <h2 class="text-center">登入</h2>
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="field margins">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+<section class="main">
+  <section class="login">
+    <div class="wrap">
+      <div class="login__form">
+        <div class="login__title">資助人登入</div>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="input-field">
+          <%= f.email_field :email, autofocus: true, class: 'form-control validate', placeholder: '註冊時Email' %>
+          <%= f.label :email, data: { error: '!帳號是註冊時的Email喔', success: 'CORRECT' } %>
+        </div>
+        <div class="input-field clearfix">
+          <%= f.password_field :password, autocomplete: "off", class: 'form-control validate' %>
+          <%= f.label :password, data: { error: '!忘記密碼了嗎', success: 'CORRECT' } %>
+        </div>
+        <% if devise_mapping.rememberable? -%>
+        <div class="input-field clearfix">
+          <%= f.check_box :remember_me, class: 'filled-in' %>
+          <%= f.label :remember_me, '記住我' %>
+          <a href="../sponse/forgetPW.html" class="login__forget">忘記密碼</a>
+        </div>
+        <% end -%>
+        <div class="actionArea">
+          <%= f.submit '進入資助平台', class: 'btn' %>
+        </div>
+        <% end %>
+      </div>
     </div>
-
-    <div class="field margins">
-      <%= f.label :password %><br />
-      <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
-    </div>
-
-    <% if devise_mapping.rememberable? -%>
-    <div class="field margins">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me, "記住我" %>
-    </div>
-    <% end -%>
-
-    <div class="actions">
-      <%= f.submit "Log in", class: 'btn btn-info' %>
-    </div>
-    <% end %>
-    <hr>
-    <%= render "devise/shared/links" %>
-  </div>
-</div>
+  </section>
+</section>
