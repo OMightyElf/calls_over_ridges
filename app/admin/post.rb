@@ -29,6 +29,7 @@ ActiveAdmin.register Post do
   	column :title
   	column :subtitle
   	column :author
+  	column :photographer
   	column :status
   	column :category
   	column :publish_date
@@ -46,6 +47,7 @@ ActiveAdmin.register Post do
 					row :title
 					row :subtitle
 					row :author
+					row :photographer
 					row :status
 					row :category
 					row :publish_date
@@ -75,6 +77,7 @@ ActiveAdmin.register Post do
 			f.input :title
 			f.input :subtitle
 			f.input :author
+			f.input :photographer
 			f.input :content
 			f.input :status, as: :select, collection: Post.status_attributes_for_select, include_blank: false
 			f.input :category, as: :select, collection: Post.category.options, include_blank: false

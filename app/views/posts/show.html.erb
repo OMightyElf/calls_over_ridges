@@ -10,7 +10,7 @@
 			<div class="articleInfo clearfix">
 				<div class="articleInfo__left">
 					<p><%= "文字：#{@post.author}" %></p>
-					<p>攝影：Nelson</p>
+					<p><%= "攝影：#{@post.photographer}" %></p>
 				</div>
 				<div class="articleInfo__right">
 					<p><%= @post.category %></p>
@@ -18,7 +18,7 @@
 				</div>
 			</div>
 			<article>
-				<%= raw @post %>
+				<%= raw @post.content %>
 			</article>
 		</div>
 	</section>

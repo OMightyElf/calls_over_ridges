@@ -20,7 +20,7 @@ class CoverUploader < CarrierWave::Uploader::Base
     process resize_to_fill: [2000, 1500]
   end
 
-  version :small, from_version: :big do
+  version :small, from_version: :large do
     process resize_to_fill: [1000, 750]
   end
 
