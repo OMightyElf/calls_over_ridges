@@ -1,5 +1,7 @@
 ActiveAdmin.register User do
-	permit_params :name, :email, :password, :password_confirmation, :role, :phone_number, :address, :receipt_url, :support_batch, :support_year, :paid_at, :current_receipt_state,
+	permit_params :name, :email, :password, :password_confirmation, :role, :phone_number,
+								:zipcode, :address, :receipt_url, :support_date, :paid_at, :receipt_state,
+								:need_receipt, :current_state, :money,
 								:child_ids, children_attributes: [:id, :supporter_id]
 
 
@@ -32,12 +34,14 @@ ActiveAdmin.register User do
 					row :email
 					row :role
 					row :phone_number
+					row :zipcode
 					row :address
-					row :receipt_url
-					row :support_batch
-					row :support_year
+					row :money
 					row :paid_at
-					row :current_receipt_state
+					row :need_receipt
+					row :receipt_state
+					row :receipt_url
+					row :current_state
 					row :children do |user|
 						table_for user.children do
 							column do |child|
@@ -55,12 +59,14 @@ ActiveAdmin.register User do
 		column :email
 		column :role
 		column :phone_number
+		column :zipcode
 		column :address
-		column :receipt_url
-		column :support_batch
-		column :support_year
+		column :money
 		column :paid_at
-		column :current_receipt_state
+		column :need_receipt
+		column :receipt_url
+		column :receipt_state
+		column :current_state
 		actions defaults: true
 	end
 
@@ -69,16 +75,17 @@ ActiveAdmin.register User do
 		f.inputs do
 			f.semantic_errors *f.object.errors.keys
 			f.input :name
-			f.hidden_field :password, value: f.object.password || Devise.friendly_token.first(8)
 			f.input :email
 			f.input :role, as: :select, collection: User.role_attributes_for_select, include_blank: false
 			f.input :phone_number
+			f.input :zipcode
 			f.input :address
-			f.input :receipt_url
-			f.input :support_batch
-			f.input :support_year
+			f.input :money
 			f.input :paid_at, as: :date_picker
-			f.input :current_receipt_state
+			f.input :need_receipt, as: :boolean
+			f.input :receipt_state, as: :radio, collection: User.receipt_states.keys, include_blank: false
+			f.input :receipt_url
+			f.input :current_state, as: :radio, collection: User.current_states.keys, include_blank: false
 		end
 		f.actions
 	end

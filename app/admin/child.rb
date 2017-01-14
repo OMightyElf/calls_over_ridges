@@ -105,7 +105,7 @@ ActiveAdmin.register Child do
 			f.semantic_errors *f.object.errors.keys
 			f.input :name
 			f.input :serial_number
-			f.input :gender, as: :select, collection: Child.genders.keys, include_blank: false;
+			f.input :gender, as: :select, collection: Child.genders.keys, include_blank: false
 			f.input :birthday, as: :date_picker
 			f.input :supported_at, as: :date_picker
 			f.input :support_until, as: :date_picker

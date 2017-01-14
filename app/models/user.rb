@@ -4,7 +4,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  validates :name, presence: true
+  validates :name, :email, presence: true
+  validates :password, :password_confirmation, presence: true, on: :create
+  validates :password, confirmation: true
 
   enum receipt_state: [:fundation_checking, :sent]
   enum gender: [:other, :male, :female]
