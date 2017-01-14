@@ -31,7 +31,9 @@
             <% current_user.children.all.each do |child| %>
               <li><%= link_to child.name, child_path(child) %></li>
             <% end %>
-            <li><a href="#">登出</a></li>
+            <li>
+              <%= link_to('登出', destroy_user_session_path, method: :delete) %>
+            </li>
           </ul>
         </li>
       </ul>

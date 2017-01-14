@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     if resource.supporter?
-      session["user_return_to"] = resource.children.blank? ? user_path(id: resource.id) : children_path(resource.children.first)
+      session["user_return_to"] = resource.children.blank? ? user_path(id: resource.id) : child_path(resource.children.first)
     else
       session["user_return_to"] = admin_root_path
     end
@@ -25,5 +25,9 @@ class ApplicationController < ActionController::Base
     elsif !current_user.try(:admin?)
       redirect_to root_path, notice: "權限不足無法進入"
     end
+  end
+
+  def after_sign_out_path_for(resource_or_scope)
+    root_path
   end
 end
