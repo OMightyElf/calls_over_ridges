@@ -76,7 +76,7 @@
 					<th>贊助收據狀態</th>
 				</tr>
 				<tr>
-					<td>第一屆</td>
+					<td><%= "第 #{((@user.support_date - '2016/06/01'.to_datetime) / 6.month).to_i + 1} 屆" %></td>
 					<td><%= @user.paid_at.strftime("%Y/%m/%d") %></td>
 					<td>
 						<ul class="list">
