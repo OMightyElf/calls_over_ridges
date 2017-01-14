@@ -1,0 +1,68 @@
+<div class="wrap wrap--s"">
+  <div class="title title--red">基本資料</div>
+  <%= simple_form_for(@user, as: :user, url: registration_path(:user), html: { method: :put, class: 'memberform form' }) do |f| %>
+    <div class="clearfix">
+      <a href="#" id="editData" class="btn btn--red">修改會員資料</a>
+      <%= f.submit '修改完成', class: 'btn btn--red', id: 'finishEdit' %>
+      <a href="#" id="cancelEdit" class="btn btn--red btn--rev">取消</a>
+    </div>
+    <%= devise_error_messages! %>
+
+    <div class="input-field">
+      <%= f.input_field :name, autofocus: true %>
+      <%= f.label :name, '贊助者姓名' %>
+    </div>
+    <div class="value-field">
+      <div class="label">贊助者姓名</div>
+      <div class="value"><%= @user.name %></div>
+    </div>
+    <div class="input-field">
+      <%= f.email_field :email %>
+      <%= f.label :email, '聯絡信箱／會員帳號' %>
+    </div>
+    <div class="value-field">
+      <div class="label">聯絡信箱／會員帳號</div>
+      <div class="value"><%= @user.email %></div>
+    </div>
+    <div class="input-field">
+      <%= f.input_field :address %>
+      <%= f.label :address, '聯絡地址' %>
+    </div>
+    <div class="value-field">
+      <div class="label">聯絡地址</div>
+      <div class="value"><%= @user.address %></div>
+    </div>
+    <div class="input-field">
+      <%= f.input_field :phone_number, as: :tel %>
+      <%= f.label :phone_number, '聯絡電話' %>
+    </div>
+    <div class="value-field">
+      <div class="label">聯絡電話</div>
+      <div class="value"><%= @user.phone_number %></div>
+    </div>
+    <div class="input-field" data-input="radio">
+      <p>是否需要資助收據？</p>
+      <p>
+        <div class="radio">
+          <%= f.input_field :need_receipt, collection: [['是', true], ['否', false]], as: :radio_buttons, class: 'with-gap', checked: @user.need_receipt %>
+        </div>
+      </p>
+    </div>
+    <div class="value-field">
+      <div class="label">是否需要資助收據</div>
+      <div class="value" data-id="value"><%= @user.need_receipt %></div>
+    </div>
+    <div class="input-field">
+      <%= f.password_field :password, autocomplete: "off" %>
+      <%= f.label :password, '新密碼（不需更改請留空）' %>
+    </div>
+    <div class="input-field">
+      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      <%= f.label :password_confirmation, '請再次輸入新密碼' %>
+    </div>
+    <div class="input-field">
+      <%= f.label :current_password, '請輸入現在的密碼以變更資料' %><br />
+      <%= f.password_field :current_password, autocomplete: "off" %>
+    </div>
+  <% end %>
+</div>

@@ -1,4 +1,7 @@
 zh-TW:
+  boolean:
+    true: 是
+    false: 否
   activerecord:
     models:
       ad:

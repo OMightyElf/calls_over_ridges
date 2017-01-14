@@ -64,81 +64,7 @@
 	</section>
 
 	<section class="section memberPage">
-		<div class="wrap wrap--s"">
-			<div class="title title--red">基本資料</div>
-			<div class="clearfix">
-				<a href="#" id="editData" class="btn btn--red">修改會員資料</a>
-				<a href="#" id="finishEdit" class="btn btn--red">修改完成</a>
-				<a href="#" id="cancelEdit" class="btn btn--red btn--rev">取消</a>
-			</div>
-			<form id="memberData" class="form">
-				<div class="input-field">
-					<input type="text" id="name" value="李小明" />
-					<label for="name">贊助者姓名</label>
-				</div>
-				<div class="value-field">
-					<div class="label">贊助者姓名</div>
-					<div class="value">李小明</div>
-				</div>
-				<div class="input-field">
-					<input type="email" id="account" value="abc@gmail.com" />
-					<label for="email">聯絡信箱</label>
-				</div>
-				<div class="value-field">
-					<div class="label">聯絡信箱</div>
-					<div class="value">abc@gmail.com</div>
-				</div>
-				<div class="input-field">
-					<input type="email" id="email" value="abc@gmail.com" />
-					<label for="email">會員帳號(同Email)</label>
-				</div>
-				<div class="value-field">
-					<div class="label">會員帳號(同Email)</div>
-					<div class="value">abc@gmail.com</div>
-				</div>
-				<div class="input-field">
-					<input type="password" id="password" value="123456" />
-					<label for="email">會員密碼</label>
-				</div>
-				<div class="value-field">
-					<div class="label">會員密碼</div>
-					<div class="value">123456</div>
-				</div>
-				<div class="input-field">
-					<input type="text" id="address" value="台北市大安區大安路一號一樓" />
-					<label for="email">聯絡地址</label>
-				</div>
-				<div class="value-field">
-					<div class="label">聯絡地址</div>
-					<div class="value">台北市大安區大安路一號一樓</div>
-				</div>
-				<div class="input-field">
-					<input type="tel" id="phone" value="0900000000" />
-					<label for="email">聯絡電話</label>
-				</div>
-				<div class="value-field">
-					<div class="label">聯絡電話</div>
-					<div class="value">0900000000</div>
-				</div>
-				<div class="input-field" data-input="radio">
-					<p>是否需要資助收據？</p>
-					<p>
-						<div class="radio">
-							<input name="invoice" type="radio" id="true" class="with-gap" value="true" checked />
-							<label for="true">是</label>
-						</div>
-						<div class="radio">
-							<input name="invoice" type="radio" id="false" class="with-gap" value="false" />
-							<label for="false">否</label>
-						</div>
-					</p>
-				</div>
-				<div class="value-field">
-					<div class="label">是否需要資助收據</div>
-					<div class="value" data-id="value">是</div>
-				</div>
-			</form>
-		</div>
+		<%= render 'devise/registrations/edit' %>
 	</section>
 	<section class="section memberPage">
 		<div class="wrap wrap--s"">
@@ -151,12 +77,10 @@
 				</tr>
 				<tr>
 					<td>第一屆</td>
-					<td>2017.01.26</td>
+					<td><%= @user.paid_at.strftime("%Y/%m/%d") %></td>
 					<td>
 						<ul class="list">
-							<li>不需要收據</li>
-							<li>基金會確認中</li>
-							<li>已寄出</li>
+							<li><%= @user.receipt_state %></li>
 						</ul>
 					</td>
 				</tr>
@@ -200,3 +124,29 @@
 		</form>
 	</div>
 </section>
+
+<% content_for :javascript do %>
+<script>
+	$(function () {
+		$('#editData').click(function (e) {
+			e.preventDefault();
+			$('.input-field').fadeIn();
+			$('.value-field').hide();
+			$(this).hide();
+			$('#finishEdit').fadeIn();
+			$('#cancelEdit').fadeIn();
+		});
+
+		$('#cancelEdit').click(function (e) {
+			e.preventDefault();
+			$('#finishEdit').hide();
+			$('#cancelEdit').hide();
+			$('#editData').fadeIn();
+			$('.input-field').hide();
+			$('.value-field').fadeIn();
+		});
+		readData();
+	});
+</script>
+
+<% end %>

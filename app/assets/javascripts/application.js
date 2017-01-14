@@ -22,3 +22,4 @@
 //= require main
 //= require Chart.min
 //= require jquery.fancybox/jquery.fancybox
+//= require users
