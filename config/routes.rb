@@ -12,10 +12,9 @@ Rails.application.routes.draw do
   # root 'welcome#index'
 
   root 'pages#index'
-  get 'tags/:name_en', to: 'pages#show_posts_with_tag'
   get 'aboutus', to: 'pages#aboutus'
+  get 'support', to: 'pages#support'
   post 'attachment/upload' => 'attachments#upload'
-  get 'search', to: 'pages#search'
 
   # get 'posts/:id', to: 'posts#show'
   # get 'posts/new', to: 'posts#new'
