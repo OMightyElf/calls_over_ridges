@@ -135,7 +135,7 @@
 			<p>每個月社工會在學校集合家長舉行資助金發放儀式，詳實記錄金額並簽名拍照作為紀錄。</p>
 		</div>
 		<div class="recordPopup__right">
-			<img src="../Content/images/certification.png" />
+			<%= image_tag 'certification.png' %>
 		</div>
 	</div>
 	<div id="deliver" class="recordPopup clearfix">
@@ -145,7 +145,7 @@
 			<p>資助金發放時要求孩子與家長一同出席，除了能讓社工了解家中狀況外，更會舉辦親子講堂，邀請尼泊爾講者分享教育觀念。</p>
 		</div>
 		<div class="recordPopup__right">
-			<img src="../Content/images/deliver.png" />
+			<%= image_tag 'deliver.png' %>
 		</div>
 	</div>
 	<div id="attendence" class="popup recordPopup clearfix">
@@ -272,41 +272,41 @@
 
 		//資料放這裡
 		var attendenceData = jQuery.extend(true, {}, commonData);
-		attendenceData.labels = ["一月", "二月", "三月", "四月", "五月", "六月", "七月"];
+		attendenceData.labels = <%= raw @child.update_month_last_six_months %>;
 		attendenceData.datasets[0].label = "出席率統計";
-		attendenceData.datasets[0].data = [65, 59, 80, 81, 56, 55, 40];
+		attendenceData.datasets[0].data = <%= @child.statics_last_six_months_of(:attendence_rate).map{ |r| r*100 } %>;
 
 		var readingData = jQuery.extend(true, {}, commonData);
-		readingData.labels = ["一月", "二月", "三月", "四月", "五月", "六月", "七月"];
+		readingData.labels = <%= raw @child.update_month_last_six_months %>;
 		readingData.datasets[0].label = "讀書心得統計";
-		readingData.datasets[0].data = [3, 5, 4, 2, 6, 4, 3];
+		readingData.datasets[0].data = <%= @child.statics_last_six_months_of(:reading_report_amount) %>;
 
 		var gradeData = jQuery.extend(true, {}, commonData);
-		gradeData.labels = ["一月", "二月", "三月", "四月", "五月", "六月", "七月"];
+		gradeData.labels = <%= raw @child.update_month_last_six_months %>;
 		gradeData.datasets[0].label = "成績表現統計";
-		gradeData.datasets[0].data = [87, 80, 69, 75, 88, 75, 70];
+		gradeData.datasets[0].data = <%= @child.statics_last_six_months_of(:grade) %>;
 
 
 		var incomeData = jQuery.extend(true, {}, commonData);
-		incomeData.labels = ["一月", "二月", "三月", "四月", "五月", "六月", "七月"];
+		incomeData.labels = <%= raw @child.update_month_last_six_months %>;
 		incomeData.datasets[0].label = "家庭收入統計";
-		incomeData.datasets[0].data = [15000, 16000, 14500, 16500, 17000, 18000, 17500];
+		incomeData.datasets[0].data = <%= @child.statics_last_six_months_of(:family_income) %>;
 
 		var bodyshapeData = jQuery.extend(true, {}, commonData);
-		bodyshapeData.labels = ["一月", "二月", "三月", "四月", "五月", "六月", "七月"];
+		bodyshapeData.labels = <%= raw @child.update_month_last_six_months %>;
 		bodyshapeData.datasets[0].label = "身高統計";
-		bodyshapeData.datasets[0].data = [145, 145, 146, 146.5, 146.5, 146.8, 147];
+		bodyshapeData.datasets[0].data = <%= @child.statics_last_six_months_of(:height) %>;
 		bodyshapeData.datasets[0].yAxisID = 'height';
 		bodyshapeData.datasets[1] = dataset2;
 		bodyshapeData.datasets[1].label = "體重統計";
-		bodyshapeData.datasets[1].data = [35, 35.2, 35.4, 35.5, 35.5, 35.8, 36];
+		bodyshapeData.datasets[1].data = <%= @child.statics_last_six_months_of(:weight) %>;
 		bodyshapeData.datasets[1].yAxisID = 'weight';
 
 
 		var studyData = jQuery.extend(true, {}, commonData);
-		studyData.labels = ["一月", "二月", "三月", "四月", "五月", "六月", "七月"];
+		studyData.labels = <%= raw @child.update_month_last_six_months %>;
 		studyData.datasets[0].label = "讀書時間統計";
-		studyData.datasets[0].data = [3.5, 2, 1, 1.5, 2, 3, 3.5];
+		studyData.datasets[0].data = <%= @child.statics_last_six_months_of(:study_hours) %>;
 
 
 		$('[data-fancybox="attendence"]').fancybox(

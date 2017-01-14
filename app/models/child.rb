@@ -10,4 +10,11 @@ class Child < ActiveRecord::Base
 
 	enum gender: [:male, :female, :other]
 
+	def statics_last_six_months_of(attribute)
+		updates.pluck(attribute)
+	end
+
+	def update_month_last_six_months
+		updates.map { |u| I18n.t('date.month_names')[u.update_time.month] }
+	end
 end
