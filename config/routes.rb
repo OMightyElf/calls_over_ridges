@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   root 'pages#index'
   get 'aboutus', to: 'pages#aboutus'
-  get 'support', to: 'pages#support'
+  get 'sponsor_project', to: 'pages#sponsor_project'
   post 'attachment/upload' => 'attachments#upload'
 
   # get 'posts/:id', to: 'posts#show'

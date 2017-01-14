@@ -5,9 +5,7 @@ class PagesController < ApplicationController
 	  @covers = @posts.first(4)
 	end
 
-	def show_posts_with_tag
-		@tag = Tag.find_by(name_en: params[:name_en])
-		@posts = @tag.posts
+	def sponsor_project
 	end
 
 	def search
