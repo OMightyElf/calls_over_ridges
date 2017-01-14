@@ -17,8 +17,9 @@
  *= require main
  *= require mobile
  *= require bxslider
- *= require fancybox
  */
+
+@import 'jquery.fancybox/jquery.fancybox';
 
 .margin-top5 { margin-top:5px; }
 .margin-top7 { margin-top:7px; }

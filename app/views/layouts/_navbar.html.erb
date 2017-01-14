@@ -28,7 +28,9 @@
           </a>
           <ul id="memberDropDown" class="dropdown-content">
             <li><%= link_to '修改個人資料', edit_user_registration_path %></li>
-            <li><a href="../sponse/kidPage.html">孩童專頁</a></li>
+            <% current_user.children.all.each do |child| %>
+              <li><%= link_to child.name, child_path(child) %></li>
+            <% end %>
             <li><a href="#">登出</a></li>
           </ul>
         </li>

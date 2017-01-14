@@ -1,14 +1,12 @@
 <section class="main">
 	<section class="section">
 		<div class="wrap">
-			<div class="title title--red">Hello, <%= @user.email%></div>
+			<div class="title title--red"><%= "Hello, #{current_user.name}" %></div>
 			<div class="counter">
 				<div class="counter__title">這是你支持孩子的</div>
 				<div class="counter__container">
 					第&nbsp;&nbsp;
-					<span class="counter__number" data-duration="3000" data-easing="easeInOutQuart" data-count="<%= ((Time.now - @child.supported_at) / 1.day).round %>">
-					0
-					</span>
+					<span class="counter__number" data-duration="2000" data-easing="easeInOutQuart" data-count="149"><%= @child.decorate.support_length %></span>
 					天
 				</div>
 			</div>
@@ -16,7 +14,7 @@
 				<div class="counter__title">你與孩子之間的旅途</div>
 				<div class="counter__container">
 					還有
-					<span class="counter__number" data-duration="4000" data-easing="easeOutQuad" data-count="<%= ((@child.support_until - Time.now) / 1.day).round %>">0</span>
+					<span class="counter__number" data-duration="3000" data-easing="easeOutQuad" data-count="256"><%= @child.decorate.support_days_left %></span>
 					天
 				</div>
 			</div>
@@ -25,240 +23,204 @@
 	<section class="section">
 		<div class="title title--red">孩童資料</div>
 		<div class="row kidData">
-			<div class="col s12 m6 tac">
-				<video class="responsive-video" controls>
-					<source src="../Content/media/kid.mp4" type="video/mp4">
+			<div class="wrap">
+				<div class="col s12 m6 tac">
+					<video class="responsive-video" controls>
+						<source src="../Content/media/kid.mp4" type="video/mp4">
 					</video>
 				</div>
 				<div class="col s12 m6">
 					<div class="kidData__name"><%= @child.name %></div>
+
 					<ul class="browser-default">
-						<li>性別： <%= @child.gender %></li>
-						<li>年紀： <%= ((Time.now - @child.birthday) / 1.year).round %> 歲</li>
-						<li>就讀小學： <%= @child.school %></li>
-						<li>就讀年級： <%= @child.school_year %> 年級</li>
+						<li><%= "性別： #{@child.gender}" %></li>
+						<li><%= "年紀： #{@child.decorate.age}" %></li>
+						<li><%= "就讀小學： #{@update.current_school}" %></li>
+						<li><%= "就讀年級： #{@update.current_grade} 年級" %></li>
 					</ul>
 					<div class="kidData__info">
-						<%= @child.description %>
+						<%= @update.comment %>
 					</div>
 				</div>
 			</div>
-		</section>
-		<section class="section">
-			<div class="wrap">
-				<div class="title title--red">成長紀錄</div>
-				<div class="row record">
-					<div class="col s6 m4">
-						<a href="#attendence" class="record__item" data-fancybox="attendence">
-							<div class="record__content">出席率</div>
-						</a>
-					</div>
-					<div class="col s6 m4">
-						<a href="#reading" class="record__item" data-fancybox="reading">
-							<div class="record__content">讀書心得</div>
-						</a>
-					</div>
-					<div class="col s6 m4">
-						<a href="#grade" class="record__item" data-fancybox="grade">
-							<div class="record__content">成績表現</div>
-						</a>
-					</div>
-					<div class="col s6 m4">
-						<a href="#income" class="record__item" data-fancybox="income">
-							<div class="record__content">家庭收入</div>
-						</a>
-					</div>
-					<div class="col s6 m4">
-						<a href="#bodyshape" class="record__item" data-fancybox="bodyshape">
-							<div class="record__content">身體狀況</div>
-						</a>
-					</div>
-					<div class="col s6 m4">
-						<a href="#study" class="record__item" data-fancybox="study">
-							<div class="record__content">讀書時間</div>
-						</a>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section class="section">
-			<div class="title title--red">資助實況</div>
-			<div class="kidData">
-				<div class="kidData__slider">
-					<ul class="sponseSlider">
-						<li><img src="../Content/images/sponse1.jpg" /></li>
-						<li><img src="../Content/images/sponse2.jpg" /></li>
-						<li><img src="../Content/images/sponse3.jpg" /></li>
-					</ul>
-					<div class="sponseMoney">
-						<a href="#certification" class="btn" data-fancybox="true">資助證明</a>
-						<a href="#deliver" class="btn" data-fancybox="true">資助金發放</a>
-					</div>
-				</div>
-			</div>
-		</section>
-		<div class="sideTool">
-			<a href="#message" class="icon iTool__message waves-effect waves-light" data-fancybox="true"></a>
-			<a href="../sponse/memberPage.html" class="icon iTool__info waves-effect waves-light"></a>
 		</div>
-
-		<div id="message" class="popup">
-			<form id="messageForm">
-				<div class="popup__content">
-					<div class="title title--red">資助人留言板</div>
-					<div class="row">
-						<div class="col s12 m4">
-							<input type="checkbox" class="filled-in" id="toTeam" />
-							<label for="toTeam">留言給團隊</label>
-							<div>對於計劃、團隊或其他疑問等都歡迎隨時留言給我們！我們將在收到訊息三天內儘速回覆您！</div>
-						</div>
-						<div class="col s12 m4">
-							<input type="checkbox" class="filled-in" id="toKid" />
-							<label for="toKid">留言給孩子</label>
-							<div>當您留言給孩子後，團隊將彙整您的訊息留言，在每個月中旬社工逐家探訪孩子時，為您傳遞您的心意給資助兒童。</div>
-						</div>
-						<div class="col s12 m4">
-							<input type="checkbox" class="filled-in" id="forBill" />
-							<label for="forBill">回傳繳款資訊</label>
-							<div>（僅限資助人繳款／招募時開放使用）</div>
-							<div>在您完成資助金匯款後，將您的繳款證明拍照回傳，並附上繳款資訊。</div>
-						</div>
-					</div>
-					<div class="title title--red">留言內容</div>
-					<div class="file-field input-field clearfix">
-						<div class="btn btn--red">
-							<span>上傳照片</span>
-							<input type="file">
-						</div>
-					</div>
-					<div class="input-field">
-						<textarea id="textarea1"></textarea>
-					</div>
-				</div>
-				<div class="popup__footer form__action">
-					<a href="#" class="waves-effect waves-green btn btn--red btn--rev" data-fancybox-close="true">取消</a>
-					<a href="#" class="waves-effect waves-green btn btn--red" data-fancybox-close="true">送出</a>
-				</div>
-			</form>
-		</div>
-		<div id="certification" class="recordPopup clearfix">
-			<div class="recordPopup__left">
-				<div class="recordPopup__title">資助證明</div>
-				<div class="recordPopup__percentage"></div>
-				<p>每個月社工會在學校集合家長舉行資助金發放儀式，詳實記錄金額並簽名拍照作為紀錄。</p>
-			</div>
-			<div class="recordPopup__right">
-				<img src="../Content/images/certification.png" />
-			</div>
-		</div>
-		<div id="deliver" class="recordPopup clearfix">
-			<div class="recordPopup__left">
-				<div class="recordPopup__title">資助金發放</div>
-				<div class="recordPopup__percentage"></div>
-				<p>資助金發放時要求孩子與家長一同出席，除了能讓社工了解家中狀況外，更會舉辦親子講堂，邀請尼泊爾講者分享教育觀念。</p>
-			</div>
-			<div class="recordPopup__right">
-				<img src="../Content/images/deliver.png" />
-			</div>
-		</div>
-		<div id="attendence" class="popup recordPopup clearfix">
-			<div class="recordPopup__left">
-				<div class="recordPopup__title">出席率</div>
-				<div class="recordPopup__percentage">95%</div>
-				<p>這個月比上次更為進步了，繼續加油與保持！</p>
-				<p>（在後台可以手動輸入與上個月比較過後所產生的客製化文字）</p>
-			</div>
-			<div class="recordPopup__right">
-				<canvas id="attendenceChart" width="400" height="400"></canvas>
-			</div>
-		</div>
-		<div id="reading" class="popup recordPopup clearfix">
-			<div class="recordPopup__left">
-				<div class="recordPopup__title">讀書心得</div>
-				<div class="recordPopup__percentage">3篇</div>
-				<p>這個月比上次更為進步了，繼續加油與保持！</p>
-				<p>（在後台可以手動輸入與上個月比較過後所產生的客製化文字）</p>
-			</div>
-			<div class="recordPopup__right">
-				<canvas id="readingChart" width="400" height="400"></canvas>
-			</div>
-		</div>
-		<div id="grade" class="popup recordPopup clearfix">
-			<div class="recordPopup__left">
-				<div class="recordPopup__title">成績表現</div>
-				<div class="recordPopup__percentage">87%</div>
-				<p>這個月比上次更為進步了，繼續加油與保持！</p>
-				<p>（在後台可以手動輸入與上個月比較過後所產生的客製化文字）</p>
-			</div>
-			<div class="recordPopup__right">
-				<canvas id="gradeChart" width="400" height="400"></canvas>
-			</div>
-		</div>
-		<div id="income" class="popup recordPopup clearfix">
-			<div class="recordPopup__left">
-				<div class="recordPopup__title">家庭收入</div>
-				<div class="recordPopup__percentage">$15,000盧比</div>
-				<p>這個月比上次更為進步了，繼續加油與保持！</p>
-				<p>（在後台可以手動輸入與上個月比較過後所產生的客製化文字）</p>
-			</div>
-			<div class="recordPopup__right">
-				<canvas id="incomeChart" width="400" height="400"></canvas>
-			</div>
-		</div>
-		<div id="bodyshape" class="popup recordPopup clearfix">
-			<div class="recordPopup__left">
-				<div class="recordPopup__title">身體狀況</div>
-				<div class="recordPopup__percentage">150cm;52kg</div>
-				<p>這個月比上次更為進步了，繼續加油與保持！</p>
-				<p>（在後台可以手動輸入與上個月比較過後所產生的客製化文字）</p>
-			</div>
-			<div class="recordPopup__right">
-				<canvas id="bodyshapeChart" width="400" height="300"></canvas>
-			</div>
-		</div>
-		<div id="study" class="popup recordPopup clearfix">
-			<div class="recordPopup__left">
-				<div class="recordPopup__title">讀書時間</div>
-				<div class="recordPopup__percentage">3.5小時</div>
-				<p>這個月比上次更為進步了，繼續加油與保持！</p>
-				<p>（在後台可以手動輸入與上個月比較過後所產生的客製化文字）</p>
-			</div>
-			<div class="recordPopup__right">
-				<canvas id="studyChart" width="400" height="300"></canvas>
-			</div>
-		</div>
-
-
 	</section>
+	<section class="section">
+		<div class="wrap">
+			<div class="title title--red">成長紀錄</div>
+			<div class="row record">
+				<div class="col s6 m4">
+					<a href="#attendence" class="record__item" data-fancybox="attendence">
+						<%= image_tag 'iKid1.png' %>
+					</a>
+				</div>
+				<div class="col s6 m4">
+					<a href="#reading" class="record__item" data-fancybox="reading">
+						<%= image_tag 'iKid2.png' %>
+					</a>
+				</div>
+				<div class="col s6 m4">
+					<a href="#grade" class="record__item" data-fancybox="grade">
+						<%= image_tag 'iKid3.png' %>
+					</a>
+				</div>
+				<div class="col s6 m4">
+					<a href="#study" class="record__item" data-fancybox="study">
+						<%= image_tag 'iKid4.png' %>
+					</a>
+				</div>
+				<div class="col s6 m4">
+					<a href="#bodyshape" class="record__item" data-fancybox="bodyshape">
+						<%= image_tag 'iKid5.png' %>
+					</a>
+				</div>
+				<div class="col s6 m4">
+					<a href="#income" class="record__item" data-fancybox="income">
+						<%= image_tag 'iKid6.png' %>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="section">
+		<div class="title title--red">資助實況</div>
+		<div class="kidData">
+			<div class="kidData__slider">
+				<ul class="sponseSlider">
+					<li><%= image_tag 'sponse1.jpg' %></li>
+					<li><%= image_tag 'sponse2.jpg' %></li>
+					<li><%= image_tag 'sponse3.jpg' %></li>
+				</ul>
+				<div class="sponseMoney">
+					<a href="#certification" class="btn" data-fancybox="true">資助證明</a>
+					<a href="#deliver" class="btn" data-fancybox="true">資助金發放</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="sideTool">
+		<a href="#message" class="icon iTool__message waves-effect waves-light" data-fancybox="true"></a>
+		<a href="../sponse/memberPage.html" class="icon iTool__info waves-effect waves-light" target="_blank"></a>
+	</div>
 
-	<script>
-		$(function () {
+	<div id="message" class="popup">
+		<form id="messageForm">
+			<div class="popup__content">
+				<div class="title title--red">資助人留言板</div>
+				<div class="row">
+					<div class="col s12 m6">
+						<input type="radio" class="with-gap" id="toTeam" name="messageTo" />
+						<label for="toTeam">留言給團隊</label>
+						<div>對於計劃、團隊或其他疑問等都歡迎隨時留言給我們！我們將在收到訊息三天內儘速回覆您！</div>
+					</div>
+					<div class="col s12 m6">
+						<input type="radio" class="with-gap" id="toKid"  name="messageTo"/>
+						<label for="toKid">留言給孩子</label>
+						<div>當您留言給孩子後，團隊將彙整您的訊息留言，在每個月中旬社工逐家探訪孩子時，為您傳遞您的心意給資助兒童。</div>
+					</div>
+				</div>
+				<div class="title title--red">留言內容</div>
+				<textarea id="textarea1"></textarea>
+			</div>
+			<div class="popup__footer form__action">
+				<a href="#" class="waves-effect waves-green btn btn--red btn--rev" data-fancybox-close="true">取消</a>
+				<a href="#" class="waves-effect waves-green btn btn--red" data-fancybox-close="true">送出</a>
+			</div>
+		</form>
+	</div>
+	<div id="certification" class="recordPopup clearfix">
+		<div class="recordPopup__left">
+			<div class="recordPopup__title">資助證明</div>
+			<div class="recordPopup__percentage"></div>
+			<p>每個月社工會在學校集合家長舉行資助金發放儀式，詳實記錄金額並簽名拍照作為紀錄。</p>
+		</div>
+		<div class="recordPopup__right">
+			<img src="../Content/images/certification.png" />
+		</div>
+	</div>
+	<div id="deliver" class="recordPopup clearfix">
+		<div class="recordPopup__left">
+			<div class="recordPopup__title">資助金發放</div>
+			<div class="recordPopup__percentage"></div>
+			<p>資助金發放時要求孩子與家長一同出席，除了能讓社工了解家中狀況外，更會舉辦親子講堂，邀請尼泊爾講者分享教育觀念。</p>
+		</div>
+		<div class="recordPopup__right">
+			<img src="../Content/images/deliver.png" />
+		</div>
+	</div>
+	<div id="attendence" class="popup recordPopup clearfix">
+		<div class="recordPopup__left">
+			<div class="recordPopup__title">出席率</div>
+			<div class="recordPopup__percentage"><%= @update.decorate.attendence_rate_in_percent %></div>
+			<p><%= @child.comparison_word('attendence_rate') %></p>
+		</div>
+		<div class="recordPopup__right">
+			<canvas id="attendenceChart" width="400" height="400"></canvas>
+		</div>
+	</div>
+	<div id="reading" class="popup recordPopup clearfix">
+		<div class="recordPopup__left">
+			<div class="recordPopup__title">讀書心得</div>
+			<div class="recordPopup__percentage"><%= "#{@update.reading_report_amount} 篇" %></div>
+			<p><%= @child.comparison_word('reading_report_amount') %></p>
+		</div>
+		<div class="recordPopup__right">
+			<canvas id="readingChart" width="400" height="400"></canvas>
+		</div>
+	</div>
+	<div id="grade" class="popup recordPopup clearfix">
+		<div class="recordPopup__left">
+			<div class="recordPopup__title">成績表現</div>
+			<div class="recordPopup__percentage"><%= @update.grade %> %></div>
+			<p><%= @child.comparison_word('grade') %></p>
+		</div>
+		<div class="recordPopup__right">
+			<canvas id="gradeChart" width="400" height="400"></canvas>
+		</div>
+	</div>
+	<div id="income" class="popup recordPopup clearfix">
+		<div class="recordPopup__left">
+			<div class="recordPopup__title">家庭收入</div>
+			<div class="recordPopup__percentage"><%= @update.decorate.family_income_in_unit %> %></div>
+			<p><%= @child.comparison_word('family_income') %></p>
+		</div>
+		<div class="recordPopup__right">
+			<canvas id="incomeChart" width="400" height="400"></canvas>
+		</div>
+	</div>
+	<div id="bodyshape" class="popup recordPopup clearfix">
+		<div class="recordPopup__left">
+			<div class="recordPopup__title">身體狀況</div>
+			<div class="recordPopup__percentage"><%= "#{@update.decorate.height_in_unit}; #{@update.decorate.weight_in_unit}" %></div>
+			<p><%= @child.comparison_word('height') %></p>
+			<p><%= @child.comparison_word('weight') %></p>
+		</div>
+		<div class="recordPopup__right">
+			<canvas id="bodyshapeChart" width="400" height="300"></canvas>
+		</div>
+	</div>
+	<div id="study" class="popup recordPopup clearfix">
+		<div class="recordPopup__left">
+			<div class="recordPopup__title">讀書時間</div>
+			<div class="recordPopup__percentage"><%= @update.decorate.rounded_study_hours %></div>
+			<p><%= @child.comparison_word('study_hours') %></p>
+		</div>
+		<div class="recordPopup__right">
+			<canvas id="studyChart" width="400" height="300"></canvas>
+		</div>
+	</div>
+</section>
 
-		//數字effect
-		$('.counter__number').each(function () {
-			var $this = $(this),
-			countTo = $this.attr('data-count'),
-			duration = Number($(this).attr('data-duration')),
-			easing = $this.attr('data-easing');
-			$({ countNum: $this.text() }).animate({
-				countNum: countTo
-			},
-			{
-				duration: duration,
-				easing: easing,
-				step: function () {
-					$this.text(Math.floor(this.countNum));
-				},
-				complete: function () {
-					$this.text(this.countNum);
-				}
-			});
-		});
+<% content_for :javascript do %>
+<script>
+	$(function () {
+
+
 		//slider
 		$('.sponseSlider').bxSlider(
 		{
 			pager: false,
-			adeptiveHeight: true
+			adaptiveHeight: true
 		}
 		);
 		var dataset = {
@@ -350,7 +312,7 @@
 		$('[data-fancybox="attendence"]').fancybox(
 		{
 			scrolling: 'no',
-			beforeShow: function () {
+			afterShow: function () {
 				var attendenceCtx = document.getElementById("attendenceChart").getContext("2d");
 				attendenceChart = new Chart(attendenceCtx, {
 					type: 'line',
@@ -365,7 +327,7 @@
 		$('[data-fancybox="reading"]').fancybox(
 		{
 			scrolling: 'no',
-			beforeShow: function () {
+			afterShow: function () {
 				var readingCtx = document.getElementById("readingChart").getContext("2d");
 				readingChart = new Chart(readingCtx, {
 					type: 'line',
@@ -380,7 +342,7 @@
 		$('[data-fancybox="grade"]').fancybox(
 		{
 			scrolling: 'no',
-			beforeShow: function () {
+			afterShow: function () {
 				var gradeCtx = document.getElementById("gradeChart").getContext("2d");
 				gradeChart = new Chart(gradeCtx, {
 					type: 'line',
@@ -395,7 +357,7 @@
 		$('[data-fancybox="income"]').fancybox(
 		{
 			scrolling: 'no',
-			beforeShow: function () {
+			afterShow: function () {
 				var incomeCtx = document.getElementById("incomeChart").getContext("2d");
 				incomeChart = new Chart(incomeCtx, {
 					type: 'line',
@@ -410,7 +372,7 @@
 		$('[data-fancybox="bodyshape"]').fancybox(
 		{
 			scrolling: 'no',
-			beforeShow: function () {
+			afterShow: function () {
 				var bodyshapeCtx = document.getElementById("bodyshapeChart").getContext("2d");
 				bodyshapeChart = new Chart(bodyshapeCtx, {
 					type: 'line',
@@ -438,7 +400,7 @@
 		$('[data-fancybox="study"]').fancybox(
 		{
 			scrolling: 'no',
-			beforeShow: function () {
+			afterShow: function () {
 				var studyCtx = document.getElementById("studyChart").getContext("2d");
 				studyChart = new Chart(studyCtx, {
 					type: 'line',
@@ -452,17 +414,4 @@
 		);
 	});
 </script>
-
-
-<!-- Page js /end -->
-<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-	<!--<script>
-		(function (b, o, i, l, e, r) {
-			b.GoogleAnalyticsObject = l; b[l] || (b[l] =
-			function () { (b[l].q = b[l].q || []).push(arguments) }); b[l].l = +new Date;
-			e = o.createElement(i); r = o.getElementsByTagName(i)[0];
-			e.src = '//www.google-analytics.com/analytics.js';
-			r.parentNode.insertBefore(e, r)
-		}(window, document, 'script', 'ga'));
-		ga('create', 'UA-XXXXX-X'); ga('send', 'pageview');
-	</script>-->
+<% end %>

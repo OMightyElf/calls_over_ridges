@@ -16,9 +16,9 @@
 //= require posts
 //= require bootstrap-sprockets
 //= require viewport.js
-//= require fancybox
 //= require materialize
 //= require helper
 //= require plugins
 //= require main
 //= require Chart.min
+//= require jquery.fancybox/jquery.fancybox
