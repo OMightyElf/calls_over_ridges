@@ -150,3 +150,19 @@
     </div>
   </div>
 </section>
+
+<% content_for :javascript do %>
+<script>
+$(function () {
+$(window).resize(function () {
+  var ww = $(window).width(),
+  wh = $(window).height(),
+  idealH = $('.sponseIdeal__mid').outerHeight();
+  $('.banner--sponse').width(ww).height(wh - 250);
+  if (!Modernizr.mq('(max-width: 770px)')) {
+    $('.sponseIdeal__left ,.sponseIdeal__right  ').height(idealH);
+  };
+}).trigger('resize');
+});
+</script>
+<% end %>

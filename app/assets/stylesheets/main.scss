@@ -177,7 +177,7 @@ a {
   -o-transition: all .5s;
   -webkit-transition: all .5s;
   transition: all .5s;
-  background-image: url(asset_path('iSocial.png'));
+  background-image: url(asset-path("iSocial.png"));
   background-size: 35px 70px;
 }
 
@@ -199,7 +199,7 @@ a {
 .iTool__message:before, .iTool__info:before, .iTool__message:after, .iTool__info:after {
   width: 60px;
   height: 60px;
-  background-image: url(asset_path('itool.png'));
+  background-image: url(asset-path("itool.png"));
   background-size: 60px 120px;
 }
 
@@ -750,7 +750,7 @@ article blockquote p {
 
 .login {
   min-height: 800px;
-  background-image: url(asset_path('bg-login.jpg'));
+  background-image: url(asset-path("bg-login.jpg"));
   background-size: cover;
   background-position: center center;
   position: relative;
@@ -944,12 +944,12 @@ article blockquote p {
   background: #990033;
 }
 .banner--createAccount {
-  background-image: url(asset_path('banner__createAccount.jpg'));
+  background-image: url(asset-path("banner__createAccount.jpg"));
   background-position: right center;
   height: 500px;
 }
 .banner--sponse {
-  background-image: url(asset_path('banner__sponse.jpg'));
+  background-image: url(asset-path("banner__sponse.jpg"));
   background-position: left center;
 }
 
@@ -1305,7 +1305,7 @@ article blockquote p {
   position: absolute;
   top: 0;
   right: 0;
-  background-image: url(asset_path('bookmark.png'));
+  background-image: url(asset-path("bookmark.png"));
   background-size: 40px 40px;
 }
 .blogCard--video .blogCard__photo:after {
