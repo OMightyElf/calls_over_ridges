@@ -1,467 +1,202 @@
 <section class="main">
-	<section class="section">
-		<div class="wrap">
-			<div class="title title--red">Hello, 李小明</div>
-			<div class="counter">
-				<div class="counter__title">這是你支持孩子的</div>
-				<div class="counter__container">
-					第&nbsp;&nbsp;
-					<span class="counter__number" data-duration="3000" data-easing="easeInOutQuart" data-count="149">0</span>
-					天
-				</div>
-			</div>
-			<div class="counter">
-				<div class="counter__title">你與孩子之間的旅途</div>
-				<div class="counter__container">
-					還有
-					<span class="counter__number" data-duration="4000" data-easing="easeOutQuad" data-count="256">0</span>
-					天
-				</div>
-			</div>
-		</div>
-	</section>
-	<section class="section">
-		<div class="title title--red">孩童資料</div>
-		<div class="row kidData">
-			<div class="col s12 m6 tac">
-				<video class="responsive-video" controls>
-					<source src="../Content/media/kid.mp4" type="video/mp4">
-					</video>
-				</div>
-				<div class="col s12 m6">
-					<div class="kidData__name">Sujan Kuwor</div>
-					<ul class="browser-default">
-						<li>性別： 男</li>
-						<li>年紀： 7 歲</li>
-						<li>就讀小學： GK School</li>
-						<li>就讀年級： 小學 3 年級</li>
-					</ul>
-					<div class="kidData__info">
-						Sujan has been a good kid at school this year, and had improved a lot in his reading skills and also the writing homework.
-						He failed from tree this month becasue of accident. He broke his arms, and went to hospital. But he is recovering fast and stays energetic everyday I see him!
-					</div>
-				</div>
-			</div>
-		</section>
-		<section class="section">
-			<div class="wrap">
-				<div class="title title--red">成長紀錄</div>
-				<div class="row record">
-					<div class="col s6 m4">
-						<a href="#attendence" class="record__item" data-fancybox="attendence">
-							<div class="record__content">出席率</div>
-						</a>
-					</div>
-					<div class="col s6 m4">
-						<a href="#reading" class="record__item" data-fancybox="reading">
-							<div class="record__content">讀書心得</div>
-						</a>
-					</div>
-					<div class="col s6 m4">
-						<a href="#grade" class="record__item" data-fancybox="grade">
-							<div class="record__content">成績表現</div>
-						</a>
-					</div>
-					<div class="col s6 m4">
-						<a href="#income" class="record__item" data-fancybox="income">
-							<div class="record__content">家庭收入</div>
-						</a>
-					</div>
-					<div class="col s6 m4">
-						<a href="#bodyshape" class="record__item" data-fancybox="bodyshape">
-							<div class="record__content">身體狀況</div>
-						</a>
-					</div>
-					<div class="col s6 m4">
-						<a href="#study" class="record__item" data-fancybox="study">
-							<div class="record__content">讀書時間</div>
-						</a>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section class="section">
-			<div class="title title--red">資助實況</div>
-			<div class="kidData">
-				<div class="kidData__slider">
-					<ul class="sponseSlider">
-						<li><img src="../Content/images/sponse1.jpg" /></li>
-						<li><img src="../Content/images/sponse2.jpg" /></li>
-						<li><img src="../Content/images/sponse3.jpg" /></li>
-					</ul>
-					<div class="sponseMoney">
-						<a href="#certification" class="btn" data-fancybox="true">資助證明</a>
-						<a href="#deliver" class="btn" data-fancybox="true">資助金發放</a>
-					</div>
-				</div>
-			</div>
-		</section>
-		<div class="sideTool">
-			<a href="#message" class="icon iTool__message waves-effect waves-light" data-fancybox="true"></a>
-			<a href="../sponse/memberPage.html" class="icon iTool__info waves-effect waves-light"></a>
-		</div>
-
-		<div id="message" class="popup">
-			<form id="messageForm">
-				<div class="popup__content">
-					<div class="title title--red">資助人留言板</div>
-					<div class="row">
-						<div class="col s12 m4">
-							<input type="checkbox" class="filled-in" id="toTeam" />
-							<label for="toTeam">留言給團隊</label>
-							<div>對於計劃、團隊或其他疑問等都歡迎隨時留言給我們！我們將在收到訊息三天內儘速回覆您！</div>
+	<section class="section bgGrey">
+		<div class="wrap wrap--s">
+			<div class="title title--red">註冊繳款資訊</div>
+			<div class="row">
+				<ul class="processLine clearfix">
+					<li class="<%= progress_state_finished('havent_paid') %>">
+						<div class="processLine__title h2 fBold fRed">未繳款</div>
+					</li>
+					<li class="<%= progress_state_finished('payment_needs_confirmation') %>">
+						<div class="processLine__title h2 fBold fRed">款項<span class="breakLine"><br /></span>確認中</div>
+						<div class="processLine__sub h4">
+							<p>統一確認日期</p>
+							<p>2017.01.18</p>
 						</div>
-						<div class="col s12 m4">
-							<input type="checkbox" class="filled-in" id="toKid" />
-							<label for="toKid">留言給孩子</label>
-							<div>當您留言給孩子後，團隊將彙整您的訊息留言，在每個月中旬社工逐家探訪孩子時，為您傳遞您的心意給資助兒童。</div>
+					</li>
+					<li class="<%= progress_state_finished('confirmed_payment') %>">
+						<div class="processLine__title h2 fBold fRed">繳款<span class="breakLine"><br /></span>已確認</div>
+					</li>
+					<li class="<%= progress_state_finished('associated_with_children') %>">
+						<div class="processLine__title h2 fBold fRed">孩童資料<span class="breakLine"><br /></span>彙整中</div>
+						<div class="processLine__sub h4">
+							<p>孩童資料開放日期</p>
+							<p>2017.01.20</p>
 						</div>
-						<div class="col s12 m4">
-							<input type="checkbox" class="filled-in" id="forBill" />
-							<label for="forBill">回傳繳款資訊</label>
-							<div>（僅限資助人繳款／招募時開放使用）</div>
-							<div>在您完成資助金匯款後，將您的繳款證明拍照回傳，並附上繳款資訊。</div>
-						</div>
-					</div>
-					<div class="title title--red">留言內容</div>
-					<div class="file-field input-field clearfix">
-						<div class="btn btn--red">
-							<span>上傳照片</span>
+					</li>
+				</ul>
+			</div>
+			<div class="row borderSection pd20">
+				<div class="col m6 s12">
+					<div class="h2 fBold fRed">匯款資訊</div>
+					<p>匯款銀行:012 華南銀行 大安分行</p>
+					<p>匯款帳號:1234-1234-1234-1234</p>
+					<p>匯款戶名:李小明</p>
+				</div>
+				<div class="col m6 s12">
+					<div class="h2 fBold fRed">匯款期限</div>
+					<p class="fBold h2">2017.01.12</p>
+					<p>期限後5個工作天內將確認收款狀況</p>
+				</div>
+			</div>
+			<div class="row pd20">
+				<div class="col m6 s12">
+					<div class="h2 fBold fRed">繳款成功後</div>
+					<p>請您務必在匯款期限內完成ATM 匯款程序，並在此回傳您的繳款資訊 或 上傳繳款憑證圖片，就完成繳款程序囉！</p>
+				</div>
+				<div class="col m6 s12">
+					<div class="file-field clearfix">
+						<div class="fileBtn h4 fr">
+							<span>上傳繳款證明圖片</span>
 							<input type="file">
 						</div>
 					</div>
-					<div class="input-field">
-						<textarea id="textarea1"></textarea>
+					<p>
+						<textarea placeholder="留言您的末五碼／匯款帳戶名稱。（此平台透過加密保護，資料完全保密）"></textarea>
+					</p>
+					<div class="actionArea clearfix">
+						<a href="#" class="btn btn--red fr">送出</a>
+						<a href="#" class="btn btn--rev btn--red btn-reset fr">取消</a>
 					</div>
 				</div>
-				<div class="popup__footer form__action">
-					<a href="#" class="waves-effect waves-green btn btn--red btn--rev" data-fancybox-close="true">取消</a>
-					<a href="#" class="waves-effect waves-green btn btn--red" data-fancybox-close="true">送出</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="section memberPage">
+		<div class="wrap wrap--s"">
+			<div class="title title--red">基本資料</div>
+			<div class="clearfix">
+				<a href="#" id="editData" class="btn btn--red">修改會員資料</a>
+				<a href="#" id="finishEdit" class="btn btn--red">修改完成</a>
+				<a href="#" id="cancelEdit" class="btn btn--red btn--rev">取消</a>
+			</div>
+			<form id="memberData" class="form">
+				<div class="input-field">
+					<input type="text" id="name" value="李小明" />
+					<label for="name">贊助者姓名</label>
+				</div>
+				<div class="value-field">
+					<div class="label">贊助者姓名</div>
+					<div class="value">李小明</div>
+				</div>
+				<div class="input-field">
+					<input type="email" id="account" value="abc@gmail.com" />
+					<label for="email">聯絡信箱</label>
+				</div>
+				<div class="value-field">
+					<div class="label">聯絡信箱</div>
+					<div class="value">abc@gmail.com</div>
+				</div>
+				<div class="input-field">
+					<input type="email" id="email" value="abc@gmail.com" />
+					<label for="email">會員帳號(同Email)</label>
+				</div>
+				<div class="value-field">
+					<div class="label">會員帳號(同Email)</div>
+					<div class="value">abc@gmail.com</div>
+				</div>
+				<div class="input-field">
+					<input type="password" id="password" value="123456" />
+					<label for="email">會員密碼</label>
+				</div>
+				<div class="value-field">
+					<div class="label">會員密碼</div>
+					<div class="value">123456</div>
+				</div>
+				<div class="input-field">
+					<input type="text" id="address" value="台北市大安區大安路一號一樓" />
+					<label for="email">聯絡地址</label>
+				</div>
+				<div class="value-field">
+					<div class="label">聯絡地址</div>
+					<div class="value">台北市大安區大安路一號一樓</div>
+				</div>
+				<div class="input-field">
+					<input type="tel" id="phone" value="0900000000" />
+					<label for="email">聯絡電話</label>
+				</div>
+				<div class="value-field">
+					<div class="label">聯絡電話</div>
+					<div class="value">0900000000</div>
+				</div>
+				<div class="input-field" data-input="radio">
+					<p>是否需要資助收據？</p>
+					<p>
+						<div class="radio">
+							<input name="invoice" type="radio" id="true" class="with-gap" value="true" checked />
+							<label for="true">是</label>
+						</div>
+						<div class="radio">
+							<input name="invoice" type="radio" id="false" class="with-gap" value="false" />
+							<label for="false">否</label>
+						</div>
+					</p>
+				</div>
+				<div class="value-field">
+					<div class="label">是否需要資助收據</div>
+					<div class="value" data-id="value">是</div>
 				</div>
 			</form>
 		</div>
-		<div id="certification" class="recordPopup clearfix">
-			<div class="recordPopup__left">
-				<div class="recordPopup__title">資助證明</div>
-				<div class="recordPopup__percentage"></div>
-				<p>每個月社工會在學校集合家長舉行資助金發放儀式，詳實記錄金額並簽名拍照作為紀錄。</p>
-			</div>
-			<div class="recordPopup__right">
-				<img src="../Content/images/certification.png" />
-			</div>
-		</div>
-		<div id="deliver" class="recordPopup clearfix">
-			<div class="recordPopup__left">
-				<div class="recordPopup__title">資助金發放</div>
-				<div class="recordPopup__percentage"></div>
-				<p>資助金發放時要求孩子與家長一同出席，除了能讓社工了解家中狀況外，更會舉辦親子講堂，邀請尼泊爾講者分享教育觀念。</p>
-			</div>
-			<div class="recordPopup__right">
-				<img src="../Content/images/deliver.png" />
-			</div>
-		</div>
-		<div id="attendence" class="popup recordPopup clearfix">
-			<div class="recordPopup__left">
-				<div class="recordPopup__title">出席率</div>
-				<div class="recordPopup__percentage">95%</div>
-				<p>這個月比上次更為進步了，繼續加油與保持！</p>
-				<p>（在後台可以手動輸入與上個月比較過後所產生的客製化文字）</p>
-			</div>
-			<div class="recordPopup__right">
-				<canvas id="attendenceChart" width="400" height="400"></canvas>
-			</div>
-		</div>
-		<div id="reading" class="popup recordPopup clearfix">
-			<div class="recordPopup__left">
-				<div class="recordPopup__title">讀書心得</div>
-				<div class="recordPopup__percentage">3篇</div>
-				<p>這個月比上次更為進步了，繼續加油與保持！</p>
-				<p>（在後台可以手動輸入與上個月比較過後所產生的客製化文字）</p>
-			</div>
-			<div class="recordPopup__right">
-				<canvas id="readingChart" width="400" height="400"></canvas>
-			</div>
-		</div>
-		<div id="grade" class="popup recordPopup clearfix">
-			<div class="recordPopup__left">
-				<div class="recordPopup__title">成績表現</div>
-				<div class="recordPopup__percentage">87%</div>
-				<p>這個月比上次更為進步了，繼續加油與保持！</p>
-				<p>（在後台可以手動輸入與上個月比較過後所產生的客製化文字）</p>
-			</div>
-			<div class="recordPopup__right">
-				<canvas id="gradeChart" width="400" height="400"></canvas>
-			</div>
-		</div>
-		<div id="income" class="popup recordPopup clearfix">
-			<div class="recordPopup__left">
-				<div class="recordPopup__title">家庭收入</div>
-				<div class="recordPopup__percentage">$15,000盧比</div>
-				<p>這個月比上次更為進步了，繼續加油與保持！</p>
-				<p>（在後台可以手動輸入與上個月比較過後所產生的客製化文字）</p>
-			</div>
-			<div class="recordPopup__right">
-				<canvas id="incomeChart" width="400" height="400"></canvas>
-			</div>
-		</div>
-		<div id="bodyshape" class="popup recordPopup clearfix">
-			<div class="recordPopup__left">
-				<div class="recordPopup__title">身體狀況</div>
-				<div class="recordPopup__percentage">150cm;52kg</div>
-				<p>這個月比上次更為進步了，繼續加油與保持！</p>
-				<p>（在後台可以手動輸入與上個月比較過後所產生的客製化文字）</p>
-			</div>
-			<div class="recordPopup__right">
-				<canvas id="bodyshapeChart" width="400" height="300"></canvas>
-			</div>
-		</div>
-		<div id="study" class="popup recordPopup clearfix">
-			<div class="recordPopup__left">
-				<div class="recordPopup__title">讀書時間</div>
-				<div class="recordPopup__percentage">3.5小時</div>
-				<p>這個月比上次更為進步了，繼續加油與保持！</p>
-				<p>（在後台可以手動輸入與上個月比較過後所產生的客製化文字）</p>
-			</div>
-			<div class="recordPopup__right">
-				<canvas id="studyChart" width="400" height="300"></canvas>
-			</div>
-		</div>
-
-
 	</section>
-
-	<script>
-		$(function () {
-
-		//數字effect
-		$('.counter__number').each(function () {
-			var $this = $(this),
-			countTo = $this.attr('data-count'),
-			duration = Number($(this).attr('data-duration')),
-			easing = $this.attr('data-easing');
-			$({ countNum: $this.text() }).animate({
-				countNum: countTo
-			},
-			{
-				duration: duration,
-				easing: easing,
-				step: function () {
-					$this.text(Math.floor(this.countNum));
-				},
-				complete: function () {
-					$this.text(this.countNum);
-				}
-			});
-		});
-		//slider
-		$('.sponseSlider').bxSlider(
-		{
-			pager: false,
-			adeptiveHeight: true
-		}
-		);
-		var dataset = {
-			fill: false,
-			lineTension: 0.1,
-			backgroundColor: "#990033",
-			borderColor: "#990033",
-			borderCapStyle: 'butt',
-			borderDash: [],
-			borderDashOffset: 0.0,
-			borderJoinStyle: 'miter',
-			pointBorderColor: "#990033",
-			pointBackgroundColor: "#990033",
-			pointBorderWidth: 1,
-			pointHoverRadius: 5,
-			pointHoverBackgroundColor: "#990033",
-			pointHoverBorderColor: "#990033",
-			pointHoverBorderWidth: 2,
-			pointRadius: 1,
-			pointHitRadius: 10,
-			spanGaps: false
-		};
-		var dataset2 = {
-			fill: false,
-			lineTension: 0.1,
-			backgroundColor: "#003471",
-			borderColor: "#003471",
-			borderCapStyle: 'butt',
-			borderDash: [],
-			borderDashOffset: 0.0,
-			borderJoinStyle: 'miter',
-			pointBorderColor: "#003471",
-			pointBackgroundColor: "#003471",
-			pointBorderWidth: 1,
-			pointHoverRadius: 5,
-			pointHoverBackgroundColor: "#003471",
-			pointHoverBorderColor: "#003471",
-			pointHoverBorderWidth: 2,
-			pointRadius: 1,
-			pointHitRadius: 10,
-			spanGaps: false
-		};
-		//line chart
-		var commonData = {
-			datasets: [
-			dataset
-			]
-		};
-
-		//資料放這裡
-		var attendenceData = jQuery.extend(true, {}, commonData);
-		attendenceData.labels = ["一月", "二月", "三月", "四月", "五月", "六月", "七月"];
-		attendenceData.datasets[0].label = "出席率統計";
-		attendenceData.datasets[0].data = [65, 59, 80, 81, 56, 55, 40];
-
-		var readingData = jQuery.extend(true, {}, commonData);
-		readingData.labels = ["一月", "二月", "三月", "四月", "五月", "六月", "七月"];
-		readingData.datasets[0].label = "讀書心得統計";
-		readingData.datasets[0].data = [3, 5, 4, 2, 6, 4, 3];
-
-		var gradeData = jQuery.extend(true, {}, commonData);
-		gradeData.labels = ["一月", "二月", "三月", "四月", "五月", "六月", "七月"];
-		gradeData.datasets[0].label = "成績表現統計";
-		gradeData.datasets[0].data = [87, 80, 69, 75, 88, 75, 70];
-
-
-		var incomeData = jQuery.extend(true, {}, commonData);
-		incomeData.labels = ["一月", "二月", "三月", "四月", "五月", "六月", "七月"];
-		incomeData.datasets[0].label = "家庭收入統計";
-		incomeData.datasets[0].data = [15000, 16000, 14500, 16500, 17000, 18000, 17500];
-
-		var bodyshapeData = jQuery.extend(true, {}, commonData);
-		bodyshapeData.labels = ["一月", "二月", "三月", "四月", "五月", "六月", "七月"];
-		bodyshapeData.datasets[0].label = "身高統計";
-		bodyshapeData.datasets[0].data = [145, 145, 146, 146.5, 146.5, 146.8, 147];
-		bodyshapeData.datasets[0].yAxisID = 'height';
-		bodyshapeData.datasets[1] = dataset2;
-		bodyshapeData.datasets[1].label = "體重統計";
-		bodyshapeData.datasets[1].data = [35, 35.2, 35.4, 35.5, 35.5, 35.8, 36];
-		bodyshapeData.datasets[1].yAxisID = 'weight';
-
-
-		var studyData = jQuery.extend(true, {}, commonData);
-		studyData.labels = ["一月", "二月", "三月", "四月", "五月", "六月", "七月"];
-		studyData.datasets[0].label = "讀書時間統計";
-		studyData.datasets[0].data = [3.5, 2, 1, 1.5, 2, 3, 3.5];
-
-
-		$('[data-fancybox="attendence"]').fancybox(
-		{
-			scrolling: 'no',
-			beforeShow: function () {
-				var attendenceCtx = document.getElementById("attendenceChart").getContext("2d");
-				attendenceChart = new Chart(attendenceCtx, {
-					type: 'line',
-					data: attendenceData
-				});
-			},
-			afterClose: function () {
-				attendenceChart.destroy();
-			}
-		}
-		);
-		$('[data-fancybox="reading"]').fancybox(
-		{
-			scrolling: 'no',
-			beforeShow: function () {
-				var readingCtx = document.getElementById("readingChart").getContext("2d");
-				readingChart = new Chart(readingCtx, {
-					type: 'line',
-					data: readingData
-				});
-			},
-			afterClose: function () {
-				readingChart.destroy();
-			}
-		}
-		);
-		$('[data-fancybox="grade"]').fancybox(
-		{
-			scrolling: 'no',
-			beforeShow: function () {
-				var gradeCtx = document.getElementById("gradeChart").getContext("2d");
-				gradeChart = new Chart(gradeCtx, {
-					type: 'line',
-					data: gradeData
-				});
-			},
-			afterClose: function () {
-				gradeChart.destroy();
-			}
-		}
-		);
-		$('[data-fancybox="income"]').fancybox(
-		{
-			scrolling: 'no',
-			beforeShow: function () {
-				var incomeCtx = document.getElementById("incomeChart").getContext("2d");
-				incomeChart = new Chart(incomeCtx, {
-					type: 'line',
-					data: incomeData
-				});
-			},
-			afterClose: function () {
-				incomeChart.destroy();
-			}
-		}
-		);
-		$('[data-fancybox="bodyshape"]').fancybox(
-		{
-			scrolling: 'no',
-			beforeShow: function () {
-				var bodyshapeCtx = document.getElementById("bodyshapeChart").getContext("2d");
-				bodyshapeChart = new Chart(bodyshapeCtx, {
-					type: 'line',
-					data: bodyshapeData,
-					options: {
-						scales: {
-							yAxes: [{
-								id: 'height',
-								type: 'linear',
-								position: 'left',
-							}, {
-								id: 'weight',
-								type: 'linear',
-								position: 'right',
-							}]
-						}
-					}
-				});
-			},
-			afterClose: function () {
-				bodyshapeChart.destroy();
-			}
-		}
-		);
-		$('[data-fancybox="study"]').fancybox(
-		{
-			scrolling: 'no',
-			beforeShow: function () {
-				var studyCtx = document.getElementById("studyChart").getContext("2d");
-				studyChart = new Chart(studyCtx, {
-					type: 'line',
-					data: studyData
-				});
-			},
-			afterClose: function () {
-				studyChart.destroy();
-			}
-		}
-		);
-	});
-</script>
-
-
-<!-- Page js /end -->
-<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-	<!--<script>
-		(function (b, o, i, l, e, r) {
-			b.GoogleAnalyticsObject = l; b[l] || (b[l] =
-			function () { (b[l].q = b[l].q || []).push(arguments) }); b[l].l = +new Date;
-			e = o.createElement(i); r = o.getElementsByTagName(i)[0];
-			e.src = '//www.google-analytics.com/analytics.js';
-			r.parentNode.insertBefore(e, r)
-		}(window, document, 'script', 'ga'));
-		ga('create', 'UA-XXXXX-X'); ga('send', 'pageview');
-	</script>-->
+	<section class="section memberPage">
+		<div class="wrap wrap--s"">
+			<div class="title title--red">贊助資料</div>
+			<table class="table table--red">
+				<tr>
+					<th>贊助招募日期</th>
+					<th>贊助繳款日期</th>
+					<th>贊助收據狀態</th>
+				</tr>
+				<tr>
+					<td>第一屆</td>
+					<td>2017.01.26</td>
+					<td>
+						<ul class="list">
+							<li>不需要收據</li>
+							<li>基金會確認中</li>
+							<li>已寄出</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</section>
+	<ul class="sideTool">
+		<li>
+			<a href="#message" class="icon iTool__message waves-effect waves-light" data-fancybox="true"></a>
+		</li>
+	</ul>
+	<div id="message" class="popup">
+		<form id="messageForm">
+			<div class="popup__content">
+				<div class="title title--red">資助人留言板</div>
+				<div class="row">
+					<div class="col s12 m6">
+						<input type="radio" class="with-gap" id="toTeam" name="messageTo" />
+						<label for="toTeam">留言給團隊</label>
+						<div>對於計劃、團隊或其他疑問等都歡迎隨時留言給我們！我們將在收到訊息三天內儘速回覆您！</div>
+					</div>
+					<div class="col s12 m6">
+						<input type="radio" class="with-gap" id="toKid" name="messageTo" />
+						<label for="toKid">留言給孩子</label>
+						<div>當您留言給孩子後，團隊將彙整您的訊息留言，在每個月中旬社工逐家探訪孩子時，為您傳遞您的心意給資助兒童。</div>
+					</div>
+				</div>
+				<div class="title title--red">留言內容</div>
+				<div class="file-field input-field clearfix">
+					<div class="btn btn--red">
+						<span>上傳照片</span>
+						<input type="file">
+					</div>
+				</div>
+				<textarea></textarea>
+			</div>
+			<div class="popup__footer form__action">
+				<a href="#!" class="modal-action modal-close waves-effect waves-green btn btn--red" data-fancybox-close="true">送出</a>
+				<a href="#!" class="modal-action modal-close waves-effect waves-green btn btn--red btn--rev" data-fancybox-close="true">取消</a>
+			</div>
+		</form>
+	</div>
+</section>

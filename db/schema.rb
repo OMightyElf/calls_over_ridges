@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170114141544) do
+ActiveRecord::Schema.define(version: 20170114162059) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -131,7 +131,7 @@ ActiveRecord::Schema.define(version: 20170114141544) do
     t.boolean  "need_receipt"
     t.datetime "paid_at"
     t.string   "receipt_state"
-    t.string   "current_state"
+    t.integer  "current_state",          default: 0
     t.integer  "money"
     t.integer  "role",                   default: 0
     t.string   "name"
