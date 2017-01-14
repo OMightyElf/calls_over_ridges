@@ -2,7 +2,6 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-  before_action :authenticate_user!
 
   def set_admin_locale
     I18n.locale = "zh-TW"
@@ -26,6 +25,8 @@ class ApplicationController < ActionController::Base
       redirect_to root_path, notice: "權限不足無法進入"
     end
   end
+
+  private
 
   def after_sign_out_path_for(resource_or_scope)
     root_path
