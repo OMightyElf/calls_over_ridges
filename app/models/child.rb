@@ -1,7 +1,7 @@
 class Child < ActiveRecord::Base
 	validates :name, presence: true
 	validates :serial_number, presence: true, uniqueness: true
-
+	include Children::LatestUpdatesComparisonMethods
 
 
 	belongs_to :user, foreign_key: :supporter_id
@@ -9,4 +9,5 @@ class Child < ActiveRecord::Base
 	accepts_nested_attributes_for :updates
 
 	enum gender: [:male, :female, :other]
+
 end
