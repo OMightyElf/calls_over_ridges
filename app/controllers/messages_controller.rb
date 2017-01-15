@@ -3,7 +3,7 @@ class MessagesController < ApplicationController
 		@message = Message.new(message_params)
 		@message.save
 
-		redirect_to user_path(@message.user), notice: '謝謝您的留言，請靜候遠山呼喚的團隊處理，感謝！'
+		redirect_to request.referrer, notice: '謝謝您的留言，請靜候遠山呼喚的團隊處理，感謝！'
 	end
 
 	private
