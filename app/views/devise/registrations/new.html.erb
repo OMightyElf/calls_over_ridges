@@ -1,29 +1,110 @@
-<h2>Sign up for your life</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+<section class="main">
+  <div class="banner banner--createAccount">
+    <div class="banner__title">成為資助人</div>
   </div>
+  <section class="section">
+    <div class="wrap">
+      <div class="tac">
+        <p>一個月孩子只需要600元台幣，就能獲得穩定的教育以及溫飽。</p>
+        <p>持續長期五年不間斷的支持，是孩子脫離貧窮的道路，</p>
+        <p>遠山呼喚誠摯邀請您長期投入，改變遠方一個年幼的生命。</p>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap">
+      <div class="title title--red">成為資助者後</div>
+      <ul class="functions">
+        <li>
+          <div class="functions__title">登入平台<br>更新資訊</div>
+          <div class="functions__content">
+            <p>打開手機或電腦登入網站，進入屬於你與孩子的秘密基地！<br>在這裡你可以完整的追蹤孩子的成長狀況，並且擁有專屬於你的資料專區，關於資助的細節都將完整呈現給您。</p>
+          </div>
+        </li>
+        <li>
+          <div class="functions__title">清楚了解<br>資助流程</div>
+          <div class="functions__content">
+            <p>在每半年一次的資助金繳款完成之後，團隊將交由基金會協助處理資金審核，並開立資助收據，每月發放資助金的完整金流證明、影像紀錄也都會在專屬平台上呈現。</p>
+          </div>
+        </li>
+        <li>
+          <div class="functions__title">參加資助<br>專屬聚會</div>
+          <div class="functions__content">
+            <p>每半年團隊會舉辦一次專屬於資助人的見面聚會，您將與團隊成員見面瞭解孩子以及當地近況，同時也能夠與其他資助人一起交流。</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap">
+      <div class="title title--red">資助者的義務</div>
+      <ul class="response clearfix">
+        <li>
+          <div class="response__title">至少5年的長期陪伴</div>
+          <div class="response__content">
+            對於孩子來說高中教育是最重要也最難以跨越的生涯關鍵。我們之所以選擇五年，是因為計畫中資助兒童距離完成高中教育，仍需要至少五年的支持。其實孩子不只需要資金，更需要成長的時間！
+          </div>
+        </li>
+        <li>
+          <div class="response__title">半年一次資助金收取</div>
+          <div class="response__content">
+            每半年收取一次（3600元台幣），統一採ATM 繳款方式。
+            資助金委由合作基金會交由當地駐點社工，每月進行發放流程。資助期間團隊將每月回傳金流證明。
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap">
+      <div class="title title--red">報名流程</div>
+      <div class="process">
+        <%= image_tag 'process.png' %>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap ">
+      <div class="title title--red">成為資助人</div>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+        <div class="input-field" data-id="input">
+          <%= f.input_field :name, autofocus: true %>
+          <%= f.label :name, '姓名' %>
+        </div>
+        <div class="input-field" data-id="input">
+          <%= f.email_field :email %>
+          <%= f.label :email, '聯絡信箱／會員帳號' %>
+        </div>
+        <div class="input-field" data-id="input">
+          <%= f.password_field :password, autocomplete: "off" %>
+          <%= f.label :password, "會員密碼（請輸入至少#{@minimum_password_length}個字元）" %>
+        </div>
+        <div class="input-field" data-id="input">
+          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+          <%= f.label :password_confirmation, '請再次輸入密碼' %>
+        </div>
+        <div class="input-field" data-id="input">
+          <%= f.input_field :address %>
+          <%= f.label :address, '聯絡地址' %>
+        </div>
+        <div class="input-field" data-id="input">
+          <%= f.input_field :phone_number %>
+          <%= f.label :phone_number, '聯絡電話' %>
+        </div>
+        <div data-id="input" data-input="radio">
+          <div>是否需要資助收據</div>
+          <div class="radio">
+            <%= f.input_field :need_receipt, collection: [['是', true], ['否', false]], as: :radio_buttons, class: 'with-gap', checked: @user.need_receipt %>
+          </div>
+        </div>
+        <div class="actionArea">
+          <a href="#" class="btn btn--rev btn--red" data-reset="true">重填</a>
+          <%= f.submit "送出", class: 'btn btn--red' %>
+        </div>
+      <% end %>
+    </div>
+  </section>
+</section>
