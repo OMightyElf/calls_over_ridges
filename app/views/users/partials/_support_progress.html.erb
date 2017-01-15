@@ -1,0 +1,24 @@
+<div class="row">
+	<ul class="processLine clearfix">
+		<li class="<%= progress_state_finished('havent_paid') %>">
+			<div class="processLine__title h2 fBold fRed">未繳款</div>
+		</li>
+		<li class="<%= progress_state_finished('payment_needs_confirmation') %>">
+			<div class="processLine__title h2 fBold fRed">款項<span class="breakLine"><br /></span>確認中</div>
+			<div class="processLine__sub h4">
+				<p>統一確認日期</p>
+				<p>2017.01.18</p>
+			</div>
+		</li>
+		<li class="<%= progress_state_finished('confirmed_payment') %>">
+			<div class="processLine__title h2 fBold fRed">繳款<span class="breakLine"><br /></span>已確認</div>
+			<div class="processLine__sub h4">
+				<p>孩童資料彙整中，開放日期</p>
+				<p>2017.01.20</p>
+			</div>
+		</li>
+		<li class="<%= progress_state_finished('associated_with_children') %>">
+			<div class="processLine__title h2 fBold fRed">孩童<span class="breakLine"><br /></span>完成配對</div>
+		</li>
+	</ul>
+</div>
