@@ -25,20 +25,20 @@
       <div class="value"><%= @user.email %></div>
     </div>
     <div class="input-field">
-      <%= f.input_field :address %>
-      <%= f.label :address, '聯絡地址' %>
-    </div>
-    <div class="value-field">
-      <div class="label">聯絡地址</div>
-      <div class="value"><%= @user.address %></div>
-    </div>
-    <div class="input-field">
       <%= f.input_field :zipcode %>
       <%= f.label :zipcode, '郵遞區號' %>
     </div>
     <div class="value-field">
       <div class="label">郵遞區號</div>
       <div class="value"><%= @user.zipcode %></div>
+    </div>
+    <div class="input-field">
+      <%= f.input_field :address %>
+      <%= f.label :address, '聯絡地址' %>
+    </div>
+    <div class="value-field">
+      <div class="label">聯絡地址</div>
+      <div class="value"><%= @user.address %></div>
     </div>
     <div class="input-field">
       <%= f.input_field :phone_number, as: :tel %>
@@ -70,7 +70,7 @@
     </div>
     <div class="input-field">
       <%= f.label :current_password, '請輸入現在的密碼以變更資料' %><br />
-      <%= f.password_field :current_password, autocomplete: "off" %>
+      <%= f.password_field :current_password, autocomplete: "off", required: true %>
     </div>
   <% end %>
 </div>
