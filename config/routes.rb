@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :messages
   resources :updates
   resources :children
   ActiveAdmin.routes(self)

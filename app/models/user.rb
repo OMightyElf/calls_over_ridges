@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
   enum current_state: [:havent_paid, :payment_needs_confirmation, :confirmed_payment, :associated_with_children, :payment_over_due]
 
   has_many :children, foreign_key: :supporter_id
+  has_many :messages
   accepts_nested_attributes_for :children
 
   def first_child

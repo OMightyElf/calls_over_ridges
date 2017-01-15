@@ -1,0 +1,26 @@
+<div id="message" class="popup">
+	<%= simple_form_for @message do |f| %>
+	<%= f.hidden_field :user_id, value: current_user.id %>
+	<div class="popup__content">
+		<div class="title title--red">資助人留言板</div>
+		<div class="row">
+			<div class="col s12 m6">
+				<%= radio_button_tag 'message[target]', :to_team, @message.to_team? , class: 'with-gap'  %>
+				<label for="message_target_to_team">留言給團隊</label>
+				<div>對於計劃、團隊或其他疑問等都歡迎隨時留言給我們！我們將在收到訊息三天內儘速回覆您！</div>
+			</div>
+			<div class="col s12 m6">
+				<%= radio_button_tag 'message[target]', :to_kid, @message.to_kid? , class: 'with-gap'  %>
+				<label for="message_target_to_kid">留言給孩子</label>
+				<div>當您留言給孩子後，團隊將彙整您的訊息留言，在每個月中旬社工逐家探訪孩子時，為您傳遞您的心意給資助兒童。</div>
+			</div>
+		</div>
+		<div class="title title--red">留言內容</div>
+		<%= f.input_field :content %>
+	</div>
+	<div class="popup__footer form__action">
+		<%= f.submit '送出', class: 'btn btn--red', data: { disable_with: '處理中...' }  %>
+		<a href="#!" class="modal-action modal-close waves-effect waves-green btn btn--red btn--rev" data-fancybox-close="true">取消</a>
+	</div>
+	<% end %>
+</div>

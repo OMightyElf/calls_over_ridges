@@ -19,37 +19,7 @@
 			<a href="#message" class="icon iTool__message waves-effect waves-light" data-fancybox="true"></a>
 		</li>
 	</ul>
-	<div id="message" class="popup">
-		<form id="messageForm">
-			<div class="popup__content">
-				<div class="title title--red">資助人留言板</div>
-				<div class="row">
-					<div class="col s12 m6">
-						<input type="radio" class="with-gap" id="toTeam" name="messageTo" />
-						<label for="toTeam">留言給團隊</label>
-						<div>對於計劃、團隊或其他疑問等都歡迎隨時留言給我們！我們將在收到訊息三天內儘速回覆您！</div>
-					</div>
-					<div class="col s12 m6">
-						<input type="radio" class="with-gap" id="toKid" name="messageTo" />
-						<label for="toKid">留言給孩子</label>
-						<div>當您留言給孩子後，團隊將彙整您的訊息留言，在每個月中旬社工逐家探訪孩子時，為您傳遞您的心意給資助兒童。</div>
-					</div>
-				</div>
-				<div class="title title--red">留言內容</div>
-				<div class="file-field input-field clearfix">
-					<div class="btn btn--red">
-						<span>上傳照片</span>
-						<input type="file">
-					</div>
-				</div>
-				<textarea></textarea>
-			</div>
-			<div class="popup__footer form__action">
-				<a href="#!" class="modal-action modal-close waves-effect waves-green btn btn--red" data-fancybox-close="true">送出</a>
-				<a href="#!" class="modal-action modal-close waves-effect waves-green btn btn--red btn--rev" data-fancybox-close="true">取消</a>
-			</div>
-		</form>
-	</div>
+	<%= render partial: 'shared/partials/message_board' %>
 </section>
 
 <% content_for :javascript do %>
