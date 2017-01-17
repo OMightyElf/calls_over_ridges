@@ -768,7 +768,7 @@ article blockquote p {
 
 .login {
   min-height: 800px;
-  background-image: url(asset-path("bg-login.jpg"));
+  background-image: url(asset-path('bg-login.jpg'));
   background-size: cover;
   background-position: center center;
   position: relative;
@@ -963,7 +963,7 @@ article blockquote p {
   font-weight: bold;
 }
 .banner--createAccount {
-  background-image: url("../images/banner__createAccount.jpg");
+  background-image: url(asset-path("banner__createAccount.jpg"));
   background-position: right center;
   height: 500px;
 }
@@ -971,15 +971,15 @@ article blockquote p {
   background: #990033;
 }
 .banner--sponse {
-  background-image: url("../images/banner__sponse.jpg");
+  background-image: url(asset-path("banner__sponse.jpg"));
   background-position: left center;
 }
 .banner--aurora {
-  background-image: url("../images/banner__aurora.jpg");
+  background-image: url(asset-path("banner__aurora.jpg"));
   background-position: left center;
 }
 .banner--aurora2 {
-  background-image: url("../images/banner__aurora2.jpg");
+  background-image: url(asset-path("banner__aurora2.jpg"));
   background-position: left center;
 }
 .banner--aurora2 .banner__link {
@@ -1567,7 +1567,7 @@ article blockquote p {
 }
 
 .auroraVolunteer {
-  background-image: url("../images/auroraVolunteer.jpg");
+  background-image: url(asset-path("auroraVolunteer.jpg"));
   background-size: cover;
   background-position: right center;
   height: 500px;
@@ -1683,28 +1683,28 @@ article blockquote p {
   background-size: cover;
 }
 .about__photo--1 {
-  background-image: url("../images/about1.jpg");
+  background-image: url(asset-path("about1.jpg"));
 }
 .about__photo--2 {
-  background-image: url("../images/about2.jpg");
+  background-image: url(asset-path("about2.jpg"));
 }
 .about__photo--3 {
-  background-image: url("../images/banner__sponse.jpg");
+  background-image: url(asset-path("banner__sponse.jpg"));
 }
 .about__photo--4 {
-  background-image: url("../images/banner__aurora.jpg");
+  background-image: url(asset-path("banner__aurora.jpg"));
 }
 .about__photo--5 {
-  background-image: url("../images/about5.jpg");
+  background-image: url(asset-path("about5.jpg"));
 }
 .about__photo--6 {
-  background-image: url("../images/about6.jpg");
+  background-image: url(asset-path("about6.jpg"));
 }
 .about__photo--7 {
-  background-image: url("../images/about7.jpg");
+  background-image: url(asset-path("about7.jpg"));
 }
 .about__photo--8 {
-  background-image: url("../images/about8.jpg");
+  background-image: url(asset-path("about8.jpg"));
 }
 .about .clearfix {
   padding-bottom: 10px;
