@@ -1,5 +1,5 @@
 ActiveAdmin.register Post do
-	permit_params :user_id, :title, :subtitle, :author, :content, :status, :category, :publish_date, :cover
+	permit_params :user_id, :title, :subtitle, :author, :content, :status, :category, :publish_date, :cover, :video, :cover_cache, :video_cache, :photographer
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -23,6 +23,9 @@ ActiveAdmin.register Post do
   index do |post|
   	column :cover do |post|
   	  image_tag post.cover.url("thumb")
+  	end
+  	column :video do |post|
+  	  post.video.url
   	end
   	column :id
   	column :user_id
@@ -54,6 +57,9 @@ ActiveAdmin.register Post do
 					row :cover do |post|
 						image_tag post.cover.url('small')
 					end
+					row :video do |post|
+					  video_tag post.video.url
+					end
 					row :content do |post|
 						raw(post.content)
 					end
@@ -72,6 +78,12 @@ ActiveAdmin.register Post do
 			    ? image_tag(f.object.cover.url(:thumb))
 			    : content_tag(:span, "no cover page yet")
 			  f.input :cover_cache, as: :hidden
+			end
+			f.inputs "文章影片", multipart: true do
+			  f.input :video, as: :file, hint: f.object.video.present? \
+			    ? video_tag(f.object.video.url)
+			    : content_tag(:span, "no video page yet")
+			  f.input :video_cache, as: :hidden
 			end
 			f.input :user_id, as: :select, collection: User.all, member_label: Proc.new { |x| "#{x.name}(#{x.email})" }, include_blank: false
 			f.input :title
