@@ -81,6 +81,30 @@
     margin-right: 0;
     margin-bottom: 15px;
   }
+
+  .blogTab .tabs {
+    display: none;
+  }
+  .blogTab .blogTab__mobile {
+    display: block;
+    padding: 0 50px;
+  }
+
+  .auroraVolunteer__text {
+    padding: 30px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 500px;
+    margin-left: 0;
+    background: rgba(255, 255, 255, 0.5);
+  }
+
+  .auroraRequire > li.col .up {
+    font-size: 20px;
+  }
+  .auroraRequire > li.col .down {
+    font-size: 16px;
+  }
 }
 @media screen and (max-width: 650px) {
   .processLine > li .breakLine {

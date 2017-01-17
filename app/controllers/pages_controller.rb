@@ -8,6 +8,9 @@ class PagesController < ApplicationController
 	def sponsor_project
 	end
 
+	def aurora
+	end
+
 	def search
 		# @posts = Post.where("title like ?", "%"+params[:keyword]+"%")
 
