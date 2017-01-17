@@ -12,10 +12,11 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
-  root 'pages#index'
+  root 'pages#about'
   get 'aboutus', to: 'pages#aboutus'
   get 'sponsor_project', to: 'pages#sponsor_project'
   get 'aurora', to: 'pages#aurora'
+  get 'about', to: 'pages#about'
   post 'attachment/upload' => 'attachments#upload'
 
   # get 'posts/:id', to: 'posts#show'
