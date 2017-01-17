@@ -31,6 +31,7 @@ gem 'enumerize'
 gem 'draper'
 gem 'simple_form'
 gem 'dotenv-rails', :groups => [:development, :test]
+gem 'pundit'
 
 group :production do
   gem "rails_12factor"

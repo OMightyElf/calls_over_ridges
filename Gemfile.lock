@@ -295,6 +295,8 @@ GEM
     pry-remote (0.1.8)
       pry (~> 0.9)
       slop (~> 3.0)
+    pundit (1.1.0)
+      activesupport (>= 3.0.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -412,6 +414,7 @@ DEPENDENCIES
   pg
   pry-rails
   pry-remote
+  pundit
   rails (= 4.2.4)
   rails-settings-cached
   rails_12factor
