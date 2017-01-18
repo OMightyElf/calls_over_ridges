@@ -15,6 +15,6 @@ class Child < ActiveRecord::Base
 	end
 
 	def update_month_last_six_months
-		updates.map { |u| I18n.t('date.month_names')[u.update_time.month] }
+		updates.map { |u| I18n.t('date.month_names')[u.update_time.try(:month) || 0] }
 	end
 end
