@@ -6,7 +6,7 @@
     <div class="wrap">
       <div class="counter">
         <div class="counter__title">
-          <span class="counter__number" data-duration="3000" data-easing="easeInOutQuart" data-count="250"><%= Setting.how_many_children_to_be_supported %></span>
+          <span class="counter__number" data-duration="3000" data-easing="easeInOutQuart" data-count="<%= Setting.how_many_children_to_be_supported || 250 %>"><%= Setting.how_many_children_to_be_supported %></span>
           名孩子
         </div>
         <div class="counter__container">正在等待資助</div>
@@ -36,7 +36,7 @@
     <div class="wrap">
       <div class="counter">
         <div class="counter__title">
-          <span class="counter__number" data-duration="3000" data-easing="easeInOutQuart" data-count="51"><%= Setting.how_many_dreamers %></span>
+          <span class="counter__number" data-duration="3000" data-easing="easeInOutQuart" data-count="<%= Setting.how_many_dreamers || 51 %>"><%= Setting.how_many_dreamers %></span>
           位夢想家
         </div>
         <div class="counter__container">已經踏上旅程</div>

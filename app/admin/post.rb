@@ -24,9 +24,9 @@ ActiveAdmin.register Post do
   	column :cover do |post|
   	  image_tag post.cover.url("thumb")
   	end
-  	column :video do |post|
-  	  post.video.url
-  	end
+  	# column :video do |post|
+  	#   post.video.url
+  	# end
   	column :id
   	column :user_id
   	column :title
@@ -57,9 +57,9 @@ ActiveAdmin.register Post do
 					row :cover do |post|
 						image_tag post.cover.url('small')
 					end
-					row :video do |post|
-					  video_tag post.video.url
-					end
+					# row :video do |post|
+					#   video_tag post.video.url
+					# end
 					row :content do |post|
 						raw(post.content)
 					end
@@ -79,11 +79,11 @@ ActiveAdmin.register Post do
 			    : content_tag(:span, "no cover page yet")
 			  f.input :cover_cache, as: :hidden
 			end
-			f.inputs "文章影片", multipart: true do
-			  f.input :video, as: :file, hint: f.object.video.present? \
-			    ? video_tag(f.object.video.url)
-			    : content_tag(:span, "no video page yet")
-			end
+			# f.inputs "文章影片", multipart: true do
+			#   f.input :video, as: :file, hint: f.object.video.present? \
+			#     ? video_tag(f.object.video.url)
+			#     : content_tag(:span, "no video page yet")
+			# end
 			f.input :user_id, as: :select, collection: User.all, member_label: Proc.new { |x| "#{x.name}(#{x.email})" }, include_blank: false
 			f.input :title
 			f.input :subtitle
