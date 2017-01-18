@@ -1,5 +1,5 @@
 ActiveAdmin.register Post do
-	permit_params :user_id, :title, :subtitle, :author, :content, :status, :category, :publish_date, :cover, :video, :cover_cache, :video_cache, :photographer
+	permit_params :user_id, :title, :subtitle, :author, :content, :status, :category, :publish_date, :cover, :cover_cache, :photographer
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -83,7 +83,6 @@ ActiveAdmin.register Post do
 			  f.input :video, as: :file, hint: f.object.video.present? \
 			    ? video_tag(f.object.video.url)
 			    : content_tag(:span, "no video page yet")
-			  f.input :video_cache, as: :hidden
 			end
 			f.input :user_id, as: :select, collection: User.all, member_label: Proc.new { |x| "#{x.name}(#{x.email})" }, include_blank: false
 			f.input :title
