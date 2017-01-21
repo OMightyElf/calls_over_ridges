@@ -32,16 +32,22 @@ ActiveAdmin.register User do
 				attributes_table  do
 					row :name
 					row :email
-					row :role
+					row :role do |user|
+						I18n.t("enum.user.role.#{user.role}")
+					end
 					row :phone_number
 					row :zipcode
 					row :address
 					row :money
 					row :paid_at
 					row :need_receipt
-					row :receipt_state
 					row :receipt_url
-					row :current_state
+					row :receipt_state do |user|
+						I18n.t("enum.user.receipt_state.#{user.receipt_state}")
+					end
+					row :current_state do |user|
+						I18n.t("enum.user.current_state.#{user.current_state}")
+					end
 					row :children do |user|
 						table_for user.children do
 							column do |child|
@@ -57,7 +63,9 @@ ActiveAdmin.register User do
 	index do
 		column :name
 		column :email
-		column :role
+		column :role do |user|
+			I18n.t("enum.user.role.#{user.role}")
+		end
 		column :phone_number
 		column :zipcode
 		column :address
@@ -65,8 +73,12 @@ ActiveAdmin.register User do
 		column :paid_at
 		column :need_receipt
 		column :receipt_url
-		column :receipt_state
-		column :current_state
+		column :receipt_state do |user|
+			I18n.t("enum.user.receipt_state.#{user.receipt_state}")
+		end
+		column :current_state do |user|
+			I18n.t("enum.user.current_state.#{user.current_state}")
+		end
 		actions defaults: true
 	end
 
