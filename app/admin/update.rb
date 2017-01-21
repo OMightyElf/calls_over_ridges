@@ -79,7 +79,7 @@ ActiveAdmin.register Update do
 			f.semantic_errors *f.object.errors.keys
 
 			f.input :child, as: :select2, collection: Child.all, include_blank: false
-			f.input :update_time
+			f.input :update_time, as: :datetime_picker
 			f.input :current_school
 			f.input :current_grade
 			f.input :attendence_rate
