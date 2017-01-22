@@ -19,7 +19,7 @@ $(function () {
 	});
 	$(".dropdown-button").dropdown({belowOrigin:true });
 
-	//¼Æ¦reffect
+	//effect
 	function counter() {
 		$(window).scroll(function () {
 			$('.counter').each(function () {
