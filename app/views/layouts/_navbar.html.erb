@@ -1,14 +1,14 @@
 <header class="header">
   <div class="wrap clearfix">
-    <a href="../index.html" class="header__logo">
-      <%= image_tag 'LOGO--black.png' %>
-    </a>
+    <%= link_to root_path, class: 'header__logo' do %>
+      <%= image_tag 'logo-small.png' %>
+    <% end %>
     <a href="#" class="header__toggle">
       <div class="burger"></div>
     </a>
     <div class="header__menu">
       <ul class="menu__nav">
-        <li><a href="../about/about.html">關於我們</a></li>
+        <li><%= link_to '關於我們', aboutus_path %></li>
         <li><%= link_to '資助平台', sponsor_project_path %></li>
         <li><%= link_to '極光計畫', aurora_path %></li>
         <li><%= link_to 'BLOG', posts_path %></li>

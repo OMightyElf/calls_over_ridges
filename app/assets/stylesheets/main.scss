@@ -18,7 +18,7 @@ textarea {
 }
 
 body {
-  font-family: '微軟正黑體', Verdana, 'Microsoft JhengHei', sans-serif;
+  font-family: 'Lato','微軟正黑體', 'Microsoft JhengHei', sans-serif;
   font-size: 16px;
   line-height: 1.6;
 }
@@ -111,9 +111,9 @@ a {
    Author's custom styles
    ========================================================================== */
 /*---------- icon ----------
-	.icon:			使用:before (預設)
-	.icon--a:		使用:after
-	.icon__text:	文字與:before/:after產生margin: 3px
+  .icon:      使用:before (預設)
+  .icon--a:   使用:after
+  .icon__text:  文字與:before/:after產生margin: 3px
 */
 .icon {
   display: inline-block;
@@ -154,21 +154,21 @@ a {
 
 /*---------- icon - sample ----------*/
 /*%i-sample {
-	&:before,
-	&:after {
-		width: 30px;
-		height: 30px;
-		background-image: url();
-	}
+  &:before,
+  &:after {
+    width: 30px;
+    height: 30px;
+    background-image: url();
+  }
 }
 
 .i-sample__xxx {
-	@extend %i-floorsample;
+  @extend %i-floorsample;
 
-	&:before,
-	&:after {
-		background-position: 0 0;
-	}
+  &:before,
+  &:after {
+    background-position: 0 0;
+  }
 }*/
 .iSocial__fb:before, .iSocial__mail:before, .iSocial__fb:after, .iSocial__mail:after {
   width: 35px;
@@ -614,7 +614,8 @@ textarea {
 }
 .recordPopup__title {
   color: #990033;
-  font-size: 18px;
+  font-size: 24px;
+  font-weight: bold;
 }
 .recordPopup__percentage {
   color: #990033;
@@ -678,6 +679,10 @@ textarea {
 }
 .blogTab .tabs .indicator {
   background-color: #003471;
+}
+
+.bx-wrapper .bx-controls-direction a {
+  z-index: 1000;
 }
 
 /*---------- loading ----------*/
@@ -815,6 +820,186 @@ article blockquote p {
 }
 
 /* ==========================================================================
+   index
+   ========================================================================== */
+.gridHalf {
+  padding: 0;
+  margin: 0;
+}
+.gridHalf li {
+  list-style: none;
+  float: left;
+  width: 50%;
+}
+
+.mission__left {
+  padding-top: 100px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  min-height: 570px;
+}
+.mission__right {
+  background: #003471;
+  padding: 50px 40px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  min-height: 570px;
+}
+.mission__title {
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  font-size: 24px;
+}
+.mission__content {
+  color: #fff;
+  margin-top: 30px;
+  font-size: 14px;
+}
+.mission__action {
+  text-align: center;
+  margin-top: 50px;
+}
+.mission__action .btn {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid #fff;
+  font-weight: bold;
+}
+.mission__action .btn:hover {
+  background: white;
+  color: #333;
+}
+.mission .counter {
+  color: #555;
+}
+.mission .counter__number {
+  color: #003471;
+}
+
+.indexVideo {
+  position: relative;
+  display: block;
+}
+.indexVideo__text {
+  position: absolute;
+  top: 30%;
+  width: 100%;
+  font-weight: bold;
+  font-size: 50px;
+  color: #003471;
+  text-align: center;
+  letter-spacing: 5px;
+}
+.indexVideo:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-left: 30px solid #003471;
+  border-bottom: 20px solid transparent;
+  position: absolute;
+  top: 0;
+  left: 10px;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 1;
+  -moz-transition: .4s ease-in-out;
+  -o-transition: .4s ease-in-out;
+  -webkit-transition: .4s ease-in-out;
+  transition: .4s ease-in-out;
+}
+.indexVideo:before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 60px;
+  border: 1px solid #003471;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 1;
+  -moz-transition: .4s ease-in-out;
+  -o-transition: .4s ease-in-out;
+  -webkit-transition: .4s ease-in-out;
+  transition: .4s ease-in-out;
+}
+
+.indexSponse {
+  background: #990033;
+}
+.indexSponse__photo {
+  float: left;
+  width: 30%;
+  position: relative;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.indexSponse__photo img {
+  width: 100%;
+}
+.indexSponse__title {
+  float: left;
+  width: 30%;
+  padding-top: 15%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+  color: #fff;
+}
+.indexSponse__content {
+  float: left;
+  width: 40%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 20px 60px;
+  color: #fff;
+  text-align: center;
+}
+
+.indexAurora {
+  background: #ffcb01;
+}
+.indexAurora__photo {
+  position: relative;
+  width: 30%;
+  float: right;
+}
+.indexAurora__photo img {
+  width: 100%;
+}
+.indexAurora__title {
+  float: right;
+  padding-top: 15%;
+  width: 30%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+  color: #000;
+  vertical-align: middle;
+}
+.indexAurora__content {
+  float: left;
+  width: 40%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 20px 60px;
+  color: #333;
+  text-align: center;
+}
+
+/* ==========================================================================
    sponse
    ========================================================================== */
 .memberPage #editData, .memberPage #finishEdit, .memberPage #cancelEdit {
@@ -904,6 +1089,40 @@ article blockquote p {
   transition: all .3s;
 }
 
+#attendence .recordPopup__title:before, #reading .recordPopup__title:before, #grade .recordPopup__title:before, #study .recordPopup__title:before, #bodyshape .recordPopup__title:before, #income .recordPopup__title:before {
+  content: '';
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  background-image: url(asset-path("ikidTitle.png"));
+  background-size: 60px 360px;
+  vertical-align: bottom;
+}
+
+#attendence .recordPopup__title:before {
+  background-position: 0 0;
+}
+
+#reading .recordPopup__title:before {
+  background-position: 0 -60px;
+}
+
+#grade .recordPopup__title:before {
+  background-position: 0 -120px;
+}
+
+#study .recordPopup__title:before {
+  background-position: 0 -180px;
+}
+
+#bodyshape .recordPopup__title:before {
+  background-position: 0 -240px;
+}
+
+#income .recordPopup__title:before {
+  background-position: 0 -300px;
+}
+
 .sponseMoney {
   text-align: center;
   margin-top: 15px;
@@ -923,6 +1142,7 @@ article blockquote p {
   background-size: cover;
   position: relative;
   min-height: 300px;
+  width: 100%;
 }
 .banner:after {
   content: '';
@@ -944,6 +1164,7 @@ article blockquote p {
   right: 0;
   text-align: center;
   font-size: 36px;
+  font-weight: bold;
   color: #fff;
   text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
   letter-spacing: 5px;
@@ -976,11 +1197,11 @@ article blockquote p {
 }
 .banner--aurora {
   background-image: url(asset-path("banner__aurora.jpg"));
-  background-position: left center;
+  background-position: right center;
 }
 .banner--aurora2 {
   background-image: url(asset-path("banner__aurora2.jpg"));
-  background-position: left center;
+  background-position: center center;
 }
 .banner--aurora2 .banner__link {
   top: 60%;
@@ -988,6 +1209,17 @@ article blockquote p {
 .banner--aurora2 .banner__link .btn:hover {
   background: #ffcb01;
   color: #333;
+}
+.banner--index {
+  background-image: url(asset-path("banner__index.jpg"));
+  background-position: center center;
+}
+.banner--index .banner__title {
+  top: 20%;
+}
+.banner--index img {
+  width: 300px;
+  margin-bottom: 20px;
 }
 
 .functions {
@@ -1150,26 +1382,27 @@ article blockquote p {
 .studyTarget ul > li {
   list-style: none;
   position: relative;
-  padding-left: 50px;
+  padding-left: 60px;
   margin-bottom: 40px;
 }
 .studyTarget ul > li:before {
   content: '';
-  display: block;
-  border-radius: 50%;
-  width: 40px;
-  height: 50px;
   position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 0;
   left: 0;
+  background-image: url(asset-path("ikidTitle.png"));
+  background-size: 60px 360px;
 }
 .studyTarget ul > li:nth-child(1):before {
-  background: #990033;
+  background-position: 0 0;
 }
 .studyTarget ul > li:nth-child(2):before {
-  background: #cc4d4d;
+  background-position: 0 -60px;
 }
 .studyTarget ul > li:nth-child(3):before {
-  background: #b34040;
+  background-position: 0 -120px;
 }
 
 .steps {
@@ -1545,6 +1778,7 @@ article blockquote p {
   max-width: 700px;
   margin: 0 auto;
   padding: 20px;
+  padding-bottom: 100px;
 }
 .auroraIntro__content p {
   line-height: 2;
@@ -1560,10 +1794,49 @@ article blockquote p {
 .auroraModel {
   border: 2px solid #ffcb01;
   text-align: center;
+  margin: 30px 0;
 }
-.auroraModel img {
-  width: 100%;
-  max-width: 900px;
+.auroraModel__title {
+  display: table-cell;
+  font-size: 24px;
+  font-weight: bold;
+  width: 30%;
+  text-align: left;
+}
+.auroraModel__table {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.auroraModel__table .divRow {
+  display: table;
+}
+.auroraModel__table .number {
+  display: table-cell;
+  font-size: 40px;
+  font-weight: bold;
+  width: 20%;
+}
+.auroraModel__table .content {
+  display: table-cell;
+  font-size: 14px;
+  color: #333;
+  width: 50%;
+  text-align: left;
+}
+.auroraModel__table .divRow:nth-child(1) .number, .auroraModel__table .divRow:nth-child(1) .auroraModel__title {
+  color: #ffcb01;
+}
+.auroraModel__table .divRow:nth-child(2) .number, .auroraModel__table .divRow:nth-child(2) .auroraModel__title {
+  color: #f09b3d;
+}
+.auroraModel__table .divRow:nth-child(3) .number, .auroraModel__table .divRow:nth-child(3) .auroraModel__title {
+  color: #be6431;
+}
+.auroraModel__table .divRow:nth-child(4) .number, .auroraModel__table .divRow:nth-child(4) .auroraModel__title {
+  color: #f2d490;
+}
+.auroraModel__table .divRow:nth-child(5) .number, .auroraModel__table .divRow:nth-child(5) .auroraModel__title {
+  color: #c5c8a4;
 }
 
 .auroraVolunteer {
@@ -1681,6 +1954,7 @@ article blockquote p {
 }
 .about__photo {
   background-size: cover;
+  background-position: center center;
 }
 .about__photo--1 {
   background-image: url(asset-path("about1.jpg"));
@@ -1690,9 +1964,11 @@ article blockquote p {
 }
 .about__photo--3 {
   background-image: url(asset-path("banner__sponse.jpg"));
+  background-position: left center;
 }
 .about__photo--4 {
   background-image: url(asset-path("banner__aurora.jpg"));
+  background-position: right center;
 }
 .about__photo--5 {
   background-image: url(asset-path("about5.jpg"));

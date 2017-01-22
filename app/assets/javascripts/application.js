@@ -23,3 +23,4 @@
 //= require Chart.min
 //= require jquery.fancybox/jquery.fancybox
 //= require users
+//= require wow.js/wow

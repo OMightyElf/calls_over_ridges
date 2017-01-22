@@ -1,3 +1,7 @@
+html {
+  background: #fff;
+}
+
 .wrap {
   max-width: 1280px;
   margin: 0 auto;
@@ -13,12 +17,16 @@
 
 .main {
   position: relative;
+  padding-top: 75px;
 }
 
 body.menu--on {
   width: 100%;
   height: 100%;
   position: fixed;
+}
+body.indexHide .header {
+  top: -75px;
 }
 
 /* ==========================================================================
@@ -27,20 +35,27 @@ body.menu--on {
 .header {
   background-color: #fff;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-  position: relative;
-}
-.header__logo {
-  width: 200px;
-  height: 75px;
-  display: block;
-  float: left;
-  padding: 8px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  z-index: 999;
+  transition: top .5s;
+}
+.header__logo {
+  height: 75px;
+  display: block;
+  float: left;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-right: 20px;
 }
 .header__logo img {
-  width: 160px;
+  height: 75px;
 }
 .header__toggle {
   width: 75px;
@@ -178,8 +193,6 @@ body.menu--on {
   border-top: 5px solid #003471;
   text-align: center;
   background: #333;
-  padding-bottom: 30px;
-  padding-top: 45px;
   font-size: 14px;
 }
 .footer .wrap {
@@ -189,22 +202,18 @@ body.menu--on {
 .footer__logo {
   width: 25%;
   display: table-cell;
+  vertical-align: middle;
+  text-align: center;
 }
 .footer__logo img {
-  height: 65px;
-  opacity: 0.3;
-  -moz-transition: all .5s;
-  -o-transition: all .5s;
-  -webkit-transition: all .5s;
-  transition: all .5s;
-}
-.footer__logo img:hover {
-  opacity: 1;
+  width: 100px;
 }
 .footer__copyright {
   display: table-cell;
   width: 50%;
   vertical-align: middle;
+  padding-bottom: 30px;
+  padding-top: 45px;
 }
 .footer__copyright > div {
   font-size: 14px;
@@ -215,6 +224,8 @@ body.menu--on {
   margin-top: 0;
 }
 .footer__socialLink {
+  padding-bottom: 30px;
+  padding-top: 45px;
   width: 25%;
   vertical-align: middle;
   display: table-cell;
@@ -236,9 +247,6 @@ body.menu--on {
   /* ==========================================================================
      Header
      ========================================================================== */
-  .header {
-    position: relative;
-  }
   .header .wrap {
     text-align: center;
   }
@@ -309,12 +317,14 @@ body.menu--on {
     width: 100%;
   }
   .footer__copyright {
+    padding: 0;
     display: block;
     text-align: center;
     width: 100%;
     margin-top: 10px;
   }
   .footer__socialLink {
+    padding: 0;
     display: block;
     text-align: center;
     width: 100%;

@@ -1,8 +1,8 @@
 <footer class="footer">
   <div class="wrap clearfix">
-    <a href="../index.html" class="footer__logo">
-      <%= image_tag 'LOGO.png' %>
-    </a>
+    <%= link_to root_path, class: "footer__logo" do %>
+      <%= image_tag 'logo-white-big.png' %>
+    <% end %>
     <div class="footer__copyright">
       <div>Copyright CallsoverRidges. All rights reserved.</div>
       <div>Since 2015, Taipei</div>

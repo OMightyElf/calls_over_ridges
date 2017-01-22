@@ -19,6 +19,7 @@ $(function () {
 	});
 	$(".dropdown-button").dropdown({belowOrigin:true });
 
+	//¼Æ¦reffect
 	function counter() {
 		$(window).scroll(function () {
 			$('.counter').each(function () {
@@ -48,4 +49,6 @@ $(function () {
 		}).trigger('scroll');
 	}
 	counter();
+
+	new WOW().init();
 });
