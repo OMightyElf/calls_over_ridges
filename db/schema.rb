@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170117144052) do
+ActiveRecord::Schema.define(version: 20170122161243) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -83,10 +83,11 @@ ActiveRecord::Schema.define(version: 20170117144052) do
     t.string   "author"
     t.integer  "view_count",   default: 0
     t.string   "category"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.string   "photographer"
     t.integer  "file_type",    default: 0
+    t.boolean  "pinned",       default: false
   end
 
   create_table "settings", force: :cascade do |t|

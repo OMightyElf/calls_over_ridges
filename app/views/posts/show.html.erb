@@ -3,6 +3,11 @@
 		<div class="articleBanner__title">
 			<div class="articleBanner__main"><%= @post.title %></div>
 			<div class="articleBanner__sub"><%= @post.subtitle %></div>
+			<% if @post.has_video? %>
+				<div class="articleBanner__action">
+					<%= link_to '播放影片', @post.video.url, class: "btn fancybox fancybox.iframe" %>
+				</div>
+			<% end %>
 		</div>
 	</div>
 	<section class="section article">
@@ -27,7 +32,6 @@
 			<%= render partial: 'posts/partials/footer_post', collection: @latest_posts %>
 		</ul>
 	</section>
-
 </section>
 
 <% content_for :javascript do %>
@@ -39,6 +43,12 @@
 			}).trigger('resize');
 		}
 		resize();
+
+		$('.fancybox').fancybox({
+			padding: 0,
+			height: '100%',
+			width: '100%'
+		});
 	});
 </script>
 <% end %>

@@ -3,7 +3,7 @@ class PostDecorator < Draper::Decorator
   include Draper::LazyHelpers
 
   def publish_date
-  	object.publish_date.strftime("%Y/%m/%d")
+  	object.publish_date.try(:strftime, "%Y/%m/%d")
   end
   # Define presentation-specific methods here. Helpers are accessed through
   # `helpers` (aka `h`). You can override attributes, for example:

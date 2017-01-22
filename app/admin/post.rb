@@ -5,7 +5,9 @@ ActiveAdmin.register Post do
 								:author,
 								:content,
 								:status,
+								:pinned,
 								:category,
+								:file_type,
 								:publish_date,
 								:cover,
 								:cover_cache,
@@ -33,14 +35,10 @@ ActiveAdmin.register Post do
   end
 
   index do |post|
-  	column :file_type
-  	column :cover do |post|
-  	  post.cover.url("thumb")
-  	end
-  	column :video do |post|
-  	  post.video.url
-  	end
   	column :id
+  	column :file_type do |post|
+  	  I18n.t("enum.post.file_type.#{post.file_type}")
+  	end
   	column :user_id
   	column :title
   	column :subtitle
@@ -49,6 +47,13 @@ ActiveAdmin.register Post do
   	column :status
   	column :category
   	column :publish_date
+  	column :cover do |post|
+  	  post.cover.url("thumb")
+  	end
+  	column :video do |post|
+  	  post.video.url
+  	end
+  	column :pinned
   	actions default: true
   end
 
@@ -68,6 +73,7 @@ ActiveAdmin.register Post do
 					row :status
 					row :category
 					row :publish_date
+					row :pinned
 					row :cover do |post|
 						image_tag post.cover.url('small')
 					end
@@ -98,6 +104,7 @@ ActiveAdmin.register Post do
 			    : content_tag(:span, "no video page yet")
 			end
 			f.input :file_type, as: :radio, collection: Post.file_types.keys
+			f.input :pinned
 			f.input :title
 			f.input :subtitle
 			f.input :author
