@@ -1,5 +1,17 @@
 ActiveAdmin.register Post do
-	permit_params :user_id, :title, :subtitle, :author, :content, :status, :category, :publish_date, :cover, :cover_cache, :photographer
+	permit_params :user_id,
+								:title,
+								:subtitle,
+								:author,
+								:content,
+								:status,
+								:category,
+								:publish_date,
+								:cover,
+								:cover_cache,
+								:video,
+								:video_cache,
+								:photographer
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -21,12 +33,13 @@ ActiveAdmin.register Post do
   end
 
   index do |post|
+  	column :file_type
   	column :cover do |post|
-  	  image_tag post.cover.url("thumb")
+  	  post.cover.url("thumb")
   	end
-  	# column :video do |post|
-  	#   post.video.url
-  	# end
+  	column :video do |post|
+  	  post.video.url
+  	end
   	column :id
   	column :user_id
   	column :title
@@ -47,6 +60,7 @@ ActiveAdmin.register Post do
 				attributes_table  do
 					row :id
 					row :user_id
+					row :file_type
 					row :title
 					row :subtitle
 					row :author
@@ -57,9 +71,9 @@ ActiveAdmin.register Post do
 					row :cover do |post|
 						image_tag post.cover.url('small')
 					end
-					# row :video do |post|
-					#   video_tag post.video.url
-					# end
+					row :video do |post|
+					  video_tag post.video.url
+					end
 					row :content do |post|
 						raw(post.content)
 					end
@@ -71,20 +85,19 @@ ActiveAdmin.register Post do
 
 	form do |f|
 		f.inputs do
-			# t.string   :cover
-			# t.string   :video
+			f.input :user_id, as: :select, collection: User.all, member_label: Proc.new { |x| "#{x.name}(#{x.email})" }, include_blank: false
 			f.inputs "文章圖片", multipart: true do
 			  f.input :cover, as: :file, hint: f.object.cover.present? \
 			    ? image_tag(f.object.cover.url(:thumb))
 			    : content_tag(:span, "no cover page yet")
 			  f.input :cover_cache, as: :hidden
 			end
-			# f.inputs "文章影片", multipart: true do
-			#   f.input :video, as: :file, hint: f.object.video.present? \
-			#     ? video_tag(f.object.video.url)
-			#     : content_tag(:span, "no video page yet")
-			# end
-			f.input :user_id, as: :select, collection: User.all, member_label: Proc.new { |x| "#{x.name}(#{x.email})" }, include_blank: false
+			f.inputs "文章影片", multipart: true do
+			  f.input :video, as: :file, hint: f.object.video.present? \
+			    ? video_tag(f.object.video.url)
+			    : content_tag(:span, "no video page yet")
+			end
+			f.input :file_type, as: :radio, collection: Post.file_types.keys
 			f.input :title
 			f.input :subtitle
 			f.input :author
