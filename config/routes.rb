@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   # devise_for :users
   devise_for :users, controllers: { registrations: "users/registrations" }
-  resources :users
+  resources :users do
+    post 'save_receipt', to: 'users#save_receipt'
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

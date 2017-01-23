@@ -16,19 +16,21 @@
 		<div class="h2 fBold fRed">繳款成功後</div>
 		<p>請您務必在匯款期限內完成ATM 匯款程序，並在此回傳您的繳款資訊 或 上傳繳款憑證圖片，就完成繳款程序囉！</p>
 	</div>
+	<%= simple_form_for @user, url: user_save_receipt_path(user_id: @user.id), method: :post do |f| %>
 	<div class="col m6 s12">
 		<div class="file-field clearfix">
 			<div class="fileBtn h4 fr">
 				<span>上傳繳款證明圖片</span>
-				<input type="file">
+				<%= f.file_field :receipt_url %>
 			</div>
 		</div>
 		<p>
-			<textarea placeholder="留言您的末五碼／匯款帳戶名稱。（此平台透過加密保護，資料完全保密）"></textarea>
+			<%= f.input_field :payment_info, place_holder: '留言您的末五碼／匯款帳戶名稱。（此平台透過加密保護，資料完全保密）' %>
 		</p>
 		<div class="actionArea clearfix">
-			<a href="#" class="btn btn--red fr">送出</a>
+			<%= f.submit '送出', class: 'btn btn--red fr' %>
 			<a href="#" class="btn btn--rev btn--red btn-reset fr">取消</a>
 		</div>
 	</div>
+	<% end %>
 </div>

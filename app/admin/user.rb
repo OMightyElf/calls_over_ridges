@@ -41,7 +41,10 @@ ActiveAdmin.register User do
 					row :money
 					row :paid_at
 					row :need_receipt
-					row :receipt_url
+					row :receipt_url do |user|
+						image_tag user.receipt_url.url
+					end
+					row :payment_info
 					row :receipt_state do |user|
 						I18n.t("enum.user.receipt_state.#{user.receipt_state}")
 					end
@@ -73,6 +76,7 @@ ActiveAdmin.register User do
 		column :paid_at
 		column :need_receipt
 		column :receipt_url
+		column :payment_info
 		column :receipt_state do |user|
 			I18n.t("enum.user.receipt_state.#{user.receipt_state}")
 		end
@@ -97,6 +101,7 @@ ActiveAdmin.register User do
 			f.input :need_receipt, as: :boolean
 			f.input :receipt_state, as: :radio, collection: User.receipt_states.keys, include_blank: false
 			f.input :receipt_url
+			f.input :payment_info
 			f.input :current_state, as: :radio, collection: User.current_states.keys, include_blank: false
 		end
 		f.actions

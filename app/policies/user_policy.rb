@@ -23,6 +23,10 @@ class UserPolicy < ApplicationPolicy
     update?
   end
 
+  def save_receipt?
+    update?
+  end
+
   class Scope
     attr_reader :user, :scope
 

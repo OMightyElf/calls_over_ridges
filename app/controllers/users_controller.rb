@@ -9,17 +9,23 @@ class UsersController < ApplicationController
     @message = Message.new
   end
 
-
   def save_receipt
-    @user = User.find(params[:id])
+    @user = User.find(params[:user_id])
     authorize @user
     @user.update(user_params)
+    @user.payment_needs_confirmation!
+    redirect_to user_path(@user)
   end
 
-protected
+  private
 
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:receipt_url)
+  def user_params
+    params.require(:user).permit(:receipt_url, :payment_info)
   end
 
+# protected
+
+#   def configure_permitted_parameters
+#     devise_parameter_sanitizer.permit(:receipt_url)
+#   end
 end
