@@ -17,6 +17,8 @@ class User < ActiveRecord::Base
   has_many :messages
   accepts_nested_attributes_for :children
 
+  mount_uploader :receipt_url, PictureUploader
+
   def first_child
   	children.first
   end

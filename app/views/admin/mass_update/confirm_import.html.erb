@@ -1,0 +1,10 @@
+確認匯入中
+<table>
+<% (@raw_list.first_row..@raw_list.last_row).each do |i| %>
+<tr class="<% if i==1 %>green<%end%>">
+	<% @raw_list.row(i).each do |td| %>
+	<td><%=td%></td>
+	<% end %>
+</tr>
+<% end %>
+</table>

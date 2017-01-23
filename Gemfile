@@ -32,6 +32,8 @@ gem 'draper'
 gem 'simple_form'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'pundit'
+gem 'remotipart', '~> 1.2'
+gem "roo", "~> 2.7.0"
 
 group :production do
   gem "rails_12factor"
