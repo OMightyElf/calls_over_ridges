@@ -10,3 +10,16 @@
 td>img {
 	width: 50%;
 }
+
+tr.green{
+	color: green;
+	td{
+		font-weight:bold;
+	}
+}
+tr.blue{
+	color: blue;
+	td{
+		font-weight:bold;
+	}
+}

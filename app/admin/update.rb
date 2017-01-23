@@ -14,12 +14,15 @@ ActiveAdmin.register Update do
 #   permitted
 # end
 
+  action_item :mass_update do
+    link_to "匯入更新", admin_mass_update_path
+  end
+
   controller do
     def scoped_collection
       Update.all.includes(:child)
     end
   end
-
 
 	show do
 		columns do
@@ -72,7 +75,6 @@ ActiveAdmin.register Update do
 		end
 		actions defaults: true
 	end
-
 
 	form do |f|
 		f.inputs do
