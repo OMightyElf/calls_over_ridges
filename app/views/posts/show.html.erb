@@ -1,3 +1,9 @@
+
+<!-- 我知道這很醜  但沒辦法  他gem沒維護  原始檔又超肥 -->
+<script src="https://cdn.jsdelivr.net/mediaelement/latest/mediaelement-and-player.min.js"></script>
+<link href="https://cdn.jsdelivr.net/mediaelement/latest/mediaelementplayer.css" rel="stylesheet">
+
+
 <section class="main">
 	<div class="articleBanner" style="<%= inline_background_image(@post.cover.url('large')) %>">
 		<div class="articleBanner__title">
@@ -5,7 +11,14 @@
 			<div class="articleBanner__sub"><%= @post.subtitle %></div>
 			<% if @post.has_video? %>
 				<div class="articleBanner__action">
+
+				<!-- 影片就是這葛 -->
+				<video class="mejs-player" controls="controls">
+					<source src="<%= @post.video.url %>" />
+				</video>
+
 					<%= link_to '播放影片', @post.video.url, class: "btn fancybox fancybox.iframe" %>
+				
 				</div>
 			<% end %>
 		</div>
