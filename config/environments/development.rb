@@ -8,7 +8,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: "http://calls-over-ridges.dev" }
   config.action_mailer.smtp_settings = {
     address: ENV['MAILER_ADDRESS'],
-    port: 587,
+    port: 25,
     domain: ENV['MAILER_DOMAIN'],
     authentication: 'login',
     user_name: ENV['MAILER_USER_NAME'],
