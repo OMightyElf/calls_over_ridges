@@ -15,18 +15,21 @@ ActiveAdmin.register_page "Mass Update" do
 
     (2..@raw_list.last_row).each do |i|
       row = @raw_list.row(i)
-      child = Children.find_by_serial_num((row[0]).to_i)
-      if child != nil
-        u = Update.new
-        u.update_time = Time.now
-        u.attendance_rate = row[6].to_f  #attendance rate
-        u.reading_report_amount = row[7].to_i #reading reports
-        u.grade = row[8].to_i #grade
-        u.family_income = row[9].to_i #family incone
+      child = Child.find_by_serial_number((row[2]).to_i)
+      if child.present?
+        u = child.updates.where(update_year: row[0], update_month: row[1]).first.presence || child.updates.new
+        u.update_year = row[0]
+        u.update_month = row[1]
+        u.current_school = row[3]
+        u.current_grade = row[4]
+        u.attendence_rate = row[5].to_f/100  #attendance rate
+        u.reading_report_amount = row[6].to_i #reading reports
+        u.grade = row[7].to_i #grade
+        u.family_income = row[8].to_i #family incone
+        u.height = row[9].to_f #weight
         u.weight = row[10].to_f #height
-        u.height = row[11].to_f #weight
-        u.study_hours = row[12].to_i #daily study hr
-        u.comment = row[13]
+        u.study_hours = row[11].to_i #daily study hr
+        u.comment = row[12]
         u.save
       end
     end

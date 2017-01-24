@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170124135627) do
+ActiveRecord::Schema.define(version: 20170124182925) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -102,7 +102,6 @@ ActiveRecord::Schema.define(version: 20170124135627) do
   add_index "settings", ["thing_type", "thing_id", "var"], name: "index_settings_on_thing_type_and_thing_id_and_var", unique: true, using: :btree
 
   create_table "updates", force: :cascade do |t|
-    t.datetime "update_time"
     t.float    "attendence_rate"
     t.integer  "reading_report_amount"
     t.integer  "grade"
@@ -119,6 +118,8 @@ ActiveRecord::Schema.define(version: 20170124135627) do
     t.integer  "child_id"
     t.string   "current_school"
     t.string   "current_grade"
+    t.integer  "update_year"
+    t.integer  "update_month"
   end
 
   create_table "users", force: :cascade do |t|

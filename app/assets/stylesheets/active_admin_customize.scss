@@ -23,3 +23,9 @@ tr.blue{
 		font-weight:bold;
 	}
 }
+
+form input[type=submit], a.button, a:link.button, a:visited.button, a:hover.button{
+	&.gray {
+		background-color: #aaa !important;
+	}
+}

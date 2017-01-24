@@ -37,7 +37,7 @@ ActiveAdmin.register Child do
 					row :user do |child|
 						table_for child.user do
 							column do |user|
-								link_to user.name, admin_user_path(user)
+								link_to user.name, admin_user_path(user) if child.user
 							end
 						end
 					end
