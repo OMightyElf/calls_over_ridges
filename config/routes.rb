@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   # root 'welcome#index'
 
   root 'pages#index'
-  get 'aboutus', to: 'pages#aboutus'
+  get 'about', to: 'pages#about'
   get 'sponsor_project', to: 'pages#sponsor_project'
   get 'aurora', to: 'pages#aurora'
   get 'about', to: 'pages#about'
