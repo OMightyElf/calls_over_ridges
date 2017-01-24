@@ -14,7 +14,8 @@
  *= require froala
  *= require font-awesome
  *= require active_admin_customize
-
+ *= require jquery.fileupload
+ *= require jquery.fileupload-ui
  */
 
 @import "active_admin/mixins";

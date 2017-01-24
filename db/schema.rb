@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170123172800) do
+ActiveRecord::Schema.define(version: 20170124135627) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,12 +43,6 @@ ActiveRecord::Schema.define(version: 20170123172800) do
     t.integer  "status"
   end
 
-  create_table "attachments", force: :cascade do |t|
-    t.string   "picture"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "children", force: :cascade do |t|
     t.string   "name"
     t.string   "serial_number"
@@ -69,6 +63,12 @@ ActiveRecord::Schema.define(version: 20170123172800) do
     t.integer  "user_id"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+  end
+
+  create_table "photo_attachments", force: :cascade do |t|
+    t.string   "picture"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "posts", force: :cascade do |t|

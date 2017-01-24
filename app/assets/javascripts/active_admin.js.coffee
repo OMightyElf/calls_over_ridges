@@ -1,6 +1,7 @@
 //= require active_admin/base
 //= require active_admin/select2
 //= require froala
+//= require jquery-fileupload
 
 
 $(document).ready ->

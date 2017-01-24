@@ -14,10 +14,13 @@
  *= require font-awesome
  *= require materialize
  *= require layout
+ *= require jquery.fileupload
+ *= require jquery.fileupload-ui
  *= require main
  *= require mobile
  *= require bxslider
  *= require posts
+
  */
 
 @import 'jquery.fancybox/jquery.fancybox';
