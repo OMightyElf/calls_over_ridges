@@ -9,7 +9,7 @@ ActiveAdmin.register Child do
 #
 	permit_params do
 		permitted = [:name, :serial_number, :gender, :birthday, :supported_at, :support_until, :supporter_id,
-									updates_attributes: [:update_time, :current_school, :current_grade, :attendence_rate,
+									updates_attributes: [:update_year, :update_month, :current_school, :current_grade, :attendence_rate,
 																				:reading_report_amount, :grade, :family_income, :weight,
 																				:height, :study_hours, :comment]]
 		permitted
@@ -47,8 +47,11 @@ ActiveAdmin.register Child do
 				h1 "更新資料"
 				child.updates.each do |update|
 					attributes_table do
-						row :update_time do
-							update.update_time
+						row :update_year do
+							update.update_year
+						end
+						row :update_month do
+							update.update_month
 						end
 						row :current_school do
 							update.current_school
@@ -113,7 +116,8 @@ ActiveAdmin.register Child do
 		end
 
 		f.has_many :updates, header: "月更新資料" do |update|
-			update.input :update_time, as: :datetime_picker, value: Time.now
+			update.input :update_year
+			update.input :update_month
 			update.input :current_school
 			update.input :current_grade
 			update.input :attendence_rate

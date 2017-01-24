@@ -1,5 +1,5 @@
 ActiveAdmin.register Update do
-	permit_params :update_time, :current_school, :current_grade, :attendence_rate, :reading_report_amount, :grade, :family_income, :weight, :height, :study_hours, :child_id
+	permit_params :update_year, :update_month, :current_school, :current_grade, :attendence_rate, :reading_report_amount, :grade, :family_income, :weight, :height, :study_hours, :child_id
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -29,7 +29,8 @@ ActiveAdmin.register Update do
 			column span: 4 do
 				h1 "月更新資料"
 				attributes_table  do
-					row :update_time
+					row :update_year
+					row :update_month
 					row :current_school
 					row :current_grade
 					row :attendence_rate
@@ -54,7 +55,8 @@ ActiveAdmin.register Update do
 	end
 
 	index do
-		column :update_time
+		column :update_year
+		column :update_month
 		column :current_school
 		column :current_grade
 		column :attendence_rate
@@ -81,7 +83,8 @@ ActiveAdmin.register Update do
 			f.semantic_errors *f.object.errors.keys
 
 			f.input :child, as: :select2, collection: Child.all, include_blank: false
-			f.input :update_time, as: :datetime_picker
+			f.input :update_year
+			f.input :update_month
 			f.input :current_school
 			f.input :current_grade
 			f.input :attendence_rate

@@ -5,7 +5,7 @@ class ChildrenController < ApplicationController
     @user = current_user
     @child = Child.find(params[:id])
     authorize @child
-    updates = @child.updates.order(update_time: :desc).limit(6)
+    updates = @child.updates.order(update_year: :desc, update_month: :desc).limit(6)
     @update = updates.first
     @last_update = updates.first(2).last
     @message = Message.new

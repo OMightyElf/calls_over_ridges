@@ -1,7 +1,7 @@
 module Children
 	module LatestUpdatesComparisonMethods
 		def comparison(attribute)
-			updates = self.updates.order(update_time: :desc)
+			updates = self.updates.order(update_year: :desc, update_month: :desc)
 			lastest = self.updates.first.send(attribute)
 			last_time = self.updates.count > 1 ? self.updates.first(2).last.send(attribute) : 0
 

@@ -63,7 +63,8 @@ zh-TW:
         created_at: 建立時間
         updated_at: 更新時間
       update:
-        update_time: 更新時間
+        update_year: 更新年份
+        update_month: 更新月份
         attendence_rate: 出席率（百分比）
         reading_report_amount: 讀書心得數量
         grade: 成績表現
