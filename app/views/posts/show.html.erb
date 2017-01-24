@@ -1,62 +1,57 @@
-
 <!-- 我知道這很醜  但沒辦法  他gem沒維護  原始檔又超肥 -->
 <script src="https://cdn.jsdelivr.net/mediaelement/latest/mediaelement-and-player.min.js"></script>
 <link href="https://cdn.jsdelivr.net/mediaelement/latest/mediaelementplayer.css" rel="stylesheet">
 
-
-<section class="main">
-	<div class="articleBanner" style="<%= inline_background_image(@post.cover.url('large')) %>">
-		<div class="articleBanner__title">
-			<div class="articleBanner__main"><%= @post.title %></div>
-			<div class="articleBanner__sub"><%= @post.subtitle %></div>
-			<% if @post.has_video? %>
-				<div class="articleBanner__action">
-				<!-- 影片就是這葛 -->
-					<%= link_to '播放影片',"", class: "btn fancybox fancybox.iframe" %>
-				</div>
-			<% end %>
+<div class="articleBanner" style="<%= inline_background_image(@post.cover.url('large')) %>">
+	<div class="articleBanner__title">
+		<div class="articleBanner__main"><%= @post.title %></div>
+		<div class="articleBanner__sub"><%= @post.subtitle %></div>
+		<% if @post.has_video? %>
+		<div class="articleBanner__action">
+			<!-- 影片就是這葛 -->
+			<%= link_to '播放影片',"", class: "btn fancybox fancybox.iframe" %>
 		</div>
+		<% end %>
 	</div>
-	<section class="section article">
-		<div class="wrap">
-			<div class="articleInfo clearfix">
-				<div class="articleInfo__left">
-					<p><%= "文字：#{@post.author}" %></p>
-					<p><%= "攝影：#{@post.photographer}" %></p>
-				</div>
-				<div class="articleInfo__right">
-					<p><%= @post.category %></p>
-					<p><%= @post.decorate.publish_date %></p>
-				</div>
+</div>
+<section class="section article">
+	<div class="wrap">
+		<div class="articleInfo clearfix">
+			<div class="articleInfo__left">
+				<p><%= "文字：#{@post.author}" %></p>
+				<p><%= "攝影：#{@post.photographer}" %></p>
 			</div>
-			<article>
-				<%= raw @post.content %>
-			</article>
+			<div class="articleInfo__right">
+				<p><%= @post.category %></p>
+				<p><%= @post.decorate.publish_date %></p>
+			</div>
 		</div>
-	</section>
-	<section class="section">
-		<ul class="recommend clearfix">
-			<%= render partial: 'posts/partials/footer_post', collection: @latest_posts %>
-		</ul>
-	</section>
+		<article>
+			<%= raw @post.content %>
+		</article>
+	</div>
+</section>
+<section class="section">
+	<ul class="recommend clearfix">
+		<%= render partial: 'posts/partials/footer_post', collection: @latest_posts %>
+	</ul>
 </section>
 
 <% content_for :javascript do %>
 <script>
-	$(function () {
-		var resize = function () {
-			$(window).resize(function () {
-				$('.articleBanner').height($(window).height() - $('.header').outerHeight());
-			}).trigger('resize');
-		}
-		resize();
-
-		$('.fancybox').fancybox({
-			padding: 0,
-			height: '100%',
-			width: '100%',
-			content: '<video class="mejs-player video_in_fancybox" controls="controls" autoplay="autoplay" src="<%= @post.video.url %>">'
-		});
+$(function () {
+	var resize = function () {
+		$(window).resize(function () {
+			$('.articleBanner').height($(window).height() - $('.header').outerHeight());
+		}).trigger('resize');
+	}
+	resize();
+	$('.fancybox').fancybox({
+		padding: 0,
+		height: '100%',
+		width: '100%',
+		content: '<video class="mejs-player video_in_fancybox" controls="controls" autoplay="autoplay" src="<%= @post.video.url %>">'
 	});
+});
 </script>
 <% end %>

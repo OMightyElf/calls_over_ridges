@@ -1,49 +1,46 @@
-<section class="main">
-	<% unless @user.associated_with_children? %>
-	<section class="section bgGrey">
-		<div class="wrap wrap--s">
-			<div class="title title--red">註冊繳款資訊</div>
-			<%= render partial: 'users/partials/support_progress' %>
-			<%= render partial: 'users/partials/money_transfer_action' if @user.havent_paid? %>
-		</div>
-	</section>
-	<% end %>
-	<section class="section memberPage">
-		<%= render 'devise/registrations/edit' %>
-	</section>
-	<% if @user.support_date.present? %>
-		<%= render partial: 'users/partials/support_info' %>
-	<% end %>
-	<ul class="sideTool">
-		<li>
-			<a href="#message" class="icon iTool__message waves-effect waves-light" data-fancybox="true"></a>
-		</li>
-	</ul>
-	<%= render partial: 'shared/partials/message_board' %>
+<% unless @user.associated_with_children? %>
+<section class="section bgGrey">
+	<div class="wrap wrap--s">
+		<div class="title title--red">註冊繳款資訊</div>
+		<%= render partial: 'users/partials/support_progress' %>
+		<%= render partial: 'users/partials/money_transfer_action' if @user.havent_paid? %>
+	</div>
 </section>
+<% end %>
+<section class="section memberPage">
+</section>
+<% if @user.support_date.present? %>
+	<%= render partial: 'users/partials/support_info' %>
+<% end %>
+<ul class="sideTool">
+	<li>
+		<a href="#message" class="icon iTool__message waves-effect waves-light" data-fancybox="true"></a>
+	</li>
+</ul>
+<%= render partial: 'shared/partials/message_board' %>
 
 <% content_for :javascript do %>
 <script>
-	$(function () {
-		$('#editData').click(function (e) {
-			e.preventDefault();
-			$('.input-field').fadeIn();
-			$('.value-field').hide();
-			$(this).hide();
-			$('#finishEdit').fadeIn();
-			$('#cancelEdit').fadeIn();
-		});
-
-		$('#cancelEdit').click(function (e) {
-			e.preventDefault();
-			$('#finishEdit').hide();
-			$('#cancelEdit').hide();
-			$('#editData').fadeIn();
-			$('.input-field').hide();
-			$('.value-field').fadeIn();
-		});
-		readData();
+$(function () {
+	$('#editData').click(function (e) {
+		e.preventDefault();
+		$('.input-field').fadeIn();
+		$('.value-field').hide();
+		$(this).hide();
+		$('#finishEdit').fadeIn();
+		$('#cancelEdit').fadeIn();
 	});
+
+	$('#cancelEdit').click(function (e) {
+		e.preventDefault();
+		$('#finishEdit').hide();
+		$('#cancelEdit').hide();
+		$('#editData').fadeIn();
+		$('.input-field').hide();
+		$('.value-field').fadeIn();
+	});
+	readData();
+});
 </script>
 
 <% end %>

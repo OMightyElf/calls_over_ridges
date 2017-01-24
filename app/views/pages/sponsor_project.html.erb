@@ -1,155 +1,153 @@
-<section class="main">
-  <div class="banner banner--sponse">
-    <div class="banner__title">遠山資助平台</div>
-  </div>
-  <section class="section">
-    <div class="wrap">
-      <div class="counter">
-        <div class="counter__title">
-          <span class="counter__number" data-duration="3000" data-easing="easeInOutQuart" data-count="<%= Setting.how_many_children_to_be_supported.presence || 250 %>"><%= Setting.how_many_children_to_be_supported %></span>
-          名孩子
-        </div>
-        <div class="counter__container">正在等待資助</div>
+<div class="banner banner--sponse">
+  <div class="banner__title">遠山資助平台</div>
+</div>
+<section class="section">
+  <div class="wrap">
+    <div class="counter">
+      <div class="counter__title">
+        <span class="counter__number" data-duration="3000" data-easing="easeInOutQuart" data-count="<%= Setting.how_many_children_to_be_supported.presence || 250 %>"><%= Setting.how_many_children_to_be_supported %></span>
+        名孩子
       </div>
-    </div>
-  </section>
-  <section class="section">
-    <div class="sponseOrigin">
-      <div class="sponseOrigin__title">村落長老的獨白：<br>每一個孩子都夢想著改變未來</div>
-      <div class="sponseOrigin__article">
-        <p>
-          &nbsp;&nbsp;&nbsp;&nbsp;「我一輩子沒離開這裡也沒受過教育，從我還是一個小孩開始，我的一生就屬於這幾座山。但我的兒子們考上了大學，在外地城市念書跟就業了，我的孩子完成了夢想，那是我最開心的一天！身為一個鐵匠，生活非常忙碌又賺不到什麼錢，但是我總是堅持孩子的教育，我相信教育可以讓窮人翻身，雖然我從未能經歷也不清楚那些轉變如何發生，但是我真的很老了，這輩子倒是目睹了很多孩子因為教育而改變生命。
-        </p>
-        <p>
-          &nbsp;&nbsp;&nbsp;&nbsp;這個村落本身就貧窮，學校資源也非常不夠。地震發生時，大家就只能盡力維持溫飽，直到那些震後前來幫助我們的組織離開之後，我們才發現好多孩子再也不能回去上學了。其實從十幾年前，就有好多組織曾經來到這裡，他們蓋校舍、教導知識，然而都未曾回來，地震更抹去了他們曾經的幫助。
-        </p>
-        <p>
-          &nbsp;&nbsp;&nbsp;&nbsp;教育被遺忘了！為了眼前的生活，家長們必須犧牲能夠改變孩童生命的教育。我知道改變不會在短時間發生，教育是長久且困難的事，但是我的孩子的確成功了。這些孩子都是夢想家，因為他們渴望改變未來，他們不只需要不間斷的教育資金，更需要持續的陪伴與關注。」
-        </p>
-      </div>
-      <div class="sponseOrigin__photo">
-        <%= image_tag 'sponse__photo.jpg' %>
-      </div>
-    </div>
-  </section>
-  <section class="section">
-    <div class="wrap">
-      <div class="counter">
-        <div class="counter__title">
-          <span class="counter__number" data-duration="3000" data-easing="easeInOutQuart" data-count="<%= Setting.how_many_dreamers.presence || 51 %>"><%= Setting.how_many_dreamers %></span>
-          位夢想家
-        </div>
-        <div class="counter__container">已經踏上旅程</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="sponseIdeal clearfix">
-      <div class="sponseIdeal__left parallax-container">
-        <div class="parallax">
-          <%= image_tag 'sponseIdeal__left.jpg' %>
-        </div>
-      </div>
-      <div class="sponseIdeal__mid">
-        <div class="sponseIdeal__title">平台理念：陪年幼的夢想家走出貧窮</div>
-        <div class="sponseIdeal__article">
-          <p>
-            往往在冷冽的清晨時分，尼泊爾駐點團隊成員Maya Sherpa早已走進山林間的小徑，逐一前往每一位孩子的家進行紀錄。
-            同一時間，孩子穿著藍色制服由家門口出發前往學校，Maya會在山路上遇見孩子們，她們談笑、問候、暫別，朝不同方向繼續前進。
-            Maya前往紀錄孩子真實的現在，而孩子則奔向未來......
-          </p>
-          <p>
-            我們希望能如此貼近每一位受資助的孩子，讓每一位孩子感覺到自己被支持，
-            並且是值得為自己放手一搏的！比起金錢，其實驅動孩子前進的關鍵是資助者的長期關心。
-          </p>
-          <p>
-            如同當地長老的獨白，透過教育改變人生並非短期服務能完成的事，
-            因此「長期」是我們一貫的堅持，有溫度的資助更是我們打造平台的初衷。對於第一批已經受到資助的年幼夢想家，
-            以及往後每一位資助兒童來說，資助將至少長達五年。
-
-          </p>
-          <p>
-            一個月孩子只需要600元台幣，就能獲得穩定的教育以及溫飽。
-            一個尼泊爾孩子終身的教育費用是5萬塊台幣。在台灣，5萬塊台幣能買許多東西，精緻的首飾、高級腳踏車、名牌包包…….
-            在尼泊爾，5萬塊卻能支持一個孩子的終身教育。
-          </p>
-          <p>
-            如果你有能力成就一個孩子翻轉生命的夢想，你願意嗎？
-          </p>
-        </div>
-      </div>
-      <div class="sponseIdeal__right parallax-container">
-        <div class="parallax">
-          <%= image_tag 'sponseIdeal__right.jpg' %>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section">
-    <div class="wrap">
-      <div class="title title--red">學習目標追蹤</div>
-      <div class="studyTarget">
-        <ul>
-          <li>
-            <div class="h2 fBold">上學出席率</div>
-            <div class="h3">老師紀錄孩童出席狀況</div>
-          </li>
-          <li>
-            <div class="h2 fBold">讀書報告</div>
-            <div class="h3">每個月至少閱讀3篇</div>
-          </li>
-          <li>
-            <div class="h2 fBold">成績表現</div>
-            <div class="h3">追蹤記錄孩子的學習狀況</div>
-          </li>
-        </ul>
-        <div class="tac">
-          在發放資助金的同時，團隊訂定三個學習目標鼓勵孩子學習，詳實記錄追蹤每個月孩子的學習狀況。
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="wrap">
-      <div class="title title--red">資助金傳遞</div>
-      <div class="steps">
-        <ul class="h2">
-          <li>ATM 完成繳款  </li>
-          <li>基金會收款傳遞</li>
-          <li>當地社工發放</li>
-          <li>相關證明文件回傳</li>
-        </ul>
-        <div class="tac">
-          團隊秉持透明化政策：由合作基金會完成收款，附上資助金發放證明；交予當地社工舉辦資助金發放會，並回傳家長簽收等證明文件。
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="wrap">
-      <div class="title title--red">經濟研究</div>
-      <div class="research">
-        <div class="research__img">
-        <%= image_tag 'research.png' %>
-        </div>
-        <div class="tac">
-          我們更與臺大經濟系、政大國發所教授合作執行經濟研究計劃，深入探討當地貧窮背後的潛在原因，嘗試設計出更完善的服務模式
-        </div>
-      </div>
-    </div>
-  </section>
-  <div class="banner banner--createAccount">
-    <div class="banner__title">
-      <p>如果你有能力改變一個孩子，<br>你願意嗎？</p>
-    </div>
-    <div class="banner__link">
-      <%= link_to '成為資助人', new_user_registration_path, class: "btn btn--rev h4" %>
+      <div class="counter__container">正在等待資助</div>
     </div>
   </div>
 </section>
+<section class="section">
+  <div class="sponseOrigin">
+    <div class="sponseOrigin__title">村落長老的獨白：<br>每一個孩子都夢想著改變未來</div>
+    <div class="sponseOrigin__article">
+      <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;「我一輩子沒離開這裡也沒受過教育，從我還是一個小孩開始，我的一生就屬於這幾座山。但我的兒子們考上了大學，在外地城市念書跟就業了，我的孩子完成了夢想，那是我最開心的一天！身為一個鐵匠，生活非常忙碌又賺不到什麼錢，但是我總是堅持孩子的教育，我相信教育可以讓窮人翻身，雖然我從未能經歷也不清楚那些轉變如何發生，但是我真的很老了，這輩子倒是目睹了很多孩子因為教育而改變生命。
+      </p>
+      <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;這個村落本身就貧窮，學校資源也非常不夠。地震發生時，大家就只能盡力維持溫飽，直到那些震後前來幫助我們的組織離開之後，我們才發現好多孩子再也不能回去上學了。其實從十幾年前，就有好多組織曾經來到這裡，他們蓋校舍、教導知識，然而都未曾回來，地震更抹去了他們曾經的幫助。
+      </p>
+      <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;教育被遺忘了！為了眼前的生活，家長們必須犧牲能夠改變孩童生命的教育。我知道改變不會在短時間發生，教育是長久且困難的事，但是我的孩子的確成功了。這些孩子都是夢想家，因為他們渴望改變未來，他們不只需要不間斷的教育資金，更需要持續的陪伴與關注。」
+      </p>
+    </div>
+    <div class="sponseOrigin__photo">
+      <%= image_tag 'sponse__photo.jpg' %>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="counter">
+      <div class="counter__title">
+        <span class="counter__number" data-duration="3000" data-easing="easeInOutQuart" data-count="<%= Setting.how_many_dreamers.presence || 51 %>"><%= Setting.how_many_dreamers %></span>
+        位夢想家
+      </div>
+      <div class="counter__container">已經踏上旅程</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="sponseIdeal clearfix">
+    <div class="sponseIdeal__left parallax-container">
+      <div class="parallax">
+        <%= image_tag 'sponseIdeal__left.jpg' %>
+      </div>
+    </div>
+    <div class="sponseIdeal__mid">
+      <div class="sponseIdeal__title">平台理念：陪年幼的夢想家走出貧窮</div>
+      <div class="sponseIdeal__article">
+        <p>
+          往往在冷冽的清晨時分，尼泊爾駐點團隊成員Maya Sherpa早已走進山林間的小徑，逐一前往每一位孩子的家進行紀錄。
+          同一時間，孩子穿著藍色制服由家門口出發前往學校，Maya會在山路上遇見孩子們，她們談笑、問候、暫別，朝不同方向繼續前進。
+          Maya前往紀錄孩子真實的現在，而孩子則奔向未來......
+        </p>
+        <p>
+          我們希望能如此貼近每一位受資助的孩子，讓每一位孩子感覺到自己被支持，
+          並且是值得為自己放手一搏的！比起金錢，其實驅動孩子前進的關鍵是資助者的長期關心。
+        </p>
+        <p>
+          如同當地長老的獨白，透過教育改變人生並非短期服務能完成的事，
+          因此「長期」是我們一貫的堅持，有溫度的資助更是我們打造平台的初衷。對於第一批已經受到資助的年幼夢想家，
+          以及往後每一位資助兒童來說，資助將至少長達五年。
+
+        </p>
+        <p>
+          一個月孩子只需要600元台幣，就能獲得穩定的教育以及溫飽。
+          一個尼泊爾孩子終身的教育費用是5萬塊台幣。在台灣，5萬塊台幣能買許多東西，精緻的首飾、高級腳踏車、名牌包包…….
+          在尼泊爾，5萬塊卻能支持一個孩子的終身教育。
+        </p>
+        <p>
+          如果你有能力成就一個孩子翻轉生命的夢想，你願意嗎？
+        </p>
+      </div>
+    </div>
+    <div class="sponseIdeal__right parallax-container">
+      <div class="parallax">
+        <%= image_tag 'sponseIdeal__right.jpg' %>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="title title--red">學習目標追蹤</div>
+    <div class="studyTarget">
+      <ul>
+        <li>
+          <div class="h2 fBold">上學出席率</div>
+          <div class="h3">老師紀錄孩童出席狀況</div>
+        </li>
+        <li>
+          <div class="h2 fBold">讀書報告</div>
+          <div class="h3">每個月至少閱讀3篇</div>
+        </li>
+        <li>
+          <div class="h2 fBold">成績表現</div>
+          <div class="h3">追蹤記錄孩子的學習狀況</div>
+        </li>
+      </ul>
+      <div class="tac">
+        在發放資助金的同時，團隊訂定三個學習目標鼓勵孩子學習，詳實記錄追蹤每個月孩子的學習狀況。
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="title title--red">資助金傳遞</div>
+    <div class="steps">
+      <ul class="h2">
+        <li>ATM 完成繳款  </li>
+        <li>基金會收款傳遞</li>
+        <li>當地社工發放</li>
+        <li>相關證明文件回傳</li>
+      </ul>
+      <div class="tac">
+        團隊秉持透明化政策：由合作基金會完成收款，附上資助金發放證明；交予當地社工舉辦資助金發放會，並回傳家長簽收等證明文件。
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="title title--red">經濟研究</div>
+    <div class="research">
+      <div class="research__img">
+      <%= image_tag 'research.png' %>
+      </div>
+      <div class="tac">
+        我們更與臺大經濟系、政大國發所教授合作執行經濟研究計劃，深入探討當地貧窮背後的潛在原因，嘗試設計出更完善的服務模式
+      </div>
+    </div>
+  </div>
+</section>
+<div class="banner banner--createAccount">
+  <div class="banner__title">
+    <p>如果你有能力改變一個孩子，<br>你願意嗎？</p>
+  </div>
+  <div class="banner__link">
+    <%= link_to '成為資助人', new_user_registration_path, class: "btn btn--rev h4" %>
+  </div>
+</div>
 
 <% content_for :javascript do %>
 <script>

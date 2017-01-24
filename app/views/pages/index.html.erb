@@ -1,140 +1,138 @@
-<section class="main">
-	<div class="banner banner--index">
-		<div class="banner__title">
-			<%= image_tag 'logo-big.png' %>
-			<br>WALK YOUNG DREAMERS<br>THROUGH POVERTY
+<div class="banner banner--index">
+	<div class="banner__title">
+		<%= image_tag 'logo-big.png' %>
+		<br>WALK YOUNG DREAMERS<br>THROUGH POVERTY
+	</div>
+</div>
+<section class="mission">
+	<ul class="gridHalf clearfix">
+		<li>
+			<div class="mission__left parallax-container">
+				<div class="parallax">
+					<%= image_tag 'mission__left.jpg' %>
+				</div>
+				<div class="counter">
+					<div class="counter__title">
+						DAY
+						<span class="counter__number" data-duration="3000" data-easing="easeInOutQuart" data-count="<%= ((Time.now - Time.zone.parse('2015.04.25 11:56:26 UTC+5:45'))/1.day).to_i %>">0</span>
+						IN NEPAL
+					</div>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="mission__right">
+				<div class="mission__title">我們的使命</div>
+				<div class="mission__content">
+					<p>
+						我們曾經參與過各地國際服務，結束短期服務，回國投入生活之後，我們發現自己並未帶來改變，孩子需要更長期而且不間斷的幫助！
+						心中力不從心的感受使我們開始思考，什麼樣的服務才能為孩子帶來他們渴望的未來？
+					</p>
+					<p>
+						2015年4月，遠山呼喚團隊因此集結在一起，開始用行動回應心中的重重疑慮。在山與城市之間來回，我們聽見了許多孩子的獨白。
+						在書籍、捐款、志工都能快速奔向孩子的時代裡，孩子卻仍需要透過長期教育，才能慢慢地走向未來。
+						而圍繞著教育推動「長期服務」就是我們不變的初衷。
+					</p>
+				</div>
+				<div class="mission__action">
+					<%= link_to '關於我們', about_path, class: "btn" %>
+				</div>
+			</div>
+		</li>
+	</ul>
+</section>
+<!-- <section>
+	<a href="#" class="indexVideo fancybox fancybox.iframe">
+		<div class="indexVideo__text">What we believe in</div>
+	</a>
+</section> -->
+<section class="indexSponse clearfix">
+	<div class="indexSponse__photo">
+		<%= image_tag 'indexSponse.png' %>
+	</div>
+	<div class="indexSponse__title">
+		遠山資助平台
+	</div>
+	<div class="indexSponse__content">
+		<p>
+			<span class="mobile-hide">
+				購物平台，募資平台，社交平台.....
+				人們建立平台以縮短生活中的大小時間。<br>
+				但是，有些事卻需要更多時間才能完成，
+				孩子的成長、一場生命的改變.......<br>
+			</span>
+			遠山資助平台，
+			延長著人們留在彼此生命中的時間，
+			不是由上而下的短暫施予，
+			是相伴而行的長期資助。
+		</p>
+		<%= link_to '瞭解更多', sponsor_project_path, class: "btn" %>
+	</div>
+
+</section>
+<section class="indexAurora clearfix">
+	<div class="indexAurora__photo">
+		<%= image_tag 'indexAurora.png' %>
+	</div>
+	<div class="indexAurora__title">
+		極光計畫
+	</div>
+	<div class="indexAurora__content">
+		<p>
+			<span class="mobile-hide">
+				當資助兒童重返教育，
+				他們將面臨嚴峻的考驗，
+				教學資源的匱乏，家庭觀念的限制.......<br>
+			</span>
+			極光計畫致力於培養第一線的工作人員，
+			帶領村民一起投入長達十年的村落革新。
+			<span class="mobile-hide">
+				<br>
+			</span>
+			從孩子拿到第一筆資助金開始，
+			我們便是他們解決困難的陪伴者。
+		</p>
+		<%= link_to '瞭解更多', aurora_path, class: "btn" %>
+	</div>
+</section>
+<section class="section">
+	<div class="wrap">
+		<div class="title">遠山部落格</div>
+		<div class="row">
+			<div class="col s12 m6 ">
+				<%= render partial: 'posts/partials/post', locals: { post: @pinned_post_with_img, type: 'bookmark' } if @pinned_post_with_img.present? %>
+			</div>
+			<div class="col s12 m6 ">
+				<%= render partial: 'posts/partials/post', locals: { post: @pinned_post_with_video, type: 'video' } if @pinned_post_with_video.present? %>
+			</div>
+		</div>
+		<div class="row">
+			<% @posts.each do |post| %>
+				<div class="col s12 m4">
+					<%= render partial: 'posts/partials/post', locals: { post: post, type: 's' } %>
+				</div>
+			<% end if @posts.present? %>
 		</div>
 	</div>
-	<section class="mission">
-		<ul class="gridHalf clearfix">
+</section>
+<section class="section">
+	<div class="wrap">
+		<div class="title">合作夥伴</div>
+		<ul class="bxslider">
 			<li>
-				<div class="mission__left parallax-container">
-					<div class="parallax">
-						<%= image_tag 'mission__left.jpg' %>
-					</div>
-					<div class="counter">
-						<div class="counter__title">
-							DAY
-							<span class="counter__number" data-duration="3000" data-easing="easeInOutQuart" data-count="<%= ((Time.now - Time.zone.parse('2015.04.25 11:56:26 UTC+5:45'))/1.day).to_i %>">0</span>
-							IN NEPAL
-						</div>
-					</div>
-				</div>
+				<%= image_tag "partnership/backfounder.png" %>
 			</li>
 			<li>
-				<div class="mission__right">
-					<div class="mission__title">我們的使命</div>
-					<div class="mission__content">
-						<p>
-							我們曾經參與過各地國際服務，結束短期服務，回國投入生活之後，我們發現自己並未帶來改變，孩子需要更長期而且不間斷的幫助！
-							心中力不從心的感受使我們開始思考，什麼樣的服務才能為孩子帶來他們渴望的未來？
-						</p>
-						<p>
-							2015年4月，遠山呼喚團隊因此集結在一起，開始用行動回應心中的重重疑慮。在山與城市之間來回，我們聽見了許多孩子的獨白。
-							在書籍、捐款、志工都能快速奔向孩子的時代裡，孩子卻仍需要透過長期教育，才能慢慢地走向未來。
-							而圍繞著教育推動「長期服務」就是我們不變的初衷。
-						</p>
-					</div>
-					<div class="mission__action">
-						<%= link_to '關於我們', about_path, class: "btn" %>
-					</div>
-				</div>
+				<%= image_tag "partnership/ICEF.png" %>
+			</li>
+			<li>
+				<%= image_tag "partnership/ntu.png" %>
+			</li>
+			<li>
+				<%= image_tag "partnership/wIsland.png" %>
 			</li>
 		</ul>
-	</section>
-	<!-- <section>
-		<a href="#" class="indexVideo fancybox fancybox.iframe">
-			<div class="indexVideo__text">What we believe in</div>
-		</a>
-	</section> -->
-	<section class="indexSponse clearfix">
-		<div class="indexSponse__photo">
-			<%= image_tag 'indexSponse.png' %>
-		</div>
-		<div class="indexSponse__title">
-			遠山資助平台
-		</div>
-		<div class="indexSponse__content">
-			<p>
-				<span class="mobile-hide">
-					購物平台，募資平台，社交平台.....
-					人們建立平台以縮短生活中的大小時間。<br>
-					但是，有些事卻需要更多時間才能完成，
-					孩子的成長、一場生命的改變.......<br>
-				</span>
-				遠山資助平台，
-				延長著人們留在彼此生命中的時間，
-				不是由上而下的短暫施予，
-				是相伴而行的長期資助。
-			</p>
-			<%= link_to '瞭解更多', sponsor_project_path, class: "btn" %>
-		</div>
-
-	</section>
-	<section class="indexAurora clearfix">
-		<div class="indexAurora__photo">
-			<%= image_tag 'indexAurora.png' %>
-		</div>
-		<div class="indexAurora__title">
-			極光計畫
-		</div>
-		<div class="indexAurora__content">
-			<p>
-				<span class="mobile-hide">
-					當資助兒童重返教育，
-					他們將面臨嚴峻的考驗，
-					教學資源的匱乏，家庭觀念的限制.......<br>
-				</span>
-				極光計畫致力於培養第一線的工作人員，
-				帶領村民一起投入長達十年的村落革新。
-				<span class="mobile-hide">
-					<br>
-				</span>
-				從孩子拿到第一筆資助金開始，
-				我們便是他們解決困難的陪伴者。
-			</p>
-			<%= link_to '瞭解更多', aurora_path, class: "btn" %>
-		</div>
-	</section>
-	<section class="section">
-		<div class="wrap">
-			<div class="title">遠山部落格</div>
-			<div class="row">
-				<div class="col s12 m6 ">
-					<%= render partial: 'posts/partials/post', locals: { post: @pinned_post_with_img, type: 'bookmark' } if @pinned_post_with_img.present? %>
-				</div>
-				<div class="col s12 m6 ">
-					<%= render partial: 'posts/partials/post', locals: { post: @pinned_post_with_video, type: 'video' } if @pinned_post_with_video.present? %>
-				</div>
-			</div>
-			<div class="row">
-				<% @posts.each do |post| %>
-					<div class="col s12 m4">
-						<%= render partial: 'posts/partials/post', locals: { post: post, type: 's' } %>
-					</div>
-				<% end if @posts.present? %>
-			</div>
-		</div>
-	</section>
-	<section class="section">
-		<div class="wrap">
-			<div class="title">合作夥伴</div>
-			<ul class="bxslider">
-				<li>
-					<%= image_tag "partnership/backfounder.png" %>
-				</li>
-				<li>
-					<%= image_tag "partnership/ICEF.png" %>
-				</li>
-				<li>
-					<%= image_tag "partnership/ntu.png" %>
-				</li>
-				<li>
-					<%= image_tag "partnership/wIsland.png" %>
-				</li>
-			</ul>
-		</div>
-	</section>
+	</div>
 </section>
 
 <% content_for :javascript do %>

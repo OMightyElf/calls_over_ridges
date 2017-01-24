@@ -1,29 +1,27 @@
-<section class="main">
-  <section class="login">
-    <div class="wrap">
-      <div class="login__form">
-        <div class="login__title">資助人登入</div>
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="input-field">
-          <%= f.email_field :email, autofocus: true, class: 'form-control validate', placeholder: '註冊時Email' %>
-          <%= f.label :email, data: { error: '!帳號是註冊時的Email喔', success: 'CORRECT' } %>
-        </div>
-        <div class="input-field clearfix">
-          <%= f.password_field :password, autocomplete: "off", class: 'form-control validate' %>
-          <%= f.label :password, data: { error: '!忘記密碼了嗎', success: 'CORRECT' } %>
-        </div>
-        <% if devise_mapping.rememberable? -%>
-        <div class="input-field clearfix">
-          <%= f.check_box :remember_me, class: 'filled-in' %>
-          <%= f.label :remember_me, '記住我' %>
-          <%= link_to '忘記密碼', new_user_password_path, class: 'login__forget' %>
-        </div>
-        <% end -%>
-        <div class="actionArea">
-          <%= f.submit '進入資助平台', class: 'btn' %>
-        </div>
-        <% end %>
+<section class="login">
+  <div class="wrap">
+    <div class="login__form">
+      <div class="login__title">資助人登入</div>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="input-field">
+        <%= f.email_field :email, autofocus: true, class: 'form-control validate', placeholder: '註冊時Email' %>
+        <%= f.label :email, data: { error: '!帳號是註冊時的Email喔', success: 'CORRECT' } %>
       </div>
+      <div class="input-field clearfix">
+        <%= f.password_field :password, autocomplete: "off", class: 'form-control validate' %>
+        <%= f.label :password, data: { error: '!忘記密碼了嗎', success: 'CORRECT' } %>
+      </div>
+      <% if devise_mapping.rememberable? -%>
+      <div class="input-field clearfix">
+        <%= f.check_box :remember_me, class: 'filled-in' %>
+        <%= f.label :remember_me, '記住我' %>
+        <%= link_to '忘記密碼', new_user_password_path, class: 'login__forget' %>
+      </div>
+      <% end -%>
+      <div class="actionArea">
+        <%= f.submit '進入資助平台', class: 'btn' %>
+      </div>
+      <% end %>
     </div>
-  </section>
+  </div>
 </section>

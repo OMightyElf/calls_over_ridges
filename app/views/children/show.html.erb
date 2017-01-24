@@ -1,190 +1,188 @@
-<section class="main">
-	<section class="section">
-		<div class="wrap">
-			<div class="title title--red"><%= "Hello, #{current_user.name}" %></div>
-			<div class="counter">
-				<div class="counter__title">這是你支持孩子的</div>
-				<div class="counter__container">
-					第&nbsp;&nbsp;
-					<span class="counter__number" data-duration="2000" data-easing="easeInOutQuart" data-count="<%= @child.decorate.support_length %>"><%= @child.decorate.support_length %></span>
-					天
-				</div>
-			</div>
-			<div class="counter">
-				<div class="counter__title">你與孩子之間的旅途</div>
-				<div class="counter__container">
-					還有
-					<span class="counter__number" data-duration="3000" data-easing="easeOutQuad" data-count="<%= @child.decorate.support_days_left %>"><%= @child.decorate.support_days_left %></span>
-					天
-				</div>
+<section class="section">
+	<div class="wrap">
+		<div class="title title--red"><%= "Hello, #{current_user.name}" %></div>
+		<div class="counter">
+			<div class="counter__title">這是你支持孩子的</div>
+			<div class="counter__container">
+				第&nbsp;&nbsp;
+				<span class="counter__number" data-duration="2000" data-easing="easeInOutQuart" data-count="<%= @child.decorate.support_length %>"><%= @child.decorate.support_length %></span>
+				天
 			</div>
 		</div>
-	</section>
-	<section class="section">
-		<div class="title title--red">孩童資料</div>
-		<div class="row kidData">
-			<div class="wrap">
-				<div class="col s12 m6 tac">
-					<video class="responsive-video" controls>
-						<source src="../Content/media/kid.mp4" type="video/mp4">
-					</video>
-				</div>
-				<div class="col s12 m6">
-					<div class="kidData__name"><%= @child.name %></div>
-
-					<ul class="browser-default">
-						<li><%= "性別： #{@child.gender}" %></li>
-						<li><%= "年紀： #{@child.decorate.age}" %></li>
-						<li><%= "就讀小學： #{@update.current_school}" %></li>
-						<li><%= "就讀年級： #{@update.current_grade} 年級" %></li>
-					</ul>
-					<div class="kidData__info">
-						<%= @update.comment %>
-					</div>
-				</div>
+		<div class="counter">
+			<div class="counter__title">你與孩子之間的旅途</div>
+			<div class="counter__container">
+				還有
+				<span class="counter__number" data-duration="3000" data-easing="easeOutQuad" data-count="<%= @child.decorate.support_days_left %>"><%= @child.decorate.support_days_left %></span>
+				天
 			</div>
-		</div>
-	</section>
-	<section class="section">
-		<div class="wrap">
-			<div class="title title--red">成長紀錄</div>
-			<div class="row record">
-				<div class="col s6 m4">
-					<a href="#attendence" class="record__item" data-fancybox="attendence">
-						<%= image_tag 'iKid1.png' %>
-					</a>
-				</div>
-				<div class="col s6 m4">
-					<a href="#reading" class="record__item" data-fancybox="reading">
-						<%= image_tag 'iKid2.png' %>
-					</a>
-				</div>
-				<div class="col s6 m4">
-					<a href="#grade" class="record__item" data-fancybox="grade">
-						<%= image_tag 'iKid3.png' %>
-					</a>
-				</div>
-				<div class="col s6 m4">
-					<a href="#study" class="record__item" data-fancybox="study">
-						<%= image_tag 'iKid4.png' %>
-					</a>
-				</div>
-				<div class="col s6 m4">
-					<a href="#bodyshape" class="record__item" data-fancybox="bodyshape">
-						<%= image_tag 'iKid5.png' %>
-					</a>
-				</div>
-				<div class="col s6 m4">
-					<a href="#income" class="record__item" data-fancybox="income">
-						<%= image_tag 'iKid6.png' %>
-					</a>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section class="section">
-		<div class="title title--red">資助實況</div>
-		<div class="kidData">
-			<div class="kidData__slider">
-				<ul class="sponseSlider">
-					<li><%= image_tag 'sponse1.jpg' %></li>
-					<li><%= image_tag 'sponse2.jpg' %></li>
-					<li><%= image_tag 'sponse3.jpg' %></li>
-				</ul>
-				<div class="sponseMoney">
-					<a href="#certification" class="btn" data-fancybox="true">資助證明</a>
-					<a href="#deliver" class="btn" data-fancybox="true">資助金發放</a>
-				</div>
-			</div>
-		</div>
-	</section>
-	<div class="sideTool">
-		<a href="#message" class="icon iTool__message waves-effect waves-light" data-fancybox="true"></a>
-		<%= link_to '', user_path(current_user), class: 'icon iTool__info waves-effect waves-light', target: '_blank'%>
-	</div>
-	<%= render partial: 'shared/partials/message_board' %>
-	<div id="certification" class="recordPopup clearfix">
-		<div class="recordPopup__left">
-			<div class="recordPopup__title">資助證明</div>
-			<div class="recordPopup__percentage"></div>
-			<p>每個月社工會在學校集合家長舉行資助金發放儀式，詳實記錄金額並簽名拍照作為紀錄。</p>
-		</div>
-		<div class="recordPopup__right">
-			<%= image_tag 'certification.png' %>
-		</div>
-	</div>
-	<div id="deliver" class="recordPopup clearfix">
-		<div class="recordPopup__left">
-			<div class="recordPopup__title">資助金發放</div>
-			<div class="recordPopup__percentage"></div>
-			<p>資助金發放時要求孩子與家長一同出席，除了能讓社工了解家中狀況外，更會舉辦親子講堂，邀請尼泊爾講者分享教育觀念。</p>
-		</div>
-		<div class="recordPopup__right">
-			<%= image_tag 'deliver.png' %>
-		</div>
-	</div>
-	<div id="attendence" class="popup recordPopup clearfix">
-		<div class="recordPopup__left">
-			<div class="recordPopup__title">出席率</div>
-			<div class="recordPopup__percentage"><%= @update.decorate.attendence_rate_in_percent %></div>
-			<p><%= @child.comparison_word('attendence_rate') %></p>
-		</div>
-		<div class="recordPopup__right">
-			<canvas id="attendenceChart" width="400" height="400"></canvas>
-		</div>
-	</div>
-	<div id="reading" class="popup recordPopup clearfix">
-		<div class="recordPopup__left">
-			<div class="recordPopup__title">讀書心得</div>
-			<div class="recordPopup__percentage"><%= "#{@update.reading_report_amount} 篇" %></div>
-			<p><%= @child.comparison_word('reading_report_amount') %></p>
-		</div>
-		<div class="recordPopup__right">
-			<canvas id="readingChart" width="400" height="400"></canvas>
-		</div>
-	</div>
-	<div id="grade" class="popup recordPopup clearfix">
-		<div class="recordPopup__left">
-			<div class="recordPopup__title">成績表現</div>
-			<div class="recordPopup__percentage"><%= @update.grade %> %></div>
-			<p><%= @child.comparison_word('grade') %></p>
-		</div>
-		<div class="recordPopup__right">
-			<canvas id="gradeChart" width="400" height="400"></canvas>
-		</div>
-	</div>
-	<div id="income" class="popup recordPopup clearfix">
-		<div class="recordPopup__left">
-			<div class="recordPopup__title">家庭收入</div>
-			<div class="recordPopup__percentage"><%= @update.decorate.family_income_in_unit %> %></div>
-			<p><%= @child.comparison_word('family_income') %></p>
-		</div>
-		<div class="recordPopup__right">
-			<canvas id="incomeChart" width="400" height="400"></canvas>
-		</div>
-	</div>
-	<div id="bodyshape" class="popup recordPopup clearfix">
-		<div class="recordPopup__left">
-			<div class="recordPopup__title">身體狀況</div>
-			<div class="recordPopup__percentage"><%= "#{@update.decorate.height_in_unit}; #{@update.decorate.weight_in_unit}" %></div>
-			<p><%= @child.comparison_word('height') %></p>
-			<p><%= @child.comparison_word('weight') %></p>
-		</div>
-		<div class="recordPopup__right">
-			<canvas id="bodyshapeChart" width="400" height="300"></canvas>
-		</div>
-	</div>
-	<div id="study" class="popup recordPopup clearfix">
-		<div class="recordPopup__left">
-			<div class="recordPopup__title">讀書時間</div>
-			<div class="recordPopup__percentage"><%= @update.decorate.rounded_study_hours %></div>
-			<p><%= @child.comparison_word('study_hours') %></p>
-		</div>
-		<div class="recordPopup__right">
-			<canvas id="studyChart" width="400" height="300"></canvas>
 		</div>
 	</div>
 </section>
+<section class="section">
+	<div class="title title--red">孩童資料</div>
+	<div class="row kidData">
+		<div class="wrap">
+			<div class="col s12 m6 tac">
+				<video class="responsive-video" controls>
+					<source src="../Content/media/kid.mp4" type="video/mp4">
+				</video>
+			</div>
+			<div class="col s12 m6">
+				<div class="kidData__name"><%= @child.name %></div>
+
+				<ul class="browser-default">
+					<li><%= "性別： #{@child.gender}" %></li>
+					<li><%= "年紀： #{@child.decorate.age}" %></li>
+					<li><%= "就讀小學： #{@update.current_school}" %></li>
+					<li><%= "就讀年級： #{@update.current_grade} 年級" %></li>
+				</ul>
+				<div class="kidData__info">
+					<%= @update.comment %>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="section">
+	<div class="wrap">
+		<div class="title title--red">成長紀錄</div>
+		<div class="row record">
+			<div class="col s6 m4">
+				<a href="#attendence" class="record__item" data-fancybox="attendence">
+					<%= image_tag 'iKid1.png' %>
+				</a>
+			</div>
+			<div class="col s6 m4">
+				<a href="#reading" class="record__item" data-fancybox="reading">
+					<%= image_tag 'iKid2.png' %>
+				</a>
+			</div>
+			<div class="col s6 m4">
+				<a href="#grade" class="record__item" data-fancybox="grade">
+					<%= image_tag 'iKid3.png' %>
+				</a>
+			</div>
+			<div class="col s6 m4">
+				<a href="#study" class="record__item" data-fancybox="study">
+					<%= image_tag 'iKid4.png' %>
+				</a>
+			</div>
+			<div class="col s6 m4">
+				<a href="#bodyshape" class="record__item" data-fancybox="bodyshape">
+					<%= image_tag 'iKid5.png' %>
+				</a>
+			</div>
+			<div class="col s6 m4">
+				<a href="#income" class="record__item" data-fancybox="income">
+					<%= image_tag 'iKid6.png' %>
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="section">
+	<div class="title title--red">資助實況</div>
+	<div class="kidData">
+		<div class="kidData__slider">
+			<ul class="sponseSlider">
+				<li><%= image_tag 'sponse1.jpg' %></li>
+				<li><%= image_tag 'sponse2.jpg' %></li>
+				<li><%= image_tag 'sponse3.jpg' %></li>
+			</ul>
+			<div class="sponseMoney">
+				<a href="#certification" class="btn" data-fancybox="true">資助證明</a>
+				<a href="#deliver" class="btn" data-fancybox="true">資助金發放</a>
+			</div>
+		</div>
+	</div>
+</section>
+<div class="sideTool">
+	<a href="#message" class="icon iTool__message waves-effect waves-light" data-fancybox="true"></a>
+	<%= link_to '', user_path(current_user), class: 'icon iTool__info waves-effect waves-light', target: '_blank'%>
+</div>
+<%= render partial: 'shared/partials/message_board' %>
+<div id="certification" class="recordPopup clearfix">
+	<div class="recordPopup__left">
+		<div class="recordPopup__title">資助證明</div>
+		<div class="recordPopup__percentage"></div>
+		<p>每個月社工會在學校集合家長舉行資助金發放儀式，詳實記錄金額並簽名拍照作為紀錄。</p>
+	</div>
+	<div class="recordPopup__right">
+		<%= image_tag 'certification.png' %>
+	</div>
+</div>
+<div id="deliver" class="recordPopup clearfix">
+	<div class="recordPopup__left">
+		<div class="recordPopup__title">資助金發放</div>
+		<div class="recordPopup__percentage"></div>
+		<p>資助金發放時要求孩子與家長一同出席，除了能讓社工了解家中狀況外，更會舉辦親子講堂，邀請尼泊爾講者分享教育觀念。</p>
+	</div>
+	<div class="recordPopup__right">
+		<%= image_tag 'deliver.png' %>
+	</div>
+</div>
+<div id="attendence" class="popup recordPopup clearfix">
+	<div class="recordPopup__left">
+		<div class="recordPopup__title">出席率</div>
+		<div class="recordPopup__percentage"><%= @update.decorate.attendence_rate_in_percent %></div>
+		<p><%= @child.comparison_word('attendence_rate') %></p>
+	</div>
+	<div class="recordPopup__right">
+		<canvas id="attendenceChart" width="400" height="400"></canvas>
+	</div>
+</div>
+<div id="reading" class="popup recordPopup clearfix">
+	<div class="recordPopup__left">
+		<div class="recordPopup__title">讀書心得</div>
+		<div class="recordPopup__percentage"><%= "#{@update.reading_report_amount} 篇" %></div>
+		<p><%= @child.comparison_word('reading_report_amount') %></p>
+	</div>
+	<div class="recordPopup__right">
+		<canvas id="readingChart" width="400" height="400"></canvas>
+	</div>
+</div>
+<div id="grade" class="popup recordPopup clearfix">
+	<div class="recordPopup__left">
+		<div class="recordPopup__title">成績表現</div>
+		<div class="recordPopup__percentage"><%= @update.grade %> %></div>
+		<p><%= @child.comparison_word('grade') %></p>
+	</div>
+	<div class="recordPopup__right">
+		<canvas id="gradeChart" width="400" height="400"></canvas>
+	</div>
+</div>
+<div id="income" class="popup recordPopup clearfix">
+	<div class="recordPopup__left">
+		<div class="recordPopup__title">家庭收入</div>
+		<div class="recordPopup__percentage"><%= @update.decorate.family_income_in_unit %> %></div>
+		<p><%= @child.comparison_word('family_income') %></p>
+	</div>
+	<div class="recordPopup__right">
+		<canvas id="incomeChart" width="400" height="400"></canvas>
+	</div>
+</div>
+<div id="bodyshape" class="popup recordPopup clearfix">
+	<div class="recordPopup__left">
+		<div class="recordPopup__title">身體狀況</div>
+		<div class="recordPopup__percentage"><%= "#{@update.decorate.height_in_unit}; #{@update.decorate.weight_in_unit}" %></div>
+		<p><%= @child.comparison_word('height') %></p>
+		<p><%= @child.comparison_word('weight') %></p>
+	</div>
+	<div class="recordPopup__right">
+		<canvas id="bodyshapeChart" width="400" height="300"></canvas>
+	</div>
+</div>
+<div id="study" class="popup recordPopup clearfix">
+	<div class="recordPopup__left">
+		<div class="recordPopup__title">讀書時間</div>
+		<div class="recordPopup__percentage"><%= @update.decorate.rounded_study_hours %></div>
+		<p><%= @child.comparison_word('study_hours') %></p>
+	</div>
+	<div class="recordPopup__right">
+		<canvas id="studyChart" width="400" height="300"></canvas>
+	</div>
+</div>
 
 <% content_for :javascript do %>
 <script>
