@@ -7,7 +7,7 @@
 				<%= render partial: 'posts/partials/post', locals: { post: @pinned_post_with_img, type: 'bookmark' } %>
 			</li>
 			<% end %>
-			<% if @pinned_post_with_img.present? %>
+			<% if @pinned_post_with_video.present? %>
 			<li>
 				<%= render partial: 'posts/partials/post', locals: { post: @pinned_post_with_video, type: 'video' } %>
 			</li>

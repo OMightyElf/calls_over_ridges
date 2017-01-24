@@ -303,8 +303,14 @@ zh-TW:
   enum:
     post:
       status:
-        draft: "草稿"
-        publish: "發佈"
+        draft: 草稿
+        publish: 發佈
+      category:
+        news: 活動消息
+        special_column: 主題專欄
+        viewpoint: 遠山觀點
+        behind_the_scenes: 團隊幕後
+        media: 影音媒體
       file_type:
         has_cover: 附圖片
         has_video: 附影片
@@ -315,7 +321,7 @@ zh-TW:
         other_tag: "其他標籤"
       status:
         draft: "草稿"
-        publish: "已發佈"  
+        publish: "已發佈"
     user:
       role:
         supporter: 資助者

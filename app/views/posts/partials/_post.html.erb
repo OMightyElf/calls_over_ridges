@@ -8,7 +8,7 @@
 			<div class="blogCard__sub"><%= post.subtitle %></div>
 		</div>
 		<div class="blogCard__right">
-			<div class="blogCard__cat"><%= post.category %></div>
+			<div class="blogCard__cat"><%= t("enum.post.category.#{post.category}") %></div>
 			<div class="blogCard__author"><%= post.author %></div>
 			<div class="blogCard__date"><%= post.decorate.publish_date %></div>
 		</div>

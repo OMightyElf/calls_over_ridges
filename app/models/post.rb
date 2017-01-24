@@ -31,9 +31,9 @@ class Post < ActiveRecord::Base
 
   def ensure_only_one_pinned_post_per_file_type
     if has_video?
-      Post.pinned.has_video.without(id).update_all(pinned: false) if pinned?
+      Post.pinned.publish.has_video.without(id).update_all(pinned: false) if pinned?
     else
-      Post.pinned.has_cover.without(id).update_all(pinned: false) if pinned?
+      Post.pinned.publish.has_cover.without(id).update_all(pinned: false) if pinned?
     end
   end
 

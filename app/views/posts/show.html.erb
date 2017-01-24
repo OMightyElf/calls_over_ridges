@@ -22,7 +22,7 @@
 				<p><%= "攝影：#{@post.photographer}" %></p>
 			</div>
 			<div class="articleInfo__right">
-				<p><%= @post.category %></p>
+				<p><%= t("enum.post.category.#{@post.category}") %></p>
 				<p><%= @post.decorate.publish_date %></p>
 			</div>
 		</div>
