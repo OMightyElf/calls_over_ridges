@@ -11,14 +11,8 @@
 			<div class="articleBanner__sub"><%= @post.subtitle %></div>
 			<% if @post.has_video? %>
 				<div class="articleBanner__action">
-
 				<!-- 影片就是這葛 -->
-				<video class="mejs-player" controls="controls">
-					<source src="<%= @post.video.url %>" />
-				</video>
-
-					<%= link_to '播放影片', @post.video.url, class: "btn fancybox fancybox.iframe" %>
-				
+					<%= link_to '播放影片',"", class: "btn fancybox fancybox.iframe" %>
 				</div>
 			<% end %>
 		</div>
@@ -60,7 +54,8 @@
 		$('.fancybox').fancybox({
 			padding: 0,
 			height: '100%',
-			width: '100%'
+			width: '100%',
+			content: '<video class="mejs-player video_in_fancybox" controls="controls" autoplay="autoplay" src="<%= @post.video.url %>">'
 		});
 	});
 </script>
