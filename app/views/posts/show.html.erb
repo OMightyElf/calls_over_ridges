@@ -39,19 +39,22 @@
 
 <% content_for :javascript do %>
 <script>
+var resize = function () {
+	$(window).resize(function () {
+		$('.articleBanner').height($(window).height() - $('.header').outerHeight());
+	}).trigger('resize');
+}
 $(function () {
-	var resize = function () {
-		$(window).resize(function () {
-			$('.articleBanner').height($(window).height() - $('.header').outerHeight());
-		}).trigger('resize');
-	}
-	resize();
 	$('.fancybox').fancybox({
 		padding: 0,
 		height: '100%',
 		width: '100%',
-		content: '<video class="mejs-player video_in_fancybox" controls="controls" autoplay="autoplay" src="<%= @post.video.url %>">'
+		content: '<video class="mejs-player video_in_fancybox" controls="controls" autoplay="autoplay" src="<%= @post.video.url %>">',
+		afterLoad: function() {
+			resize();
+		}
 	});
+	resize();
 });
 </script>
 <% end %>
