@@ -1,6 +1,9 @@
 <%= form_tag(admin_mass_import_photos_confirm_update_path, method: "post", multipart: true) do %>
 
 <%= file_field_tag :file, multiple: true, id: "#fileupload", name: "photos[]" %>
+
+<%= select_tag 'year_and_month', options_for_select( @years_and_months) %>
+
 <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 <%= submit_tag "送出" %>
 
