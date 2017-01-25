@@ -1,5 +1,5 @@
 ActiveAdmin.register_page "Mass Update" do
-  menu priority: 5, label: "匯入每月更新"
+  menu false
 
   page_action :import, title: "匯入每月更新", method: :post do
     path = params[:file].path

@@ -19,7 +19,7 @@ class UpdateDecorator < Draper::Decorator
   end
 
   def rounded_study_hours
-    "#{"%g" % ("%.2f" % (object.study_hours*10).to_s)} 小時"
+    "#{"%g" % ("%.2f" % (object.study_hours.to_f*10).to_s)} 小時"
   end
 
   # Define presentation-specific methods here. Helpers are accessed through

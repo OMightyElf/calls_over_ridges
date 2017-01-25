@@ -5,10 +5,14 @@ module Children
 			lastest = self.updates.first.send(attribute)
 			last_time = self.updates.count > 1 ? self.updates.first(2).last.send(attribute) : 0
 
-			if lastest > last_time
-				'greater_than'
-			elsif lastest < last_time
-				'less_than'
+			if lastest && last_time
+				if lastest > last_time
+					'greater_than'
+				elsif lastest < last_time
+					'less_than'
+				else
+					'equals_to'
+				end
 			else
 				'equals_to'
 			end

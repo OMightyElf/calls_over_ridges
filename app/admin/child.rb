@@ -9,9 +9,11 @@ ActiveAdmin.register Child do
 #
 	permit_params do
 		permitted = [:name, :serial_number, :gender, :birthday, :supported_at, :support_until, :supporter_id,
-									updates_attributes: [:update_year, :update_month, :current_school, :current_grade, :attendence_rate,
-																				:reading_report_amount, :grade, :family_income, :weight,
-																				:height, :study_hours, :comment]]
+									updates_attributes: [
+										# 沒有加id的話每次更新就會重創物件
+										:id, :update_year, :update_month, :current_school, :current_grade, :attendence_rate,
+										:reading_report_amount, :grade, :family_income, :weight,
+										:height, :study_hours, :comment]]
 		permitted
 	end
 
@@ -25,7 +27,7 @@ ActiveAdmin.register Child do
 
 	show do
 		columns do
-			column span: 7 do
+			column span: 4 do
 				h1 "孩童檢視"
 				attributes_table  do
 					row :name
@@ -43,7 +45,7 @@ ActiveAdmin.register Child do
 					end
 				end
 			end
-			column span: 5 do
+			column span: 8 do
 				h1 "更新資料"
 				child.updates.each do |update|
 					attributes_table do
@@ -86,6 +88,9 @@ ActiveAdmin.register Child do
 						row :updated_at do
 							update.updated_at
 						end
+						row 'photos' do
+							safe_join update.photos.map { |p| image_tag(p.picture.url) }
+						end
 					end
 				end
 			end
@@ -113,22 +118,22 @@ ActiveAdmin.register Child do
 			f.input :supported_at, as: :date_picker
 			f.input :support_until, as: :date_picker
 			f.input :user, as: :select2, collection: User.all, member_label: Proc.new { |u| u.name }
+			f.has_many :updates, header: "月更新資料" do |update|
+				update.input :update_year
+				update.input :update_month
+				update.input :current_school
+				update.input :current_grade
+				update.input :attendence_rate
+				update.input :reading_report_amount
+				update.input :grade
+				update.input :family_income
+				update.input :weight
+				update.input :height
+				update.input :study_hours
+				update.input :comment
+			end
 		end
 
-		f.has_many :updates, header: "月更新資料" do |update|
-			update.input :update_year
-			update.input :update_month
-			update.input :current_school
-			update.input :current_grade
-			update.input :attendence_rate
-			update.input :reading_report_amount
-			update.input :grade
-			update.input :family_income
-			update.input :weight
-			update.input :height
-			update.input :study_hours
-			update.input :comment
-		end
 		f.actions
 	end
 end

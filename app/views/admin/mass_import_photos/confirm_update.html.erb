@@ -1,4 +1,15 @@
-
+<h3>匯入成功</h3>
+<ul>
 <% @success_list.each do |photo| %>
-	<%= image_tag photo.picture %>
+	<li><%= photo %></li>
 <% end %>
+</ul>
+<br>
+<hr>
+<br>
+<h3>匯入失敗</h3>
+<ul>
+<% @failed_list.each do |photo| %>
+	<li><%= photo %></li>
+<% end %>
+</ul>
