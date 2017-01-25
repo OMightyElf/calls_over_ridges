@@ -109,10 +109,10 @@ ActiveAdmin.register Post do
 			f.input :subtitle
 			f.input :author
 			f.input :photographer
-			f.input :content
+			f.input :content, as: :ckeditor, input_html: { ckeditor: { height: 300 } }
 			f.input :status, as: :select, collection: Post.status_attributes_for_select, include_blank: false
 			f.input :category, as: :select, collection: Post.category.options, include_blank: false
-			f.input :publish_date, as: :date_picker
+			f.input :publish_date, as: :date_picker, input_html: { value: Date.today }
 		end
 		f.actions
 	end

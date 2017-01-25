@@ -86,9 +86,9 @@
 	<div class="kidData">
 		<div class="kidData__slider">
 			<ul class="sponseSlider">
-				<li><%= image_tag 'sponse1.jpg' %></li>
-				<li><%= image_tag 'sponse2.jpg' %></li>
-				<li><%= image_tag 'sponse3.jpg' %></li>
+				<% @child.latest_update.photos.each do |photo| %>
+					<li><%= image_tag photo.picture.url %></li>
+				<% end %>
 			</ul>
 			<div class="sponseMoney">
 				<a href="#certification" class="btn" data-fancybox="true">資助證明</a>

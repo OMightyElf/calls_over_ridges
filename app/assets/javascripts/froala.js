@@ -34,3 +34,42 @@
 //= require froala/plugins/save.min
 //= require froala/plugins/url.min
 //= require froala/plugins/video.min
+
+$( document ).ready(function() {
+  $('.froala_editor').froalaEditor({
+    language: 'zh_tw',
+    imageMaxSize: 1 * 1024 * 1024, //限制1MB
+    heightMin: 480,
+    // toolbarSticky: true # tool bar 跟著捲軸
+    toolbarStickyOffset: 0.,
+    toolbarButtons: ['bold', 'italic', 'underline', 
+    'strikeThrough', 'fontFamily', 'fontSize', 'subscript', 'superscript', '|', 
+    'color', 'emoticons', 'paragraphStyle', '|', 'paragraphFormat', 
+    'align', 'formatOL', 'formatUL', 'html', 'fullscreen', '-', 'outdent', 'indent', 'quote', 'insertHR',
+    '|', 'insertLink', 'insertImage', 'insertVideo', 'insertTable', 
+    'undo', 'redo', 'clearFormatting'],
+    imageUploadURL: '/froala_editor/upload_image',
+    htmlRemoveTags: [],
+    htmlAllowedEmptyTags: ['textarea', 'a', 'iframe', 'object', 'video', 'style', 'script', 'div']
+  })
+  .on('froalaEditor.image.error', function (e, editor, error, response) {
+    // Bad link.
+    if (error.code == 1) { }
+
+    // No link in upload response.
+    else if (error.code == 2) { }
+
+    // Error during image upload.
+    else if (error.code == 3) { }
+
+    // Parsing response failed.
+    else if (error.code == 4) { }
+
+    // Image too text-large.
+    else if (error.code == 5) { 
+      sweetAlert("圖片大小超過1MB", "請重新選擇檔案", "error");
+    }
+
+    // Response contains the original server response to the request if available.
+  });
+});

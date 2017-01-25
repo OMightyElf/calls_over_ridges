@@ -24,3 +24,4 @@
 //= require jquery.fancybox/jquery.fancybox
 //= require users
 //= require wow.js/wow
+//= require ckeditor/init

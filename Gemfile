@@ -29,6 +29,7 @@ gem 'chartjs-ror'
 gem 'rails-settings-cached'
 gem 'enumerize'
 gem 'draper'
+gem "ckeditor"
 gem 'simple_form'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'pundit'

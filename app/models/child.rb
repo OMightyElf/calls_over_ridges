@@ -17,4 +17,8 @@ class Child < ActiveRecord::Base
 	def update_month_last_six_months
 		updates.map { |u| I18n.t('date.month_names')[u.update_month || 0] }
 	end
+
+	def latest_update
+		updates.order(created_at: :desc).first
+	end
 end
