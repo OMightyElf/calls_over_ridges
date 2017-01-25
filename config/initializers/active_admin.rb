@@ -7,6 +7,16 @@ ActiveAdmin.setup do |config|
   #
   config.site_title = "遠山呼喚"
 
+  # Customize Up Right menu
+  config.namespace :admin do |admin|
+    admin.build_menu do |menu|
+      menu.add label: '匯入', priority: 100 do |submenu|
+        submenu.add :label => '匯入更新照片', url: '/admin/mass_import_photos/import_photos'
+        submenu.add :label => '匯入更新資料', url: '/admin/mass_update'
+      end
+    end
+  end
+
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
   #
@@ -113,7 +123,7 @@ ActiveAdmin.setup do |config|
   # roots for each namespace.
   #
   # Default:
-  # config.root_to = 'dashboard#index'
+  config.root_to = 'projects#index'
 
   # == Admin Comments
   #
