@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   get 'sponsor_project', to: 'pages#sponsor_project'
   get 'aurora', to: 'pages#aurora'
   get 'about', to: 'pages#about'
-  post 'attachment/upload' => 'attachments#upload'
+  post 'photo_attachment/upload' => 'photo_attachments#upload'
 
   # get 'posts/:id', to: 'posts#show'
   # get 'posts/new', to: 'posts#new'
