@@ -8,6 +8,7 @@
 </section>
 <% end %>
 <section class="section memberPage">
+	<%= render 'devise/registrations/edit' %>
 </section>
 <% if @user.support_date.present? %>
 	<%= render partial: 'users/partials/support_info' %>
