@@ -13,7 +13,7 @@ ActiveAdmin.register_page "Mass Import Money Granting Proof" do
 
     photos.each do |photo|
       filename = photo.original_filename
-      school_number = filename[/(\d+)/,1] # 哪個學校的
+      school_number = filename[/(\w+)/,1] # 哪個學校的
       children = Child.where("serial_number LIKE ?", "#{school_number}%")
       updates = Update.where(update_year: params_year, update_month: params_month, child_id: children)
       @success_list.push(photo.original_filename)

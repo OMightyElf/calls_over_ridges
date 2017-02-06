@@ -10,9 +10,9 @@ ActiveAdmin.register_page "Mass Import Videos" do
     @success_list = []
 
     videos.each do |video|
-      child_serial_number = video.original_filename
-      # child_serial_number = filename[/(\d+)_/,1] #哪個小孩的影片
-      # num_of_video = filename[/_(\d+)/,1] #他的第幾張
+      filename = video.original_filename
+      child_serial_number = filename[/(\w+)/, 1] #哪個小孩的影片
+      # num_of_video = filename[/_(\w+)/,1] #他的第幾張
 
       if child = Child.find_by_serial_number(child_serial_number)
         last_update = child.updates.find_by(update_year: params_year, update_month: params_month)
