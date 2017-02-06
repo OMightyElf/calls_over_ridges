@@ -88,6 +88,12 @@ ActiveAdmin.register Child do
 						row :updated_at do
 							update.updated_at
 						end
+						row :support_proof do
+							image_tag(update.support_proof.url)
+						end
+						row :money_granting_proof do
+							image_tag(update.money_granting_proof.url)
+						end
 						row 'photos' do
 							safe_join update.photos.map { |p| image_tag(p.picture.url) }
 						end

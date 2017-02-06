@@ -1,0 +1,27 @@
+<%= form_tag(admin_mass_import_support_proof_confirm_update_path, method: "post", multipart: true) do %>
+
+<h3>多選上傳資助證明</h3>
+<p>照片檔案名稱請以 <b>學校編號</b> 命名，如：1.jpg</p>
+<%= file_field_tag :file, multiple: true, id: "#fileupload", name: "photos[]" %>
+<br>
+<br>
+<h3>選擇更新月份</h3>
+<%= select_tag 'year_and_month', options_for_select( @years_and_months) %>
+
+<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+<%= submit_tag "送出" %>
+
+<% end %>
+
+<script>
+	$(function () {
+		$('#fileupload').fileupload({
+			dataType: 'json',
+			done: function (e, data) {
+				$.each(data.result.files, function (index, file) {
+					$('<p/>').text(file.name).appendTo(document.body);
+				});
+			}
+		});
+	});
+</script>

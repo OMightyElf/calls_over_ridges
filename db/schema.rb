@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170126020122) do
+ActiveRecord::Schema.define(version: 20170206171815) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -128,15 +128,15 @@ ActiveRecord::Schema.define(version: 20170126020122) do
     t.float    "study_hours"
     t.text     "comment"
     t.string   "support_proof"
-    t.string   "photo",                 default: [],              array: true
     t.string   "video"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
     t.integer  "child_id"
     t.string   "current_school"
     t.string   "current_grade"
     t.integer  "update_year"
     t.integer  "update_month"
+    t.string   "money_granting_proof"
   end
 
   create_table "users", force: :cascade do |t|

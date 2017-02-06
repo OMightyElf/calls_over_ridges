@@ -42,6 +42,15 @@ ActiveAdmin.register Update do
 					row :study_hours
 					row :created_at
 					row :updated_at
+					row :support_proof do
+						image_tag(update.support_proof.url)
+					end
+					row :money_granting_proof do
+						image_tag(update.money_granting_proof.url)
+					end
+					row 'photos' do
+						safe_join update.photos.map { |p| image_tag(p.picture.url) }
+					end
 					row :child do |update|
 						table_for update.child do
 							column do |child|

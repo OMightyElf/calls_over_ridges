@@ -27,15 +27,10 @@ ActiveAdmin.register_page "Mass Import Photos" do
       else
         @failed_list.push(photo.original_filename)
       end
-    end
+    end if photos
   end
 
-  page_action :import_photos, method: :get do
-    @years_and_months = Update.all.map{|u| "#{u.update_year}/#{u.update_month}" }
+  page_action :import, method: :get do
+    @years_and_months = Update.all.map{|u| "#{u.update_year}/#{u.update_month}" }.uniq
   end
-
-  content do
-    render "mass_import_photos"
-  end
-
 end

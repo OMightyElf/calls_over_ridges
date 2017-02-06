@@ -1,0 +1,16 @@
+<h3>匯入成功</h3>
+<ul>
+<%= "#{@update_time} 資助金發放照片更新成功，檔案為：#{@success_list.join(', ')}" %>
+<% @children_list.each do |child| %>
+	<li><%= child %></li>
+<% end %>
+</ul>
+<br>
+<hr>
+<br>
+<h3>匯入失敗</h3>
+<ul>
+<% @failed_children_list.each do |child| %>
+	<li><%= child %></li>
+<% end %>
+</ul>
