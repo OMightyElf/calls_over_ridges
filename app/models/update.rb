@@ -5,4 +5,5 @@ class Update < ActiveRecord::Base
 
   mount_uploader :money_granting_proof, PictureUploader
   mount_uploader :support_proof, PictureUploader
+	mount_uploader :video, VideoUploader
 end

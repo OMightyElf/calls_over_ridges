@@ -25,7 +25,7 @@
 		<div class="wrap">
 			<div class="col s12 m6 tac">
 				<video class="responsive-video" controls>
-					<source src="../Content/media/kid.mp4" type="video/mp4">
+					<source src="<%= @child.latest_update.video.url %>" type="video/mp4">
 				</video>
 			</div>
 			<div class="col s12 m6">
@@ -109,7 +109,7 @@
 		<p>每個月社工會在學校集合家長舉行資助金發放儀式，詳實記錄金額並簽名拍照作為紀錄。</p>
 	</div>
 	<div class="recordPopup__right">
-		<%= image_tag 'certification.png' %>
+		<%= image_tag @child.latest_update.support_proof.url %>
 	</div>
 </div>
 <div id="deliver" class="recordPopup clearfix">
@@ -119,7 +119,7 @@
 		<p>資助金發放時要求孩子與家長一同出席，除了能讓社工了解家中狀況外，更會舉辦親子講堂，邀請尼泊爾講者分享教育觀念。</p>
 	</div>
 	<div class="recordPopup__right">
-		<%= image_tag 'deliver.png' %>
+		<%= image_tag @child.latest_update.money_granting_proof.url %>
 	</div>
 </div>
 <div id="attendence" class="popup recordPopup clearfix">

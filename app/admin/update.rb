@@ -51,6 +51,9 @@ ActiveAdmin.register Update do
 					row 'photos' do
 						safe_join update.photos.map { |p| image_tag(p.picture.url) }
 					end
+					row :video do
+						video_tag(update.video.url)
+					end
 					row :child do |update|
 						table_for update.child do
 							column do |child|

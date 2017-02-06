@@ -1,0 +1,17 @@
+<h3>匯入成功</h3>
+<p><%= "#{@update_time} 孩童影片更新成功" %></p>
+<p>成功匯入的影片：</p>
+<ul>
+<% @success_list.each do |video| %>
+	<li><%= video %></li>
+<% end %>
+</ul>
+<br>
+<hr>
+<br>
+<h3>匯入失敗</h3>
+<ul>
+<% @failed_list.each do |video| %>
+	<li><%= video %></li>
+<% end %>
+</ul>

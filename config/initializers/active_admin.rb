@@ -11,10 +11,11 @@ ActiveAdmin.setup do |config|
   config.namespace :admin do |admin|
     admin.build_menu do |menu|
       menu.add label: '匯入', priority: 100 do |submenu|
-        submenu.add :label => '匯入資助金發放照片', url: '/admin/mass_import_money_granting_proof/import'
-        submenu.add :label => '匯入資助證明', url: '/admin/mass_import_support_proof/import'
-        submenu.add :label => '匯入更新照片', url: '/admin/mass_import_photos/import'
-        submenu.add :label => '匯入更新資料', url: '/admin/mass_update'
+        submenu.add :label => '資助金發放照片', url: '/admin/mass_import_money_granting_proof/import'
+        submenu.add :label => '資助證明', url: '/admin/mass_import_support_proof/import'
+        submenu.add :label => '更新影片', url: '/admin/mass_import_videos/import'
+        submenu.add :label => '更新照片', url: '/admin/mass_import_photos/import'
+        submenu.add :label => '更新資料', url: '/admin/mass_update'
       end
     end
   end
