@@ -1,7 +1,7 @@
 <%= form_tag(admin_mass_import_videos_confirm_update_path, method: "post", multipart: true) do %>
 
 <h3>多選上傳孩童的影片</h3>
-<p>影片檔案名稱請格式為：孩童序號_第幾支影片，如 11140_1、11140_2</p>
+<p>影片檔案名稱請以孩童序號為檔名，如：11140.mov</p>
 <p>支援的檔案格式：mov、mp4</p>
 <%= file_field_tag :file, multiple: true, id: "#fileupload", name: "videos[]" %>
 <br>

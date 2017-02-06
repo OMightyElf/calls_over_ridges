@@ -3,6 +3,7 @@ ActiveAdmin.register_page "Mass Import Photos" do
 
   page_action :confirm_update, method: :post do
     photos = params[:photos]
+    @update_time = params[:year_and_month]
     params_year = (params[:year_and_month])[/\d+/]
     params_month = (params[:year_and_month])[/\/(\d+)/,1]
     @failed_list = []
@@ -22,10 +23,10 @@ ActiveAdmin.register_page "Mass Import Photos" do
           ph.save
           @success_list.push(photo.original_filename)
         else
-          @failed_list.push(photo.original_filename)
+          @failed_list.push("#{photo.original_filename} 無更新資料")
         end
       else
-        @failed_list.push(photo.original_filename)
+        @failed_list.push("#{photo.original_filename} 查無此孩童")
       end
     end if photos
   end
