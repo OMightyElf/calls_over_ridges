@@ -5,7 +5,7 @@ class Child < ActiveRecord::Base
 
 
 	belongs_to :user, foreign_key: :supporter_id
-	has_many :updates
+	has_many :updates, dependent: :destroy
 	accepts_nested_attributes_for :updates
 
 	enum gender: [:male, :female, :other]
@@ -19,6 +19,6 @@ class Child < ActiveRecord::Base
 	end
 
 	def latest_update
-		updates.order(created_at: :desc).first
+		updates.order(update_year: :desc, update_month: :desc).first
 	end
 end
