@@ -1,0 +1,27 @@
+<h2>請確認匯入資料欄位是否相符（藍色為系統欄位，綠色為匯入excel之欄位）：</h2>
+<%= link_to '返回', admin_mass_import_supporter_data_path, class: 'button gray' %>
+<%= link_to "確認匯入", admin_mass_import_supporter_data_confirm_import_path, class: 'button' %>
+<br>
+<br>
+<table>
+<tr class="blue">
+	<td>資助人編號</td>
+	<td>資助人姓名</td>
+	<td>性別</td>
+	<td>連絡信箱/會員帳號</td>
+	<td>聯絡電話</td>
+	<td>郵遞區號</td>
+	<td>聯絡地址</td>
+	<td>金額</td>
+	<td>付款時間</td>
+	<td>是否需要收據</td>
+</tr>
+<% (@raw_list.first_row..@raw_list.last_row).each do |i| %>
+<tr class="<% if i==1 %>green<%end%>">
+	<% @raw_list.row(i).each do |td| %>
+	<td><%=td%></td>
+	<% end %>
+</tr>
+<% end %>
+
+</table>

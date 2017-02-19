@@ -30,7 +30,9 @@ ActiveAdmin.register User do
 			column span: 4 do
 				h1 "資助者檢視"
 				attributes_table  do
+					row :serial_number
 					row :name
+					row :gender
 					row :email
 					row :role do |user|
 						I18n.t("enum.user.role.#{user.role}")
@@ -64,7 +66,9 @@ ActiveAdmin.register User do
 	end
 
 	index do
+		column :serial_number
 		column :name
+		column :gender
 		column :email
 		column :role do |user|
 			I18n.t("enum.user.role.#{user.role}")
@@ -90,7 +94,9 @@ ActiveAdmin.register User do
 	form do |f|
 		f.inputs do
 			f.semantic_errors *f.object.errors.keys
+			f.input :serial_number
 			f.input :name
+			f.input :gender
 			f.input :email
 			f.input :role, as: :select, collection: User.role_attributes_for_select, include_blank: false
 			f.input :phone_number

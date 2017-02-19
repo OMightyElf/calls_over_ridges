@@ -10,12 +10,18 @@ ActiveAdmin.setup do |config|
   # Customize Up Right menu
   config.namespace :admin do |admin|
     admin.build_menu do |menu|
-      menu.add label: '匯入', priority: 100 do |submenu|
-        submenu.add :label => '資助金發放照片', url: '/admin/mass_import_money_granting_proof/import'
-        submenu.add :label => '資助證明', url: '/admin/mass_import_support_proof/import'
-        submenu.add :label => '更新影片', url: '/admin/mass_import_videos/import'
-        submenu.add :label => '更新照片', url: '/admin/mass_import_photos/import'
-        submenu.add :label => '更新資料', url: '/admin/mass_update'
+      menu.add label: '匯入更新', priority: 100 do |submenu|
+        submenu.add label: '資助金發放照片', url: '/admin/mass_import_money_granting_proof/import'
+        submenu.add label: '資助證明', url: '/admin/mass_import_support_proof/import'
+        submenu.add label: '更新影片', url: '/admin/mass_import_videos/import'
+        submenu.add label: '更新照片', url: '/admin/mass_import_photos/import'
+        submenu.add label: '更新資料', url: '/admin/mass_update'
+      end
+    end
+
+    admin.build_menu do |menu|
+      menu.add label: '匯入基本資料', priority: 100 do |submenu|
+        submenu.add label: '匯入資助者', url: '/admin/mass_import_supporter_data'
       end
     end
   end

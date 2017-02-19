@@ -4,12 +4,13 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  validates :name, :email, presence: true
+  validates :serial_number, uniqueness: true
+  validates :serial_number, :name, :email, presence: true
   validates :password, :password_confirmation, presence: true, on: :create
   validates :password, confirmation: true
 
   enum receipt_state: [:fundation_checking, :sent]
-  enum gender: [:other, :male, :female]
+  enum gender: [:female, :male, :other]
   enum role: [:supporter, :admin]
   enum current_state: [:havent_paid, :payment_needs_confirmation, :confirmed_payment, :associated_with_children, :payment_over_due]
 
