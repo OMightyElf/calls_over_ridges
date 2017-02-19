@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :serial_number, uniqueness: true
+  validates_format_of :serial_number, with: /\A[0-9a-zA-Z]*\z/
   validates :serial_number, :name, :email, presence: true
   validates :password, :password_confirmation, presence: true, on: :create
   validates :password, confirmation: true

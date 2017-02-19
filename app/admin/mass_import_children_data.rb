@@ -17,7 +17,7 @@ ActiveAdmin.register_page "Mass Import Children Data" do
 
     (2..@raw_list.last_row).each do |i|
       row = @raw_list.row(i)
-      child = Child.find_or_initialize_by(serial_number: row[0].to_s.gsub('.0', ''))
+      child = Child.find_or_initialize_by(serial_number: row[0].to_s)
       child.name = [row[1], row[2]].join(' ')
       if row[3] == '女'
         child.gender = :female

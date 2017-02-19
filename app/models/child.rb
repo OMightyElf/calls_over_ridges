@@ -1,8 +1,8 @@
 class Child < ActiveRecord::Base
 	validates :name, presence: true
 	validates :serial_number, presence: true, uniqueness: true
+	validates_format_of :serial_number, with: /\A[0-9a-zA-Z]*\z/
 	include Children::LatestUpdatesComparisonMethods
-
 
 	belongs_to :user, foreign_key: :supporter_id
 	has_many :updates, dependent: :destroy
