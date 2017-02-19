@@ -22,6 +22,7 @@ ActiveAdmin.setup do |config|
     admin.build_menu do |menu|
       menu.add label: '匯入基本資料', priority: 100 do |submenu|
         submenu.add label: '匯入資助者', url: '/admin/mass_import_supporter_data'
+        submenu.add label: '匯入孩童', url: '/admin/mass_import_children_data'
       end
     end
   end

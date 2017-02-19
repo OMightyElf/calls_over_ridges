@@ -1,0 +1,35 @@
+<h3>匯入完成！</h3>
+<h5>以下為匯入<b>成功</b>的資料：</h5>
+<table>
+	<tr class="green">
+		<% @raw_list.row(1).each do |td| %>
+		<td><%= td %></td>
+		<% end %>
+	</tr>
+	<% @success_list.each do |row| %>
+	<tr>
+		<% row.each do |td| %>
+		<td><%= td %></td>
+		<% end %>
+	</tr>
+	<% end %>
+</table>
+
+<h5>以下為匯入<b>失敗</b>的資料：</h5>
+<table>
+	<tr class="green">
+		<% @raw_list.row(1).each do |td| %>
+		<td><%= td %></td>
+		<% end %>
+	</tr>
+	<% @failed_list.each do |row| %>
+	<tr>
+		<% row[:row].each do |td| %>
+		<td><%= td %></td>
+		<% end %>
+	</tr>
+	<tr>
+		<td colspan="<%= row[:row].length %>"><%= row[:row][1] %> 的錯誤訊息：<b class="red"><%= row[:error] %></b></td>
+	</tr>
+	<% end %>
+</table>
