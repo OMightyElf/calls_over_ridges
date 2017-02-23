@@ -91,7 +91,7 @@ ActiveAdmin.register Post do
 
 	form do |f|
 		f.inputs do
-			f.input :user_id, as: :select, collection: User.all, member_label: Proc.new { |x| "#{x.name}(#{x.email})" }, include_blank: false
+			f.input :user_id, as: :select, collection: User.admin, member_label: Proc.new { |x| "#{x.name}(#{x.email})" }, include_blank: false
 			f.inputs "文章圖片", multipart: true do
 			  f.input :cover, as: :file, hint: f.object.cover.present? \
 			    ? image_tag(f.object.cover.url(:thumb))
