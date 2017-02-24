@@ -25,3 +25,4 @@
 //= require users
 //= require wow.js/wow
 //= require ckeditor/init
+//= require ckeditor/config
