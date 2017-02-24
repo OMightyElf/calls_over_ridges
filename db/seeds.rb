@@ -8,7 +8,8 @@
 'weight.greater_than', 'weight.equals_to', 'weight.less_than',
 'height.greater_than', 'height.equals_to', 'height.less_than',
 'study_hours.greater_than', 'study_hours.equals_to', 'study_hours.less_than',
-'how_many_children_to_be_supported', 'how_many_dreamers'].each do |var|
+'how_many_children_to_be_supported', 'how_many_dreamers', 'aurora.description',
+'aurora.button_state', 'aurora.button_description', 'aurora.link'].each do |var|
   Setting.create(
     {
       var: var,
