@@ -4,9 +4,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  validates :serial_number, uniqueness: true
+  validates :name, :email, presence: true
+  validates :serial_number, uniqueness: true, allow_nil: true
   validates_format_of :serial_number, with: /\A[0-9a-zA-Z]*\z/
-  validates :serial_number, :name, :email, presence: true
   validates :password, :password_confirmation, presence: true, on: :create
   validates :password, confirmation: true
 
