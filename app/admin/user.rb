@@ -1,5 +1,5 @@
 ActiveAdmin.register User do
-	permit_params :name, :email, :password, :password_confirmation, :role, :phone_number,
+	permit_params :serial_number, :name, :email, :password, :password_confirmation, :role, :phone_number,
 								:zipcode, :address, :receipt_url, :support_date, :paid_at, :receipt_state,
 								:need_receipt, :current_state, :money,
 								:child_ids, children_attributes: [:id, :supporter_id]
