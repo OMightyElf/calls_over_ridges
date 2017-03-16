@@ -98,6 +98,9 @@ zh-TW:
         created_at: 建立時間
         updated_at: 更新時間
         children: 配對孩童
+        serial_number: 序號
+        gender: 性別
+        payment_info: 匯款帳戶／訊息
   date:
     abbr_day_names:
     - 日
