@@ -9,6 +9,10 @@ class UsersController < ApplicationController
     @message = Message.new
   end
 
+  def index
+    redirect_to admin_users_path
+  end
+
   def save_receipt
     @user = User.find(params[:user_id])
     authorize @user

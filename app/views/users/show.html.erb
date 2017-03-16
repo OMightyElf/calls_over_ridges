@@ -19,29 +19,3 @@
 	</li>
 </ul>
 <%= render partial: 'shared/partials/message_board' %>
-
-<% content_for :javascript do %>
-<script>
-$(function () {
-	$('#editData').click(function (e) {
-		e.preventDefault();
-		$('.input-field').fadeIn();
-		$('.value-field').hide();
-		$(this).hide();
-		$('#finishEdit').fadeIn();
-		$('#cancelEdit').fadeIn();
-	});
-
-	$('#cancelEdit').click(function (e) {
-		e.preventDefault();
-		$('#finishEdit').hide();
-		$('#cancelEdit').hide();
-		$('#editData').fadeIn();
-		$('.input-field').hide();
-		$('.value-field').fadeIn();
-	});
-	readData();
-});
-</script>
-
-<% end %>
