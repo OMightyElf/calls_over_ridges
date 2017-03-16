@@ -1,7 +1,16 @@
 @media screen and (max-width: 770px) {
+  .scrollDown {
+    display: none;
+  }
+
   .mobile-hide {
     display: none;
   }
+
+  .header .dropdown-button {
+		padding: 27px 10px;
+		min-width: 130px;
+	}
 
   .gridHalf li {
     list-style: none;
@@ -151,6 +160,10 @@
     width: 100%;
   }
 
+	.auroraModel img {
+		width: 100%;
+	}
+
   .indexVideo {
     position: relative;
     display: block;
@@ -209,9 +222,10 @@
     width: 45%;
   }
   .indexAurora__title {
-    width: 55%;
-    padding-top: 10px;
     font-size: 16px;
+    margin-top: 10px;
+    padding-top: 0;
+    width: 60%;
   }
   .indexAurora__content {
     width: 55%;
@@ -224,10 +238,12 @@
     width: 40%;
   }
   .indexSponse__title {
-    width: 60%;
-    padding-top: 10px;
     font-size: 16px;
+    margin-top: 10px;
+    padding-top: 0;
+    width: 60%;
   }
+
   .indexSponse__content {
     width: 60%;
     margin-top: 0;

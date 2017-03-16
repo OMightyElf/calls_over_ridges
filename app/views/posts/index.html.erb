@@ -42,7 +42,7 @@
 		<div id="newest_posts" class="col s12 section">
 			<div class="row">
 				<% @posts.each do |post| %>
-					<div class="col s12 m4">
+					<div class="col s12 m6 l4">
 						<%= render partial: 'posts/partials/post', locals: { post: post, type: 's' } %>
 					</div>
 				<% end if @posts.present? %>
@@ -51,7 +51,7 @@
 		<div id="news" class="col s12 section">
 			<div class="row">
 				<% @posts.with_category(:news).each do |post| %>
-					<div class="col s12 m4">
+					<div class="col s12 m6 l4">
 						<%= render partial: 'posts/partials/post', locals: { post: post, type: 's' } %>
 					</div>
 				<% end if @posts.with_category(:news).present? %>
@@ -60,7 +60,7 @@
 		<div id="special_column" class="col s12 section">
 			<div class="row">
 				<% @posts.with_category(:special_column).each do |post| %>
-					<div class="col s12 m4">
+					<div class="col s12 m6 l4">
 						<%= render partial: 'posts/partials/post', locals: { post: post, type: 's' } %>
 					</div>
 				<% end if @posts.with_category(:special_column).present? %>
@@ -69,7 +69,7 @@
 		<div id="viewpoint" class="col s12 section">
 			<div class="row">
 				<% @posts.with_category(:viewpoint).each do |post| %>
-					<div class="col s12 m4">
+					<div class="col s12 m6 l4">
 						<%= render partial: 'posts/partials/post', locals: { post: post, type: 's' } %>
 					</div>
 				<% end if @posts.with_category(:viewpoint).present? %>
@@ -78,7 +78,7 @@
 		<div id="behind_the_scenes" class="col s12 section">
 			<div class="row">
 				<% @posts.with_category(:behind_the_scenes).each do |post| %>
-					<div class="col s12 m4">
+					<div class="col s12 m6 l4">
 						<%= render partial: 'posts/partials/post', locals: { post: post, type: 's' } %>
 					</div>
 				<% end if @posts.with_category(:behind_the_scenes).present? %>
@@ -87,7 +87,7 @@
 		<div id="media" class="col s12 section">
 			<div class="row">
 				<% @posts.with_category(:media).each do |post| %>
-					<div class="col s12 m4">
+					<div class="col s12 m6 l4">
 						<%= render partial: 'posts/partials/post', locals: { post: post, type: 's' } %>
 					</div>
 				<% end if @posts.with_category(:media).present? %>
