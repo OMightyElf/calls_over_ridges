@@ -1,5 +1,5 @@
 ActiveAdmin.register User do
-	permit_params :serial_number, :name, :email, :password, :password_confirmation, :role, :phone_number,
+	permit_params :serial_number, :name, :email, :password, :password_confirmation, :role, :gender, :phone_number,
 								:zipcode, :address, :receipt_url, :support_date, :paid_at, :receipt_state,
 								:need_receipt, :current_state, :money,
 								:child_ids, children_attributes: [:id, :supporter_id]
@@ -96,7 +96,7 @@ ActiveAdmin.register User do
 			f.semantic_errors *f.object.errors.keys
 			f.input :serial_number
 			f.input :name
-			f.input :gender
+			f.input :gender, as: :radio, collection: User.genders.keys, include_blank: false
 			f.input :email
 			f.input :role, as: :select, collection: User.role_attributes_for_select, include_blank: false
 			f.input :phone_number
