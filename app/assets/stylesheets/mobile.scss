@@ -24,6 +24,7 @@
 
   .title:before, .title:after {
     width: 30px;
+    margin: 0 20px;
   }
   .modal .title {
     text-align: left;
@@ -219,16 +220,15 @@
   }
 
   .indexAurora__photo {
-    width: 45%;
+    width: 40%;
   }
   .indexAurora__title {
-    font-size: 16px;
-    margin-top: 10px;
-    padding-top: 0;
     width: 60%;
+    padding-top: 10px;
+    font-size: 16px;
   }
   .indexAurora__content {
-    width: 55%;
+    width: 60%;
     font-size: 14px;
     margin-top: 0;
     padding: 10px 20px;
