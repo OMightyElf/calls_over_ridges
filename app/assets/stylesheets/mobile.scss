@@ -1,4 +1,32 @@
 @media screen and (max-width: 770px) {
+  .recommend figure:hover img {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  .recommend figure figcaption {
+    background: rgba(0, 0, 0, 0.2);
+    opacity: 1;
+    -moz-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    -o-transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+    top: 0;
+    height: auto;
+  }
+  .recommend figure figcaption a {
+    display: none;
+  }
+  .recommend figure figcaption .mainTitle {
+    text-align: center;
+    font-size: 14px;
+  }
+  .recommend figure figcaption .subTitle {
+    display: none;
+  }
   .scrollDown {
     display: none;
   }

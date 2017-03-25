@@ -23,6 +23,11 @@ body {
   line-height: 1.6;
 }
 
+
+article img{
+	width:100% !important;
+	height:100% !important;
+}
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
@@ -1472,68 +1477,74 @@ article blockquote p {
 }
 
 .scrollDown {
-	position: absolute;
-	width: 30px;
-	height: 50px;
-	bottom: 50px;
-	left: 0;
-	right: 0;
-	margin: auto;
-	border: 2px solid #fff;
-	border-radius: 15px;
-	z-index: 3;
+  position: absolute;
+  bottom: 50px;
+  width: 50px;
+  height: 30px;
+  left: 50%;
+  margin-left: -30px;
+  -moz-animation: scrollDown .5s both alternate infinite;
+  -o-animation: scrollDown .5s both alternate infinite;
+  -webkit-animation: scrollDown .5s both alternate infinite;
+  animation: scrollDown .5s both alternate infinite;
+  z-index: 3;
+}
+.scrollDown:before {
+  content: '';
+  width: 30px;
+  height: 3px;
+  display: block;
+  -moz-transform: rotateZ(45deg);
+  -ms-transform: rotateZ(45deg);
+  -o-transform: rotateZ(45deg);
+  -webkit-transform: rotateZ(45deg);
+  transform: rotateZ(45deg);
+  background: #fff;
+  position: absolute;
+  top: 15px;
+  left: 0;
+  border-radius: 2px;
 }
 .scrollDown:after {
   content: '';
+  width: 30px;
+  height: 3px;
+  display: block;
   position: absolute;
-  width: 4px;
-  height: 8px;
+  top: 15px;
+  left: 20px;
+  -moz-transform: rotateZ(-45deg);
+  -ms-transform: rotateZ(-45deg);
+  -o-transform: rotateZ(-45deg);
+  -webkit-transform: rotateZ(-45deg);
+  transform: rotateZ(-45deg);
   background: #fff;
-  border-radius: 50%;
-  top: 5px;
-  left: 0;
-  right: 0;
-  margin: auto;
-  -moz-animation: scrollDown 0.8s infinite linear both;
-  -o-animation: scrollDown 0.8s infinite linear both;
-  -webkit-animation: scrollDown 0.8s infinite linear both;
-  animation: scrollDown 0.8s infinite linear both;
+  border-radius: 2px;
 }
 
 @-moz-keyframes scrollDown {
-from {
-  top: 5px;
-  opacity: 1;
+  from {
+    bottom: 50px;
+  }
+  to {
+    bottom: 40px;
+  }
 }
-
-to {
-  top: 20px;
-  opacity: 0;
-}
-}
-
 @-webkit-keyframes scrollDown {
-from {
-  top: 5px;
-  opacity: 1;
+  from {
+    bottom: 50px;
+  }
+  to {
+    bottom: 40px;
+  }
 }
-
-to {
-  top: 20px;
-  opacity: 0;
-}
-}
-
 @keyframes scrollDown {
-from {
-  top: 5px;
-  opacity: 1;
-}
-
-to {
-  top: 20px;
-  opacity: 0;
-}
+  from {
+    bottom: 50px;
+  }
+  to {
+    bottom: 40px;
+  }
 }
 
 /* ==========================================================================
