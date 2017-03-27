@@ -18,7 +18,18 @@
     height: auto;
   }
   .recommend figure figcaption a {
-    display: none;
+    display: block;
+    text-indent: -99999px;
+    font-size: 0;
+    border: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .recommend figure figcaption a:hover{
+    background: transparent;
+    transition: inherit;
   }
   .recommend figure figcaption .mainTitle {
     text-align: center;
