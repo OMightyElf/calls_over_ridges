@@ -10,6 +10,8 @@ class Child < ActiveRecord::Base
 
 	enum gender: [:male, :female, :other]
 
+  after_save :check_supporter_associated_state
+
 	def statics_last_six_months_of(attribute)
 		updates.pluck(attribute)
 	end
@@ -20,5 +22,11 @@ class Child < ActiveRecord::Base
 
 	def latest_update
 		updates.order(update_year: :desc, update_month: :desc).first
+	end
+
+	def check_supporter_associated_state
+		if supporter_id.present?
+			User.find(supporter_id).update(current_state: 'associated_with_children')
+		end
 	end
 end
