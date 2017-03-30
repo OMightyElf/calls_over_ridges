@@ -3,6 +3,8 @@ Rails.application.configure do
 
   # Code is not reloaded between requests.
   config.cache_classes = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { host: "http://callsoverridges.com" }
   config.action_mailer.smtp_settings = {
     address: ENV['MAILER_ADDRESS'],
     port: 587,
