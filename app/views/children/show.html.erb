@@ -33,7 +33,9 @@
 
 				<ul class="browser-default">
 					<li><%= "性別： #{@child.gender}" %></li>
-					<li><%= "年紀： #{@child.decorate.age}" %></li>
+					<% if @child.birthday.present? %>
+						<li><%= "年紀： #{@child.decorate.age}" %></li>
+					<% end %>
 					<li><%= "就讀小學： #{@update.current_school}" %></li>
 					<li><%= "就讀年級： #{@update.current_grade} 年級" %></li>
 				</ul>
