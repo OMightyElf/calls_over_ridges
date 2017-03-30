@@ -23,8 +23,6 @@ ActiveAdmin.register Child do
 		end
 	end
 
-	filter :gender, as: :select, collection: Child.genders
-
 	show do
 		columns do
 			column span: 4 do
@@ -126,7 +124,7 @@ ActiveAdmin.register Child do
 			f.input :birthday, as: :date_picker
 			f.input :supported_at, as: :date_picker
 			f.input :support_until, as: :date_picker
-			f.input :user, as: :select2, collection: User.all, member_label: Proc.new { |u| u.name }
+			f.input :user, as: :select2, collection: User.all, member_label: Proc.new { |u| u.serial_number }
 			f.has_many :updates, header: "月更新資料" do |update|
 				update.input :update_year
 				update.input :update_month
