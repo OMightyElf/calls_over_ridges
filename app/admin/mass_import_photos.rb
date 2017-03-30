@@ -11,8 +11,8 @@ ActiveAdmin.register_page "Mass Import Photos" do
 
     photos.each do |photo|
       filename = photo.original_filename
-      child_serial_number = filename[/(\w+)_/,1] #哪個小孩的照片
-      num_of_photo = filename[/_(\w+)/,1] #他的第幾張
+      child_serial_number = filename[/(\w+)-/,1] #哪個小孩的照片
+      num_of_photo = filename[/-(\w+)/,1] #他的第幾張
 
       if child = Child.find_by_serial_number(child_serial_number)
         last_update = child.updates.find_by(update_year: params_year, update_month: params_month)
