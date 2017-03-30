@@ -1,7 +1,7 @@
 <%= form_tag(admin_mass_import_photos_confirm_update_path, method: "post", multipart: true) do %>
 
 <h3>多選上傳孩童的照片</h3>
-<p>照片檔案名稱請以「孩童序號_第幾張」為檔名，如：11140_1、11140_2</p>
+<p>照片檔案名稱請以「孩童序號-第幾張」為檔名，如：11140-1、11140-2</p>
 <%= file_field_tag :file, multiple: true, id: "#fileupload", name: "photos[]" %>
 <br>
 <br>
