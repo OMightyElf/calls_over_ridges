@@ -18,7 +18,7 @@ ActiveAdmin.register_page "Mass Import Photos" do
         last_update = child.updates.find_by(update_year: params_year, update_month: params_month)
 
         if last_update.present?
-          ph = last_update.photos.new
+          ph = last_update.photos.find_or_initialize_by(serial_number: num_of_photo)
           ph.picture = photo
           ph.save
           @success_list.push(photo.original_filename)

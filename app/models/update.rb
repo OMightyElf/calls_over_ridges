@@ -3,7 +3,7 @@ class Update < ActiveRecord::Base
 	has_many :photos, class_name: 'PhotoAttachment'
 	accepts_nested_attributes_for :photos
 	validates :update_year, :update_month, :child_id, presence: true
-	validate :unique_time
+	validate :unique_time, if: Proc.new { |u| u.update_year_changed? || u.update_year_changed? }
 
   mount_uploader :money_granting_proof, PictureUploader
   mount_uploader :support_proof, PictureUploader
