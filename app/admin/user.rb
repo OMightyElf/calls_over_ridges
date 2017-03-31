@@ -96,6 +96,8 @@ ActiveAdmin.register User do
 			f.semantic_errors *f.object.errors.keys
 			f.input :serial_number
 			f.input :name
+			f.hidden_field :password, value: '12345678' unless f.object.persisted?
+			f.hidden_field :password_confirmation, value: '12345678' unless f.object.persisted?
 			f.input :gender, as: :radio, collection: User.genders.keys, include_blank: false
 			f.input :email
 			f.input :role, as: :select, collection: User.role_attributes_for_select, include_blank: false
