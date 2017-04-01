@@ -8,7 +8,7 @@ ActiveAdmin.register Child do
 # or
 #
 	permit_params do
-		permitted = [:name, :serial_number, :gender, :birthday, :supported_at, :support_until, :supporter_id,
+		permitted = [:name, :serial_number, :gender, :birthday, :supporter_id,
 									updates_attributes: [
 										# 沒有加id的話每次更新就會重創物件
 										:id, :update_year, :update_month, :current_school, :current_grade, :attendence_rate,
@@ -32,8 +32,6 @@ ActiveAdmin.register Child do
 					row :serial_number
 					row :gender
 					row :birthday
-					row :supported_at
-					row :support_until
 					row :user do |child|
 						table_for child.user do
 							column do |user|
@@ -109,8 +107,6 @@ ActiveAdmin.register Child do
 		column :serial_number
 		column :gender
 		column :birthday
-		column :supported_at
-		column :support_until
 		column :supporter_id
 		actions defaults: true
 	end
@@ -122,8 +118,6 @@ ActiveAdmin.register Child do
 			f.input :serial_number
 			f.input :gender, as: :select, collection: Child.genders.keys, include_blank: false
 			f.input :birthday, as: :date_picker
-			f.input :supported_at, as: :date_picker
-			f.input :support_until, as: :date_picker
 			f.input :user, as: :select2, collection: User.all, member_label: Proc.new { |u| u.serial_number }
 			f.has_many :updates, header: "月更新資料" do |update|
 				update.input :update_year

@@ -1,6 +1,6 @@
 ActiveAdmin.register User do
 	permit_params :serial_number, :name, :email, :password, :password_confirmation, :role, :gender, :phone_number,
-								:zipcode, :address, :receipt_url, :support_date, :paid_at, :receipt_state,
+								:zipcode, :address, :receipt_url, :support_date, :support_start, :support_end, :paid_at, :receipt_state,
 								:need_receipt, :current_state, :money,
 								:child_ids, children_attributes: [:id, :supporter_id]
 
@@ -40,6 +40,8 @@ ActiveAdmin.register User do
 					row :phone_number
 					row :zipcode
 					row :address
+					row :support_start
+					row :support_end
 					row :money
 					row :paid_at
 					row :need_receipt
@@ -78,6 +80,8 @@ ActiveAdmin.register User do
 		column :address
 		column :money
 		column :paid_at
+		column :support_start
+		column :support_end
 		column :need_receipt
 		column :receipt_url
 		column :payment_info
@@ -105,6 +109,8 @@ ActiveAdmin.register User do
 			f.input :zipcode
 			f.input :address
 			f.input :money
+			f.input :support_start, as: :date_picker
+			f.input :support_end, as: :date_picker
 			f.input :paid_at, as: :date_picker
 			f.input :need_receipt, as: :boolean
 			f.input :receipt_state, as: :radio, collection: User.receipt_states.keys, include_blank: false
