@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170331092115) do
+ActiveRecord::Schema.define(version: 20170401125549) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,8 +47,6 @@ ActiveRecord::Schema.define(version: 20170331092115) do
     t.string   "name"
     t.string   "serial_number"
     t.integer  "gender"
-    t.datetime "supported_at"
-    t.datetime "support_until"
     t.integer  "supporter_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
@@ -168,6 +166,8 @@ ActiveRecord::Schema.define(version: 20170331092115) do
     t.text     "payment_info"
     t.string   "serial_number"
     t.integer  "gender"
+    t.datetime "support_start"
+    t.datetime "support_end"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
