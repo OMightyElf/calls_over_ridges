@@ -9,10 +9,20 @@ class UsersController < ApplicationController
     authorize @user
     @child = @user.first_child
     @message = Message.new
+    if @user == current_user
+      redirect_to profile_path
+    end
   end
 
   def index
     redirect_to admin_users_path
+  end
+
+  def profile
+    @user = current_user
+    @child = @user.first_child
+    @message = Message.new
+    render 'show'
   end
 
   def save_receipt
@@ -31,7 +41,7 @@ class UsersController < ApplicationController
 
   def user_not_authorized
     flash[:alert] = "無瀏覽權限"
-    redirect_to current_user
+    redirect_to profile_path
   end
 
 # protected

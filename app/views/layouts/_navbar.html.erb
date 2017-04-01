@@ -27,7 +27,7 @@
             Hi <%= current_user.name %><i class="material-icons right"><i class="fa fa-caret-down"></i></i>
           </a>
           <ul id="memberDropDown" class="dropdown-content">
-            <li><%= link_to '個人資料', user_path(current_user) %></li>
+            <li><%= link_to '個人資料', profile_path %></li>
             <% current_user.children.all.each do |child| %>
               <li><%= link_to child.name, child_path(child) %></li>
             <% end if current_user.associated_with_children? %>
