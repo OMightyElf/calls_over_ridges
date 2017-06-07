@@ -1338,6 +1338,18 @@ article blockquote p {
   -ms-transform: rotate(-20deg) skewX(70deg);
   transform: rotate(-20deg) skewX(70deg);
 }
+
+.counter .sponseOrigin__header {
+  color: #990033;
+  position: relative;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.counter .sponseOrigin__article {
+  top: 0;
+}
+
 .sponseOrigin__article {
   position: relative;
   top: -80px;
