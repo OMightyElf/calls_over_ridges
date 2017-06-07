@@ -9,6 +9,8 @@
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
+$main-blue: #003471;
+
 html,
 button,
 input,
@@ -982,7 +984,11 @@ article blockquote p {
 }
 
 .indexAurora {
-  background: #ffcb01;
+  background: #003471;
+  .btn {
+    background: #fff;
+    color: $main-blue;
+  }
 }
 .indexAurora__photo {
   position: relative;
@@ -999,7 +1005,7 @@ article blockquote p {
   text-align: center;
   font-weight: bold;
   font-size: 24px;
-  color: #000;
+  color: #FFF;
   vertical-align: middle;
 }
 .indexAurora__content {
@@ -1009,8 +1015,12 @@ article blockquote p {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 20px 60px;
-  color: #333;
+  color: #FFF;
   text-align: center;
+}
+
+.mobile-show {
+  display: none;
 }
 
 /* ==========================================================================

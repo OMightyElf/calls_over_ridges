@@ -1,7 +1,8 @@
 <div class="banner banner--index">
 	<div class="banner__title">
 		<%= image_tag 'logo-big.png' %>
-		<br>WALK YOUNG DREAMERS<br>THROUGH POVERTY
+		<br>
+		<%= Setting.slogan %>
 	</div>
 	<a href="#" class="scrollDown"></a>
 </div>
@@ -14,9 +15,9 @@
 				</div>
 				<div class="counter">
 					<div class="counter__title">
-						DAY
+						EDUCATIONAL ECOSYSTEM
+						<br>DAY
 						<span class="counter__number" data-duration="3000" data-easing="easeInOutQuart" data-count="<%= ((Time.now - Time.zone.parse('2015.04.25 11:56:26 UTC+5:45'))/1.day).to_i %>">0</span>
-						IN NEPAL
 					</div>
 				</div>
 			</div>
@@ -26,13 +27,16 @@
 				<div class="mission__title">我們的使命</div>
 				<div class="mission__content">
 					<p>
-						我們曾經參與過各地國際服務，結束短期服務，回國投入生活之後，我們發現自己並未帶來改變，孩子需要更長期而且不間斷的幫助！
-						心中力不從心的感受使我們開始思考，什麼樣的服務才能為孩子帶來他們渴望的未來？
+						2015年4月，渴望能跳脫短期服務的遠山呼喚團隊集結在一起，隨後一場地震帶我們深入山城間的震央村落。直到今天我們未曾離開，我們仍傾聽著許多孩子的獨白，這些傾訴是黑暗中的微光，引領我們不斷思考服務的意義。
 					</p>
 					<p>
-						2015年4月，遠山呼喚團隊因此集結在一起，開始用行動回應心中的重重疑慮。在山與城市之間來回，我們聽見了許多孩子的獨白。
-						在書籍、捐款、志工都能快速奔向孩子的時代裡，孩子卻仍需要透過長期教育，才能慢慢地走向未來。
-						而圍繞著教育推動「長期服務」就是我們不變的初衷。
+						我們發現在許多貧窮地區，學習是孩子必須獨自面對的事情，孩子在教育領域的重要關係人，並不知道怎麼為孩子鋪走出貧窮的路。嚴苛的教育環境讓許多孩子被迫放棄學習，然而教育卻是他們改變生命唯一的途徑。
+					</p>
+					<p>
+						大家總認為要改變的是孩子，卻沒有人真正長期的改善教育環境。在短期志工不斷進出孩子生命的時代裡，我們有不一樣的堅持；在體驗式服務當道的現在，我們渴望實踐一場改變。
+					</p>
+					<p>
+						「學習生態系」是一套教育環境的優化系統，更是一場每個人都能參與的長期行動！
 					</p>
 				</div>
 				<div class="mission__action">
@@ -47,6 +51,35 @@
 		<div class="indexVideo__text">What we believe in</div>
 	</a>
 </section> -->
+<section class="indexAurora clearfix">
+	<div class="indexAurora__photo">
+		<%= image_tag 'indexAurora.png' %>
+	</div>
+	<div class="indexAurora__title">
+		學習生態系
+	</div>
+	<div class="indexAurora__content">
+		<p>
+			<span class="mobile-show">
+				學習生態系致力於改善貧童教育的四大面向：教育資金、學習資源、親職參與、內在動機，並以經濟研究作為評估機制。
+			</span>
+			<span class="mobile-hide">
+				學習生態系致力於改善貧童教育的四大面向：<br>
+				教育資金（Educational Funds）、<br>
+				學習資源（Learning Resources）、<br>
+				親職參與（Parental Involvement）、<br>
+				內在動機（Incentive Cultivation），<br>
+				並以經濟研究作為評估機制。<br><br>
+				我們與許多孩子們一同經驗了兩年的學習，<br>
+				是什麼樣的真實故事引領我們展開行動？<br>
+				將如何大眾一起執行學習生態系呢？<br>
+				快跟著我們一探究竟吧！
+				<br>
+			</span>
+		</p>
+		<%= link_to '瞭解更多', about_path, class: "btn" %>
+	</div>
+</section>
 <section class="indexSponse clearfix">
 	<div class="indexSponse__photo">
 		<%= image_tag 'indexSponse.png' %>
@@ -68,32 +101,6 @@
 			是相伴而行的長期資助。
 		</p>
 		<%= link_to '瞭解更多', sponsor_project_path, class: "btn" %>
-	</div>
-
-</section>
-<section class="indexAurora clearfix">
-	<div class="indexAurora__photo">
-		<%= image_tag 'indexAurora.png' %>
-	</div>
-	<div class="indexAurora__title">
-		極光計畫
-	</div>
-	<div class="indexAurora__content">
-		<p>
-			<span class="mobile-hide">
-				當資助兒童重返教育，
-				他們將面臨嚴峻的考驗，
-				教學資源的匱乏，家庭觀念的限制.......<br>
-			</span>
-			極光計畫致力於培養第一線的工作人員，
-			帶領村民一起投入長達十年的村落革新。
-			<span class="mobile-hide">
-				<br>
-			</span>
-			從孩子拿到第一筆資助金開始，
-			我們便是他們解決困難的陪伴者。
-		</p>
-		<%= link_to '瞭解更多', aurora_path, class: "btn" %>
 	</div>
 </section>
 <section class="section">
