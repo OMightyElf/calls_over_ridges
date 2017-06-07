@@ -2062,12 +2062,10 @@ article blockquote p {
   background-image: url(asset-path("about2.jpg"));
 }
 .about__photo--3 {
-  background-image: url(asset-path("banner__sponse.jpg"));
-  background-position: left center;
+  background-image: url(asset-path("about3.jpg"));
 }
 .about__photo--4 {
-  background-image: url(asset-path("banner__aurora.jpg"));
-  background-position: right center;
+  background-image: url(asset-path("about4.jpg"));
 }
 .about__photo--5 {
   background-image: url(asset-path("about5.jpg"));
@@ -2082,6 +2080,7 @@ article blockquote p {
   background-image: url(asset-path("about8.jpg"));
 }
 .about .clearfix {
+  padding-top: 10px;
   padding-bottom: 10px;
   margin: 0 20px;
   border-bottom: 1px solid #003471;
@@ -2090,6 +2089,10 @@ article blockquote p {
   text-align: justify;
   padding: 20px;
   font-size: 14px;
+  b {
+    display: inline-block;
+    margin-bottom: 5px;
+  }
 }
 .about .row {
   border: 3px solid #003471;
@@ -2116,9 +2119,6 @@ article blockquote p {
   left: 50px;
 }
 .about .row:nth-child(odd) .about__title {
-  float: right;
-}
-.about .row:nth-child(odd) .about__month {
   float: left;
 }
 .about .row:nth-child(odd) .about__year {
@@ -2130,7 +2130,8 @@ article blockquote p {
   right: 50px;
 }
 .about .row:nth-child(even) .about__title {
-  float: left;
+  float: right;
+  text-align: right;
 }
 .about .row:nth-child(even) .about__month {
   float: right;
@@ -2139,6 +2140,31 @@ article blockquote p {
   padding: 0 20px;
   text-align: right;
   padding-top: 10px;
+}
+
+.about .row.educational-funds {
+  border: 3px solid #bfd0d6;
+  .about__photo {
+    border: 10px solid #bfd0d6;
+  }
+}
+.about .row.learning-resources {
+  border: 3px solid #4b6875;
+  .about__photo {
+    border: 10px solid #4b6875;
+  }
+}
+.about .row.parental-involvement {
+  border: 3px solid #96b9ca;
+  .about__photo {
+    border: 10px solid #96b9ca;
+  }
+}
+.about .row.incentive-cultivation {
+  border: 3px solid #0e4261;
+  .about__photo {
+    border: 10px solid #0e4261;
+  }
 }
 
 /* ==========================================================================
