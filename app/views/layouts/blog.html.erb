@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<title><%= @post.title %></title>
+
+<meta name="author" content="遠山呼喚">
+<meta name="copyright" content="遠山呼喚">
+<meta name="description" content="<%= @post.subtitle %>">
+<meta itemprop="name" content="遠山呼喚">
+<meta itemprop="description" content="<%= @post.subtitle %>">
+<meta property="og:title" content="遠山呼喚">
+<meta property="og:url" content="<%= post_url(@post) %>">
+<meta property="og:image" content="<%= @post.cover.url('large') %>">
+<meta property="og:description" content="<%= @post.subtitle %>" >
+<meta http-equiv="cleartype" content="on" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui" />
+<link rel="author" href="https://plus.google.com/101286981499052449270">
+<link rel="publisher" href="ghttps://plus.google.com/101286981499052449270">
+
+<!-- favicon -->
+<link rel="apple-touch-icon" sizes="57x57" href="<%= asset_path('SEO/favicons/apple-icon-57x57.png') %>">
+<link rel="apple-touch-icon" sizes="60x60" href="<%= asset_path('SEO/favicons/apple-icon-60x60.png') %>">
+<link rel="apple-touch-icon" sizes="72x72" href="<%= asset_path('SEO/favicons/apple-icon-72x72.png') %>">
+<link rel="apple-touch-icon" sizes="76x76" href="<%= asset_path('SEO/favicons/apple-icon-76x76.png') %>">
+<link rel="apple-touch-icon" sizes="114x114" href="<%= asset_path('SEO/favicons/apple-icon-114x114.png') %>">
+<link rel="apple-touch-icon" sizes="120x120" href="<%= asset_path('SEO/favicons/apple-icon-120x120.png') %>">
+<link rel="apple-touch-icon" sizes="144x144" href="<%= asset_path('SEO/favicons/apple-icon-144x144.png') %>">
+<link rel="apple-touch-icon" sizes="152x152" href="<%= asset_path('SEO/favicons/apple-icon-152x152.png') %>">
+<link rel="apple-touch-icon" sizes="180x180" href="<%= asset_path('SEO/favicons/apple-icon-180x180.png') %>">
+<link rel="icon" type="image/png" sizes="192x192"  href="<%= asset_path('SEO/favicons/android-icon-192x192.png') %>">
+<link rel="icon" type="image/png" sizes="32x32" href="<%= asset_path('SEO/favicons/favicon-32x32.png') %>">
+<link rel="icon" type="image/png" sizes="96x96" href="<%= asset_path('SEO/favicons/favicon-96x96.png') %>">
+<link rel="icon" type="image/png" sizes="16x16" href="<%= asset_path('SEO/favicons/favicon-16x16.png') %>">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!-- favicon -->
+
+<%= stylesheet_link_tag    'application', media: 'all' %>
+<%= javascript_include_tag 'application' %>
+<%= javascript_include_tag :modernizr %>
+<%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="container">
+  <%= render partial: "layouts/navbar" %>
+	<section class='main'>
+		<%= render partial: 'layouts/notices' %>
+		<%= yield %>
+	</section>
+	<%= render partial: "layouts/footer" %>
+  <%= render partial: 'layouts/loading' %>
+</div>
+
+<%= yield :javascript %>
+
+</body>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-63368833-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</html>

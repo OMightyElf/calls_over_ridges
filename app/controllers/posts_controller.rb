@@ -8,6 +8,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @latest_posts = Post.all.publish.order(publish_date: :desc).limit(3)
+    render layout: "blog"
   end
 
   def new
