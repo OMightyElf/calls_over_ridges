@@ -16,7 +16,7 @@
       <% if !user_signed_in? %>
         <ul class="menu__member">
           <li><%= link_to '資助人登入', new_user_session_path, class: 'btn btn--rev' %></li>
-          <li><%= link_to '成為資助人', new_user_registration_path, style: " text-decoration: none;", id: "signup", class: 'btn btn--rev' %></li>
+          <!-- <li><%#= link_to '成為資助人', new_user_registration_path, style: " text-decoration: none;", id: "signup", class: 'btn btn--rev' %></li> -->
         </ul>
       <% end %>
     </div>
