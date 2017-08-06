@@ -33,6 +33,7 @@ show do
 						end
 					end
 				end
+				row :created_at
 			end
 		end
 	end
@@ -45,6 +46,7 @@ index do
 	column '來自' do |message|
 		link_to message.user.name, admin_user_path(message.user)
 	end
+	column :created_at
 	actions defaults: true
 end
 
