@@ -18,6 +18,9 @@ ActiveAdmin.register User do
 #   permitted
 # end
 
+	preserve_default_filters!
+	filter :sign_in_count
+
   controller do
     def scoped_collection
       User.all.includes(:children)
@@ -55,6 +58,7 @@ ActiveAdmin.register User do
 					row :current_state do |user|
 						I18n.t("enum.user.current_state.#{user.current_state}")
 					end
+					row :sign_in_count
 					row :children do |user|
 						table_for user.children do
 							column do |child|
@@ -91,6 +95,7 @@ ActiveAdmin.register User do
 		column :current_state do |user|
 			I18n.t("enum.user.current_state.#{user.current_state}")
 		end
+		column :sign_in_count
 		actions defaults: true
 	end
 
