@@ -13,4 +13,8 @@ class PagesController < ApplicationController
 
 	def aurora
 	end
+
+	def donate
+		redirect_to 'http://donate.callsoverridges.org'
+	end
 end
